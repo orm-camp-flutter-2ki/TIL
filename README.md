@@ -8,7 +8,8 @@ Today I Learned
  
  추가 정리 및 수정 수정
 
-## 샘플
-- https://github.com/namjunemy/TIL
-- https://github.com/milooy/TIL
-- https://github.com/YutoMizutani/til
+## fork
+
+복사해서 나의 리파지토리에 가져오는것
+수정해서 Pull requests 하여 하루에 한번씩 일지쓰기
+수정하기 위해선 나의 리파지토리 TIL 들어가서 수정하면 commit 된것 까지 자동으로 수정됨
