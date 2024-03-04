@@ -1,8 +1,7 @@
 # TIL
 
-Today I Learned
-
-오늘 학습한 내용을 정리하는 것
+Git, GitHub 기초에 대해 수업
+- mac 환경 기준
 
 
 ## 샘플
