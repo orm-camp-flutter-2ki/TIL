@@ -7,18 +7,18 @@ Hajun KIM
 <hr>
 
 #### [GIT](https://github.com/algochemy/TIL/tree/main/git)
-</hr>
+
+<br>
 #### DART
 ![image](https://github.com/algochemy/TIL/assets/152131529/f292f623-9f46-400e-859a-ab9abb41bcd3)
 ![image](https://github.com/algochemy/TIL/assets/152131529/5b7a2c3b-f3f8-44e2-9bd6-8af64aff21c5)
-</hr>
+</br>
+
 #### FLUTTER
-</hr>
+
 #### JAVA
-</hr>
+
 #### PYTHON
-</hr>
-<hr>
 
 ## 샘플
 - https://github.com/namjunemy/TIL
