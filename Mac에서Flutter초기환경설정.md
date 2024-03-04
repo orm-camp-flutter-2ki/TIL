@@ -1,4 +1,8 @@
 # Mac에서 Flutter 초기 환경설정
+[유튜브: 2023년 12월 최신 Flutter MacOS 환경설정](https://www.youtube.com/watch?v=DDCqlDrWsXU&t=1119s)
+링크내용을 참조하여 작성함.
+
+
 ### 1. FlutterSDK 다운로드 받아야함.
 - brew로 설치도 가능함. 나는 다운로드받아서 함.
 - 아래링크참조
@@ -25,13 +29,13 @@ flutter doctor
 ### 4. Android Studio 설치
 - 안드스튜디오 공식홈페이지에서 설치
 - 실행 후, Plugin에서 Dart, Flutter 2개를 설치
-![스크린샷 2024-03-04 오후 6.06.26](https://hackmd.io/_uploads/r1O61MXa6.png)
+![스크린샷 2024-03-04 오후 6 06 26](https://github.com/iOS-Woong/TIL/assets/96489602/abcb81f4-fdd2-413a-8562-5e4853d59de0)
 - 재실행 했을때, 안드스튜디오 켜면 New Flutter Proj 나오면 잘된거임
 
 ### 5. Android Studio 세부 설정
-![image](https://hackmd.io/_uploads/BkNeEGmTp.png)
 - More Actions -> SDK Manager -> SDKTools에서
 - CommendlineTool, Emulator, SDK Platform Tool, NDK 4개를 Apply하기
+![스크린샷 2024-03-04 오후 6 26 55](https://github.com/iOS-Woong/TIL/assets/96489602/b44e9672-4676-4425-abb4-97d709fa1b39)
 - 이후에 Android SDK Location을 복사하라 그리고 아래 명령어를 활용하여 기입해주라.
 ```
 vi ~\.zshrc
@@ -39,16 +43,16 @@ vi ~\.zshrc
 export ANDROID_HOME=/Users/hyeonung-seo/Library/Android/sdk
 ```
 - 이 행위는 ANDROID_HOME을 설정하는 것. ANDROID_HOME은 안드로이드 개발 환경에서 중요한 변수 중 하나이며, 안드로이드 SDK가 설치된 디렉토리의 경로를 지정하는 작업임
-![image](https://hackmd.io/_uploads/SygkOHzQpT.png)
+![스크린샷 2024-03-04 오후 6 33 16](https://github.com/iOS-Woong/TIL/assets/96489602/8f988896-2342-433d-95b7-9ef61c35b025)
+
 
 
 ### 6. flutter doctor 다시 명령해보기
-![image](https://hackmd.io/_uploads/rkOduMmTp.png)
-
+![스크린샷 2024-03-04 오후 6 46 18](https://github.com/iOS-Woong/TIL/assets/96489602/b1b1ebce-ff51-4c8d-b3ed-813b7c085467)
 - 나의 경우에 cocoaPods이 오래됬다고 업데이트 하라고 한다. 업데이트해주자.
 ```
 sudo gem install cocoapods
 ```
 - 설치가 완료되면 flutter doctor를 다시 명령해본다.
 - 노란체크박스가 모두 사라질 것이다.
-![image](https://hackmd.io/_uploads/HyBItGX6a.png)
+![스크린샷 2024-03-04 오후 6 49 57](https://github.com/iOS-Woong/TIL/assets/96489602/6f7f3af7-047f-4541-ba57-a64129739d70)
