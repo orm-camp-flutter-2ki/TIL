@@ -12,8 +12,4 @@ Today I Learned ~ Hajun KIM
 
 #### FLUTTER
 
-#### JAVA
-
-#### PYTHON  
-
 <hr/>
