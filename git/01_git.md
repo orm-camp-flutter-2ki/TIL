@@ -1,4 +1,4 @@
-# G
+# GIT
 
 1. git 설치
   ```shell
