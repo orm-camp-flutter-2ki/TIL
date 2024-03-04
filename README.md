@@ -10,8 +10,10 @@ Today I Learned
 - How to make a folder.
 - How to 'Pull requests'
 - STEP01. Check the 'Pull requests' on the Top-bar
+
   ![image](https://github.com/gyubit/TIL/assets/114902088/6d049972-892a-4c02-ad24-583139d4607e)
 
+- How to 'Cancle requests'
 
 ## 샘플
 - https://github.com/namjunemy/TIL
