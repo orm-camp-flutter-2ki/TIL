@@ -8,7 +8,7 @@ winget install -e --id Git.Git
 2. git repository 생성
 
 3. Git 명령어
-[깃 명령어 모음집 : 코딩알려주는누나](https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K)
+  - [깃 명령어 모음집 : 코딩알려주는누나](https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K)
 
 4. MarkDown 작성 문법
    - [*Markdown 작성법 (영어)* ] https://www.markdownguide.org/cheat-sheet/
