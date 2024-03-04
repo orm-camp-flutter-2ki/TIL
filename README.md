@@ -3,7 +3,7 @@
 
 <hr/>  
 
-#### [GIT](https://github.com/algochemy/TIL/tree/main/git/git.md](https://github.com/algochemy/TIL/blob/main/Git/)
+#### [GIT](https://github.com/algochemy/TIL/tree/main/Git/git.md)
 
 #### DART
 
