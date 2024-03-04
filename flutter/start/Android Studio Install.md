@@ -11,12 +11,12 @@
 
 물론 처음 설치하신 분이라면 필자의 화면과 많이 다를것이다. 필자와 비슷한 화면이라면 우측 상단 '...'을 누르고 아니라면 'More Action'을 눌러 'SDK Manager'를 선택한다. 
 
-![image](https://github.com/jiwonHub/TIL/assets/118645166/614a6ca4-1a4d-4692-9f92-a7a718187d52)
+![image](https://github.com/jiwonHub/TIL/assets/118645166/655f8e55-0a48-4281-8e34-e5a020dedc5b)
 
 
 다음과 같은 화면에서 안드로이드 버전 취향에 맞게 api를 설치한다.
 
-![image](https://github.com/jiwonHub/TIL/assets/118645166/2188ae83-441d-49e2-bd81-973e51f3d69f)
+![image](https://github.com/jiwonHub/TIL/assets/118645166/f366dc82-2262-4bbc-b001-d36223623b67)
 
 
 옆에 SDK Tools를 선택해서 아래 Android SDK Command-line Tools를 체크해서 좌측 하단 'APPLY'를 클릭해서 다운받는다.
