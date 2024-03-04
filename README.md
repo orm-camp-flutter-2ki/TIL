@@ -14,7 +14,7 @@ Hajun KIM
 
 #### PYTHON
 
-</hr>
+<hr>
 
 ## 샘플
 - https://github.com/namjunemy/TIL
