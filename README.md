@@ -6,7 +6,7 @@ Today I Learned ~ Hajun KIM
 
 <hr/>  
 
-#### [GIT](https://github.com/algochemy/TIL/tree/main/git)
+#### [GIT](https://github.com/algochemy/TIL/tree/main/git/git.md)
 
 #### DART
 
