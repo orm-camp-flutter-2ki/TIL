@@ -4,6 +4,8 @@ Today I Learned
 
 Hajun KIM
 
+<hr>
+
 #### DART
 
 #### FLUTTER
@@ -11,6 +13,8 @@ Hajun KIM
 #### JAVA
 
 #### PYTHON
+
+</hr>
 
 ## 샘플
 - https://github.com/namjunemy/TIL
