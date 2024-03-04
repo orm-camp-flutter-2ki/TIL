@@ -7,6 +7,7 @@ Today I Learned
 Pull Request rule.
 
 title: 240304_06_김형민 TIL 작성.
+
 description: TIL 내용.
 
 ## 샘플
