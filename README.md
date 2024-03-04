@@ -4,6 +4,9 @@ Today I Learned
 
 Hajun KIM
 
+![image](https://github.com/algochemy/TIL/assets/152131529/a99bbb4c-9d07-4ec8-aeac-26243eef5753)
+
+
 <hr>
 
 #### [GIT](https://github.com/algochemy/TIL/tree/main/git)
