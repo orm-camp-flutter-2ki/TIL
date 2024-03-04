@@ -1,5 +1,6 @@
 # Mac에서 Flutter 초기 환경설정
-[유튜브: 2023년 12월 최신 Flutter MacOS 환경설정](https://www.youtube.com/watch?v=DDCqlDrWsXU&t=1119s)
+>[Flutter 공식문서:macOS에서 Flutter iOS 앱 구축 시작하기](https://docs.flutter.dev/get-started/install/macos/mobile-ios?tab=download#install-the-flutter-sdk)  
+[유튜브: 2023년 12월 최신 Flutter MacOS 환경설정](https://www.youtube.com/watch?v=DDCqlDrWsXU&t=1119s)  
 링크내용을 참조하여 작성함.
 
 
