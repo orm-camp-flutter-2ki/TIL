@@ -1,6 +1,6 @@
 # TIL
 
-Git, GitHub 기초에 대해 수업
+Git, GitHub 기초에 대해 수업
 - mac 환경 기준
 
 
