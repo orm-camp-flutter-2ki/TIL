@@ -1,12 +1,12 @@
 introduction
 =============
 ### 목차  
-[1. 프로그래밍(programing)이란?](#-🧐-what-is-programing?)  
-[2. 플루터(Flutter)란?](#-🧐-what-is-flutter?)
+[1. 프로그래밍(programing)이란?](#what-is-programing?)  
+[2. 플루터(Flutter)란?](#what-is-flutter?)
 
 <br/>
 
-### 🧐 What is programing?
+## What is programing?
 
 **프로그래밍이란**  
 >✔️ 컴퓨터와 대화하는 방법  
@@ -36,5 +36,5 @@ introduction
 >✔️ 입력된 정보를 구분하기 위한 데이터 타입 존재 (ex. int, String, boolea...)
 
 
-### 🧐 What is Flutter?
+## What is Flutter?
 
