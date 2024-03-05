@@ -189,7 +189,7 @@ void main() {
 }
 
 solution(nums) {
- 
+  int result = 0;
   int temp = 0;
   for(int i = 0; i < 3; i+=2){
     if (nums[i] < nums[i+1]){
@@ -198,7 +198,8 @@ solution(nums) {
       nums[i] = temp;
     }
   }
-  ;
-  return 10 * (nums[0]+nums[2]) + nums[1] + nums[3];
+  result = 10 * (nums[0]+nums[2]) + nums[1] + nums[3] as int;
+  return result;
 }
+ 
 ```
