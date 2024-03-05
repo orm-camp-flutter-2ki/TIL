@@ -42,10 +42,6 @@ solution(n, s) {
 #### 등차수열
 
 ```
-#### 등차수열
-![[Pasted image 20240305173818.png]]
-![[Pasted image 20240305173851.png]]
-```
 void main() {
  
   print(solution(3,3));
@@ -134,5 +130,75 @@ solution(n) {
 }
 ```
 
+#### 태풍의 간격
 
+```
+void main() {
+  List<int> day1 = [5, 8, 19, 25, 31];
+  List<int> day2 = [2, 3, 7, 9, 28];
+  print(solution(day1));
+  print(solution(day2));
+}
 
+solution(day) {
+  int num = 0;
+  List<int> gan = [];
+  for (int i = 0; i<(day.length-1); i++){
+    num = day[i+1]-day[i];   
+    gan.add(num);
+  }
+  return gan;
+}
+
+```
+
+#### 빼빼로 파티
+
+```
+void main() {
+  String ppae1 = '11111111111';
+  String ppae2 = '1111';
+  String ppae3 = '1111111111111111111';
+  
+  print(solution(ppae1));
+  print(solution(ppae2));
+  print(solution(ppae3));
+}
+
+solution(ppae) {
+  int length = ppae.length;
+  String result = 'OK';
+
+  if(length < 11){
+    result = (11 - length).toString();
+  }
+  return result;
+}
+```
+
+#### 카드 정렬
+
+```
+void main() {
+  List<int> nums1 = [2, 9, 3, 8];
+  List<int> nums2 = [7, 8, 7, 7];
+  
+  print(solution(nums1));
+  print(solution(nums2));
+
+}
+
+solution(nums) {
+ 
+  int temp = 0;
+  for(int i = 0; i < 3; i+=2){
+    if (nums[i] < nums[i+1]){
+      temp = nums[i+1];
+      nums[i+1] = nums[i];
+      nums[i] = temp;
+    }
+  }
+  ;
+  return 10 * (nums[0]+nums[2]) + nums[1] + nums[3];
+}
+```
