@@ -1,11 +1,15 @@
-# TIL
+# TIL (24.03.04 ~ 24.05.22)
 
-Today I Learned
+## 일자별 정리
 
-오늘 학습한 내용을 정리하는 것
-
-
-## 샘플
-- https://github.com/namjunemy/TIL
-- https://github.com/milooy/TIL
-- https://github.com/YutoMizutani/til
+### 1주차
+- [24.03.04](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.04.md)
+### 2주차
+### 3주차
+### 4주차
+### 5주차
+### 6주차
+### 7주차
+### 8주차
+### 9주차
+### 10주차
