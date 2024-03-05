@@ -1,8 +1,9 @@
-# TIL
+# Flutter TIL
 
-Today I Learned
+Today I Learned about Flutter
 
 오늘 학습한 내용을 정리하는 것
+
 
 
 ## 샘플
