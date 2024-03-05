@@ -3,7 +3,6 @@ Git install (mac)
 ```
 Spotlight -> 터미널(terminal)
 ```
-
 1.Homebrew 설치
 -------------
 >Homebrew :  https://brew.sh/ko/
