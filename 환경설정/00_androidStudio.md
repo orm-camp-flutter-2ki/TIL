@@ -21,11 +21,18 @@
   
 
   ## trouble shooting
+  
   1. dart SDK 위치를 몰랐다.
-   ![sdk 위치](https://github.com/philiplee25/TIL/assets/76925432/75e3df1d-4162-4cf0-bb2e-6b2281d14bcf)
-  => cmd / powershell 에서 flutter doctor -v 로 flutter 가 설치된 위치를 찾고 그 안에서 dart SDK 를 찾아냈다!
+ 
+      ![sdk 위치](https://github.com/philiplee25/TIL/assets/76925432/75e3df1d-4162-4cf0-bb2e-6b2281d14bcf)
+
+      => cmd / powershell 에서 flutter doctor -v 로 flutter 가 설치된 위치를 찾고 그 안에서 dart SDK 를 찾아냈다!
+  
+
 
     
-  3. title을 정할 때 대문자를 쓰니 lib, bin 폴더는 물론 pubspec.yaml 파일 등도 생성되지 않았다. ㅠ
-    ![프로젝트 생성 에러](https://github.com/philiplee25/TIL/assets/76925432/8904dcc6-21a0-4034-b62a-6d25958468fb)
-  => 프로젝트 title 은 소문자로 쓰자!
+  2. title을 정할 때 대문자를 쓰니 lib, bin 폴더는 물론 pubspec.yaml 파일 등도 생성되지 않았다. ㅠ
+  
+      ![프로젝트 생성 에러](https://github.com/philiplee25/TIL/assets/76925432/8904dcc6-21a0-4034-b62a-6d25958468fb)
+
+      => 프로젝트 title 은 소문자로 쓰자!
