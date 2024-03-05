@@ -6,7 +6,7 @@
   c. [Andorid Studio 다운로드](https://developer.android.com/studio/install) : [Plugins] 에서 Dart, Flutter 검색하여 설치
 
 #### 2. 환경변수 설정
-  - 'C:\Program Files\Flutter' 경로에 플러터 폴더를 위치 
+  - 'C:\Program Files\Flutter' 경로에 플러터 폴더가 위치해있다고 하면 하위 폴더 bin을 찾아
     ```
     C:\Program Files\Flutter\bin
     ```
