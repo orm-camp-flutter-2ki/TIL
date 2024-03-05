@@ -1,4 +1,4 @@
-Git install with Homebrew (mac)
+Git install (mac)
 =============
 ```
 Spotlight -> 터미널(terminal)
@@ -7,7 +7,6 @@ Spotlight -> 터미널(terminal)
 1.Homebrew 설치
 -------------
 >Homebrew :  https://brew.sh/ko/
-&nbsp;
 ### 1) Install
 ```
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -17,14 +16,15 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 $ (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/(사용자마다 다르니 요부분 수정)/.zprofile
 $ eval "$(/usr/local/bin/brew shellenv)"
 ```
-  >경우에 따라 Three commands 일 수도 있음...
-&nbsp; 
+>경우에 따라 Three commands 일 수도 있음...
+<br/>
+
 ### 3)설치확인
 ```
 $ brew --version
 ```
-&nbsp; 
-&nbsp; 
+
+<br/>
 
 2.Git 설치
 -------------
@@ -32,8 +32,12 @@ $ brew --version
 ```
 $ brew install git
 ```
+
+<br/>
+
 ### 2) 설치확인
 ```
 $ git --version 
 ```
 
+<br/>
