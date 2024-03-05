@@ -1,7 +1,7 @@
 # TIL (Today I Learned)
 #### author : Hajun KIM
 
-<hr/>  
+---
 
 #### [Git](https://github.com/algochemy/TIL/tree/main/Git)
 
@@ -9,4 +9,4 @@
 
 #### Flutter
 
-<hr/>
+---
