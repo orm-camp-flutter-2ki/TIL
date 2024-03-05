@@ -29,8 +29,7 @@
   ```
 
 #### 4. Flutter 업그레이드 
-  - Dart/Flutter 버전 업데이트 필요 시 사용.
-  - Flutter 버전이 패치될 때 마다 홈페이지에서 다운로드할 필요는 없다.
+  - Dart/Flutter 버전 업데이트 필요 시 사용
   ```
   flutter upgrade
   ```
