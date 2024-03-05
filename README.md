@@ -1,8 +1,8 @@
 # TIL
 
-Today I Learned
+What I Learned TODAY
 
-오늘 학습한 내용을 정리하는 것
+오늘 무엇을 배웠나요
 
 
 ## 샘플
