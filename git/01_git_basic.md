@@ -31,7 +31,7 @@ git version 2.39.3 (Apple-Git-145)
 ```
 > git config —-global --list
 user.name=<이름>
-user.emial=<이메일>
+user.email=<이메일>
 ```
 **현재 디렉토리를 로컬 저장소로 만들기**
 ```
