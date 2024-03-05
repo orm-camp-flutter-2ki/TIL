@@ -1,11 +1,12 @@
-# TIL
+# TIL (Today I Learned)
+#### author : Hajun KIM
 
-Today I Learned
+<hr/>  
 
-오늘 학습한 내용을 정리하는 것
+#### [GIT](https://github.com/algochemy/TIL/tree/main/Git/git.md)
 
+#### DART
 
-## 샘플
-- https://github.com/namjunemy/TIL
-- https://github.com/milooy/TIL
-- https://github.com/YutoMizutani/til
+#### FLUTTER
+
+<hr/>
