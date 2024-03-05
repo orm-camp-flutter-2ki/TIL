@@ -1,0 +1,54 @@
+# TIL
+
+Today I Learned
+
+오늘 학습한 내용을 정리하는 것
+
+오늘은 Setting day
+
+XCode 앱에서 다운로드 해야 플러터 설치 가능 
+-맥 최신 버전으로 업데이트 필요 
+
+terminal에 flutter doctor 쳤는데 안나오는 경우 '환경변수'가 원인
+pwd키로 위치 확인한 후 복붙하는 게 안전.
+
+dart로 서버까지 개발가능. 
+사용자가 아주 많지 않다면 good
+
+<Git>
+
+git hub 을 android studio와 연동 가능
+1) github token 으로 연동하는 게 복잡하지만 안전하다. 
+2) github - share project on github 
+
+git init
+git ignore 
+git commit message 나만의 룰 만들기 
+
+folk 는 원래 주인이 정한대로 빌려오는 거. 주인이 지우면 내것도 사라짐. 
+clone은 복사하는 것. 내 마음대로 수정 가능.
+
+<Dart 문법>
+LMS : 4강까지 공부 
+
+to String 은 글자로 바꿔서 return
+final 은 상수만들기 (바뀌지않음)
+
+<과제 with 세진님>
+플러터 한달 공부하셨는데 코딩 엄청 빠르게 잘하심
+3문제 품
+
+1 과제 (짝수 홀수) 
+짝홀문제는 숫자 더한 값을 2로나눠서 나머지로 짝수 홀수 판별 
+
+2 문자열 결합 
+int, String 사용해서 input 줄줄이 쓰고 switch 로 Case 분류해서 출력 
+
+3 부족한 카드
+15- 나머지 합 
+
+
+느낀 점 
+난 어떻게 풀지 알고리듬 생각까지만 잘하고 구현하는게 맘처럼 되지 않았다. 
+문법 공부를 하고 많이 시도해봐야겠다. 
+강의 먼저 듣기 
