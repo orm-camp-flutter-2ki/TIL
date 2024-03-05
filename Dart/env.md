@@ -6,19 +6,19 @@
 
 
 #### 1. Flutter 환경변수 설정
-  - [C:\Program Files\Flutter] 에 플러터가 저장되어 있다면
-  ```
-  C:\Program Files\Flutter\bin
-  ```
-  을 시스템 변수 Path에 추가한다.
+  - 'C:\Program Files\Flutter' 플러터 파일이 생성되어 있다고 가정하자.
+    ```
+    C:\Program Files\Flutter\bin
+    ```
+    을 시스템 변수 Path에 추가한다.
 
 
 #### 2. Flutter 설치현황 확인
-  - flutter 설치가 잘 되어있는지 간단히 확인할 수 있는 명령어
+  - 설치가 잘 되어있는지 *간단히*  확인할 수 있는 명령어
     ```
     flutter doctor
     ```
-  - flutter 설치가 잘 되어있는지 자세히 확인할 수 있는 명령어
+  - 설치가 잘 되어있는지 *자세히*  확인할 수 있는 명령어 (설치된 경로 조회 시 유용)
     ```
     flutter doctor -v
     ```
@@ -30,7 +30,7 @@
 
 #### 4. Flutter 업그레이드 
   - Dart/Flutter 버전 업데이트 필요 시 사용.
-  - Flutter 버전 패치마다 홈페이지에서 다운로드할 필요가 없다.
+  - Flutter 버전이 패치될 때 마다 홈페이지에서 다운로드할 필요는 없다.
   ```
   flutter upgrade
   ```
