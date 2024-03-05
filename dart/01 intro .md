@@ -1,8 +1,8 @@
 introduction
 =============
 ### 목차  
-[1. 프로그래밍(programing)이란?](#what-is-programing?)  
-[2. 플루터(Flutter)란?](#what-is-flutter?)
+1. [What is programing?](#what-is-programing-)  
+2. [What is flutter?](#what-is-flutter-)
 
 <br/>
 
@@ -32,9 +32,31 @@ introduction
 <br/>
 
 ### Variables, Data Type
->✔️ 컴퓨터는 정보를 문자, 숫자, 참-거짓 등.. 으로 구분  
+>✔️ 컴퓨터는 정보를 문자, 숫자, 참-거짓 등.. 으로 구분   
 >✔️ 입력된 정보를 구분하기 위한 데이터 타입 존재 (ex. int, String, boolea...)
 
 
 ## What is Flutter?
 
+```
+플루터(Flutter)는 프레임워크(Framework)
+```
+
+**프레임워크(framework)**  
+>✔️ 작업(work)의 구조(frame)가 정해져 있는 라이브러리들의 집합   
+>✔️ 앱 개발 등.. 뚜렷한 목적이 있고, 이를 위한 control flow 제공
+
+<br/>
+
+**라이브러리(Library)**
+>✔️ 필요한 기능들이 모여있는 코드의 묶음  
+>✔️ 자주 사용되는 기능들을 필요할 때마다 직접 호출하여 사용  
+
+<br/>
+
+**프레임워크가 필요한 이유**
+>✔️ 기본 틀(뼈대, 규칙, 흐름)을 제공 (업무 효율 증가)  
+>✔️ 일부분만 조정해 목적 달성이 가능 (생산성 증가)  
+>✔️ 안정적으로 유지, 보수, 관리가 가능
+
+<br/>
