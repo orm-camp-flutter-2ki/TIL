@@ -11,8 +11,8 @@ winget install -e --id Git.Git
     - [깃 명령어 모음집 : 코딩알려주는누나](https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K)
 
 4. MarkDown 작성 문법
-   - [*Markdown 작성법 (영어)* ] https://www.markdownguide.org/cheat-sheet/
-   - [*Markdown 작성법 (한글)* ] (https://gist.github.com/ihoneymon/652be052a0727ad59601)
+   - [*Markdown 작성법 (영어)* ](https://www.markdownguide.org/cheat-sheet/)
+   - [*Markdown 작성법 (한글)* ](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 
 5. **Fork** repository
    - 상대 repository를 본인 계정의 repoisotry로 복사하여 저장하기 위해 사용함.
