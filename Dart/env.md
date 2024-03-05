@@ -3,7 +3,7 @@
 ## 1. Flutter 설치
   a. [Flutter 공식 홈페이지](https://flutter-ko.dev/get-started/install) 을 통해 다운로드 및 압축해제 (flutter 폴더가 생성된다.)  
   b. [Visual Studio 2022 다운로드](https://visualstudio.microsoft.com/ko/vs/community/) (Visual Studio Code 아님.)  
-  c. [Andorid Studio 다운로드](https://developer.android.com/studio/install)  
+  c. [Andorid Studio 다운로드](https://developer.android.com/studio/install) : [Plugins] 에서 Dart, Flutter 검색하여 설치
 
 #### 2. 환경변수 설정
   - 'C:\Program Files\Flutter' 경로에 플러터 폴더를 위치 
@@ -34,8 +34,7 @@
   ```
   
 #### 6. Dart 프로젝트 폴더 생성
-  - [참조](https://dart.dev/tutorials/server/get-started#3-create-a-small-app)
+[참조링크](https://dart.dev/tutorials/server/get-started#3-create-a-small-app)
   ```
-  //cd C:\Study\Dart
-  dart create -t console 프로젝트명
+  dart create -t console 프로젝트폴더명
   ```
