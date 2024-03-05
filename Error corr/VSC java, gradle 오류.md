@@ -1,4 +1,4 @@
-## vsc 오류
+## VSC 오류
 ![image](https://github.com/hwangtaewook/TIL/assets/87569211/13748981-7198-4093-85fe-dfeee435afe7)
 
 카스퍼스키에서 java를 트로이목마로 인식 빌드가 되지 않음
