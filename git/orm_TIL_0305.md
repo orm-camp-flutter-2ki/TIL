@@ -11,5 +11,15 @@
 5. 안드로이드 스튜디오 실행 후 페이지에서 플러터, 다트 설치
 6. 윈도우에 경우 cmd나 powershall 실행 후 flutter doctor 콘솔창에 실행
 7. flutter doctor에서 나온 부족한 오류를 해결하기
-8. 환경변수 설정 윈도우는 환경변수 창에서 변수 추가후 flutter/bin을 추가하면 된다.
-9. 
+8. 환경변수 설정 윈도우는 환경변수 창에서 변수 추가후 ~/flutter/bin을 추가하면 된다.
+
+Git commit message convention guide
+-------------------------
+feat: 새로운 기능 추가
+fix: 버그 픽스
+docs: 문서 수정
+style: 포멧, 세미콜론 수정, Optimize import, Code clean up 등 코드가 아닌 스타일에 관련된 수정
+refactor: 코드 리펙토링
+test: 테스트 코드 추가
+chore: 빌들 관련 업무 수정(안드로이드의 경우 bulide.gradle, manifest)
+
