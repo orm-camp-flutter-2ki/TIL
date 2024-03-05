@@ -7,6 +7,6 @@
 
 #### [Dart](https://github.com/algochemy/TIL/tree/main/Dart)
 
-#### FLUTTER
+#### Flutter
 
 <hr/>
