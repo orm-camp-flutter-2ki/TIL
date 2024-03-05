@@ -1,5 +1,7 @@
-# Install Git & Homebrew for Mac
+## Install Git & Homebrew for Mac    
 
+
+   
 1. Homebrew 설치  ->  https://brew.sh/ko/
 
 ![image](https://github.com/Gunbam27/TIL/assets/95085649/2a835f34-1d4c-4464-a7e3-cee902cdd5b0)
