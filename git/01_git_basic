@@ -19,5 +19,29 @@ https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A
 
 **버전 확인**
 ```
-git --version
+> git --version
+git version 2.39.3 (Apple-Git-145)
+```
+**글로벌 설정**
+```
+> git config --global user.name “<이름>”
+> git config —-global user.email “<이메일>”
+```
+**글로벌 설정 확인**
+```
+> git config —-global --list
+user.name=<이름>
+user.emial=<이메일>
+```
+**현재 디렉토리를 로컬 저장소로 만들기**
+```
+> git init
+```
+**원격 저장소 주소 등록**
+```
+> git remote add origin <git주소>
+```
+**푸쉬(Push)**
+```
+> git push -u origin <브랜치>
 ```
