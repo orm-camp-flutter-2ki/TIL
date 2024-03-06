@@ -46,3 +46,8 @@ user.email=<이메일>
 ```
 > git push -u origin <브랜치>
 ```
+**클론(Clone)**
+```
+> git clone <git주소>
+> git clone https://github.com/chojja7188/TIL.git
+```
