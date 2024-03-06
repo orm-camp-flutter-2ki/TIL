@@ -1,29 +1,32 @@
-데이터 타입
+데이터 타입(Data Type)
 =============
-### 목차  
-1. 데이터 타입(Data Type)  
-2. Dart에 있는 중요한 차이점(var, nullsafety)    
-
+  
 <br/>
 
-## 기본 데이터 타입(Data Type)  
-
+## 기본 데이터 타입
 ### int: 정수형  
 > ```
 > int age = 10;
 > ```
 
+<br/>
+
 ### double: 실수형  
 > ```
 > double PI = 3.14;
 > ```
+>✔️ Dart에서는 double 에서 int 포함하지 않음 (교집합이 없음)   
 
+<br/>
 
 ### num: 숫자 포함 관계
 > ```
 > num i = 1;
 > num j = 4.2;
 > ```
+>✔️ int, double 선언 가능   
+
+<br/>
 
 ### String: 문자열  
 > ```
@@ -31,19 +34,23 @@
 > int age = 20;
 > pint($name은 $age살 입니다..);
 > pint($name은 ${name.langth}글자 입니다..);
-> 
 > ```
+
+<br/>
 
 ### bool: 참-거짓(bloolea, true-false)  
 > ```
 > bool isClean = false;
 > ```
 
+<br/>
+
 ### List: 순서가 있는 변수들의 집합
 > ```
 > // 생성과 함께 초기화
 > List<int> numbers = [1, 2, 3, 4, 5];
->
+> ```
+> ```
 > // 리스트에 값, 요소, 데이터, 변수 추가
 > numbers.add(6);
 >
@@ -60,6 +67,8 @@
 >✔️ 같은 리스트 내 다양한 데이터 타입 포함 가능   
 >✔️ 필요에 따라 항목을 추가하거나 삭제 가능  
 
+<br/>
+
 ### Map: 키-값의 쌍 (key-valued)  
 > ```
 > // 이름(key)과 나이(value)를 매핑
@@ -67,7 +76,8 @@
 >   'John': 30,
 >   'Alice': 25,
 > };
->
+> ```
+> ```
 > // 요소 추가
 > person['Bob'] = 35; // 'Bob' 추가
 >
@@ -84,37 +94,6 @@
 > Set<String> keys = person.keys;
 > ```
 >✔️ 키에 해당하는 값, 특정 키를 사용하여 해당하는 값을 가져옴
-
-<br/>
-
-## Dart에 있는 중요한 차이점  
-
-### var: 데이터 타입 추론 (Variables)  
-> ```
-> var num = 4; // int
-> num = 6; // 가능
-> num = '고양이'; // 불가능, error
-> ```
->✔️ 변수의 타입은 초기 값에 따라 결정  
->✔️ 데이터 타입 변경 불가, 컴파일 타임 기준으로 결정되기 때문 (값은 재선언 가능)  
->✔️ 코드의 가독성이 떨어질 수 있음, 명시적으로 데이터 타입 지정하는 것이 좋음  
-
-### Null safety: 널 세이프티  
->✔️ 널 포인터(null pointer) 예외를 방지하고 안전한 널 처리(null handling)를 보장  
->✔️ 널 포인터(null pointer): 메모리 내에서 아무런 주소를 가리키지 않는 포인터를 가리키는 것  
->✔️ 널 처리(null handling): 프로그램에서 널 값을 다루는 방법   
-
-### nullable: 널러블
-> ```
-> String? name = null; // null
-> String? name; // null
->
-> String name = null; // 불가능, error
-> String name; // 불가능, error.. but 나중에 재선언으로 값 할당 하니까 선언부의 빨간줄 없어짐..
-> ```
->✔️ null 값을 허용하는 변수  
->✔️ 데이터타입 뒤 ? 를 붙여 선언, null값을 가질 수 있음을 명시적으로 표현  
->✔️ 코드 안정성 높아짐 (널 세이프티)  
 
 <br/>
 
