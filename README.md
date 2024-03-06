@@ -6,8 +6,6 @@ Today I Learned
 
 훌륭한 개발자가 되자
 
-어쩌구 저쩌구
-
 ## 샘플
 - https://github.com/namjunemy/TIL
 - https://github.com/milooy/TIL
