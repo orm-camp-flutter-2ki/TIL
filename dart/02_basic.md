@@ -58,7 +58,7 @@ void main() {
   //print(now2);
 ```
 ### 2. Control Flow 제어문
-- 제어문에는 if/else, switch/case, while, do/while, for in 등이 포함된다.
+- 제어문에는 if/else, switch/case, while, do/while, for in 등이 포함된다.(forEach문은 없다.대신 for in 사용)
 ```dart
 // switch-case 문: 다중 분기 처리
 String fruit = 'apple';
