@@ -2,7 +2,7 @@
 
 Today I Learned about Flutter
 
-배운 건 다시 정리! 이해! 내꺼!!!
+오늘 학습한 내용을 정리하는 것
 
 훌륭한 개발자가 되자
 
