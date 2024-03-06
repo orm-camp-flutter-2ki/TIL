@@ -41,7 +41,6 @@ for(int i = 1; i <= 9; i++) {
     // 실행구문
  }
  
- ==
  // swift
  
  for i in 1...9 {
@@ -59,7 +58,6 @@ for (String item in items) {
     // 실행구문
 }
 
-==
 // swift
 
 var items: [String] = ["item0", "item1", "item2"]
