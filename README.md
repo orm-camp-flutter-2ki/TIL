@@ -5,6 +5,7 @@
 ### 1주차
 - [24.03.04](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.04.md)
 - [24.03.05](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.05.md)
+- [24.03.06](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.06.md)
 ### 2주차
 ### 3주차
 ### 4주차
