@@ -71,6 +71,8 @@ var todo = isRainy ? ‘빨래를 하지 않는다’ : ‘빨래를 한다’;
 
 ### 9. 매개변수(parameter) vs 인자(arguments)
 - 변수로 가정하여 받는 값 = 매개변수
-- 실제로 받는 값 = 인자
+- 실제로 받는 값 = 인자 <br/>
+
+![return paraml + param2;](https://github.com/Gunbam27/TIL/assets/95085649/ee2d941d-963c-4df9-b8df-d0b3348e921d)
 
 
