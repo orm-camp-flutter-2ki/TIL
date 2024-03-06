@@ -34,8 +34,8 @@ int는 타 언어와 마찬가지로 정수를 입력할 때 사용하는 코드
 #### double type
 double은 실수를 입력할때 사용할 수 있다.  ex) double a = 10.3;
 
-#### num type
-정
+#### num type  
+정수나 실수를 모두 포함한 숫자 타입의 변수를 입력할 때 사용하는 코드이다.  ex) num a = 1; or num b = 3.5;
 
 #### bool type
 bool 타입의 변수는 true와 false의 참과 거짓을 구별하기 위해 사용하는 코드이다.
