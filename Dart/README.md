@@ -10,7 +10,7 @@
     ```
     C:\Program Files\Flutter\bin
     ```
-    을 시스템 변수 Path에 추가한다.
+    을 시스템 변수 Path에 추가한다. (공식 홈페이지에서는 'C\Program Files'에 위치시키는 것을 권장하지 않고 있다.)
 
 
 ### 3. Flutter 설치현황 확인
@@ -37,7 +37,6 @@
   ```
   dart create -t console 프로젝트폴더명
   ```
-
 ---
 
 ## Dart 기초
@@ -93,4 +92,15 @@
   List<String> input = stdin.readLineSync()!.split(' '); // 한 줄로 공백으로 구분된 여러 값 불러오기
   ```
 
----
+### NULL Safety
+```
+  int str = null; // 불가능
+  ?int str = null; 가능
+```
+  - Dart는 NULL로 인한 에러를 방지하기 위해, 타입 앞에 ?을 명시할 때는 입력으로 NULL을 받아도 에러가 나지 않는다.
+  - 가능하면 위의 스타일을 고수하자.
+
+### CLASS
+- 객체 : 현실에 존재하는 모든 것
+- 클래스 : 객체를 대한 내용을 컴퓨터로 기술한 것
+- 인스턴스 : 클래스가 컴퓨터 메모리에 실제 할당된 상태
