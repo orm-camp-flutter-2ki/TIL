@@ -203,3 +203,108 @@ solution(nums) {
 }
  
 ```
+
+```
+
+import 'dart:io';
+   /**
+   * 문제
+   *    숫자를 입력받아서 구구단을 출력한다.
+   *    // 숫자를 입력하세요. 
+   *     3입력시 아래와 같이 출력한다.
+   *    // 3, 6, 9, 12, 15, 18, 21, 24, 27 
+   * 
+   **/
+
+ 
+void main(){
+    print('숫자를 입력하세요.');
+    // Reading name of the Geek
+    int num = int.parse(stdin.readLineSync()!); // null safety in name string
+ 
+    print(solution(num));
+
+}
+solution(num){
+    String result = '';
+ 
+    for ( int j = 1; j < 10; j++){
+        if(j != 1){
+            result +=', ';
+        }
+        result += (num*j).toString();
+    }
+
+    return result;
+}
+
+```
+
+```
+List<String> results = List.generate(9, (index) => ((index + 1) * setNumber).toString()); print(results.join(', '));
+```
+
+비만도 계산기
+```
+ 
+import 'dart:io';
+ 
+void main()
+{
+    // 숫자를 입력받아서 구구단을 출력한다.
+    //숫자를 입력하세요.
+    
+    // 3입력시 아래와 같이 출력한다.
+    // 3, 6, 9, 12, 15, 18, 21, 24, 27
+    print('나이를 입력하세요.');
+    // Reading name of the Geek
+    int age = int.parse(stdin.readLineSync()!); // 
+ 
+     print('성별을 입력하세요.');
+    // Reading name of the Geek
+    String? sex = stdin.readLineSync();// null safety in name string
+ 
+     print('키를 입력하세요.');
+    // Reading name of the Geek
+    double height = double.parse(stdin.readLineSync()!); // 
+    print('몸무게를 입력하세요.');
+    // Reading name of the Geek
+    double weight = double.parse(stdin.readLineSync()!); // 
+    
+    solution(height, weight);
+
+}
+solution(height, weight){
+    double bmi = weight / (height*height) * 10000;
+    print(bmi);
+    print(bmi.toStringAsFixed(2));
+        
+    String category;
+    if (bmi < 18.5){
+        category = '저체중';
+    } else if (bmi < 23) {
+        category = '정상';
+    } else if (bmi < 25) {
+        category = '과체중';
+    } else {
+        category = '비만';
+    }
+    switch (category) {
+        case '정상':
+            print('당신은 정상입니다.');
+            break;
+        case '과체중':
+            print('당신은 과체중입니다.');
+            break;
+        case '비만':
+            print('당신은 비만입니다.');
+            break;
+        case '저체중':
+            print('당신은 저체중입니다.');
+            break;
+        default:
+            print('BMI 수치가 유효하지 않습니다.');
+            break;
+        }
+}
+```
