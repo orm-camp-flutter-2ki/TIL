@@ -39,3 +39,41 @@ void something({int age = 10, String name = 'john'})
 처럼 초기값 넣어야 함
 
 단, nullable하면 초기값 안넣어도 됨
+
+### nullSafety
+* value가 null이면 0
+```
+int value = nulllableValue ?? 0
+```
+
+* 널이 아님을 보장함. 고수 이하 쓰지 말 것
+```
+int value = nullableValue!;
+```
+
+* null 검사한 거라 안전함
+```
+int value = nulllableValue ?? 0
+```
+
+
+<br>
+* String과 String?은 다른 타입이라고 봐도 됨
+앞으로 할 건 ?를 떼는 방법을 배워야함
+<br>
+
+## 클래스
+
+### 클래스 작성
+
+* 필드 (=멤버변수=전역변수(global variable))
+
+### 함수 vs. 메소드
+클래스 안의 함수 = 메소드
+<> 최상위 함수(main)
+
+### 클래스 정의에 따른 효과
+인스턴스 생성
+ㄴ 인스턴스 => 메모리 사용
+
+int, String, double, bool 외의 인스턴스 만드려고 할 때 class 만드는 것
