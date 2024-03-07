@@ -1,4 +1,4 @@
-# Variables
+# Operators
 
 Dart에만 있는 혹은 특별한 연산자만 정리
 
