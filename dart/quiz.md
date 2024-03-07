@@ -244,7 +244,7 @@ solution(num){
 List<String> results = List.generate(9, (index) => ((index + 1) * setNumber).toString()); print(results.join(', '));
 ```
 
-비만도 계산기
+#### 비만도 계산기
 ```
  
 import 'dart:io';
@@ -306,5 +306,25 @@ solution(height, weight){
             print('BMI 수치가 유효하지 않습니다.');
             break;
         }
+}
+```
+
+#### 원주율 구하기
+```
+void main() {
+  int tries = 10000000 ;
+  int hits = 0;
+  int r = 5;
+
+  for (int i = 0; i < tries; i++) {
+    double x = Random().nextDouble() * 2 - 1;
+    double y = Random().nextDouble() * 2 - 1;
+    if (sqrt((0 - x) * (0 - y) + (0 - y) * (0 - y)) < r) {
+      hits++;
+    }
+  }  
+  print('hits:$hits');
+  double piEstimate = 4*hits/tries;;
+  print(piEstimate);
 }
 ```

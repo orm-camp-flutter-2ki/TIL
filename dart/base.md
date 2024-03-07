@@ -89,3 +89,41 @@ final(상수)로 선언하는 것이 바람직하다.
 
 ++ random으로 부여된 것도 재활용하는 게 있다면
 변수로 선언해놓는 것이 낫다.
+
+## dart:math
+### Random
+To create a non-negative random integer uniformly distributed in the range from 0, inclusive, to max, exclusive, use [nextInt(int max)](https://api.flutter.dev/flutter/dart-math/Random/nextInt.html).
+```
+var intValue = Random().nextInt(10); // Value is >= 0 and < 10.
+intValue = Random().nextInt(100) + 50; // Value is >= 50 and < 150.
+```
+
+To create a non-negative random floating point value uniformly distributed in the range from 0.0, inclusive, to 1.0, exclusive, use [nextDouble](https://api.flutter.dev/flutter/dart-math/Random/nextDouble.html).
+
+```
+var doubleValue = Random().nextDouble(); // Value is >= 0.0 and < 1.0.
+doubleValue = Random().nextDouble() * 256; // Value is >= 0.0 and < 256.0.
+```
+
+To create a random Boolean value, use [nextBool](https://api.flutter.dev/flutter/dart-math/Random/nextBool.html).
+
+```
+var boolValue = Random().nextBool(); // true or false, with equal chance.
+```
+
+### sqrt function
+double sqrt(
+num x
+)
+Converts x to a double and returns the positive square root of the value.
+
+Returns -0.0 if x is -0.0, and NaN if x is otherwise negative or NaN.
+
+var result = sqrt(9.3);
+print(result); // 3.0495901363953815
+result = sqrt(2);
+print(result); // 1.4142135623730951
+result = sqrt(0);
+print(result); // 0.0
+result = sqrt(-2.2);
+print(result); // NaN
