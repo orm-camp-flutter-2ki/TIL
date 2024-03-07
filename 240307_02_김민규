@@ -1,0 +1,4 @@
+### null의 개념
+```Dart
+int? i = null
+```
