@@ -12,6 +12,9 @@ String string = null;// eroor
 String? string = null;// OK
 ```
 - String과 String?은 타입이 다름
+<br>
+<br>
+
 ## 📄 null 처리에 관한 기능
 <br>
 
@@ -20,6 +23,8 @@ String? string = null;// OK
 int value = nullableValue ?? 0;
 ```
 - 앞의 객체가 null인 경우 ?? 뒤에 작성한 값으로 반환
+<br>
+
 
 ### ✏️ ! 연산자
 ```dart
@@ -29,6 +34,7 @@ int value = nullablevalue!;
 ```
 - ! nullavle 인 값을 null이 아님을 보증
 - 개발자에게 책임이 따르므로 주의해서 사용해야 함
+<br>
 
 ### ✏️ ?. 연산자
 ```dart 
@@ -55,6 +61,7 @@ print(nullableValue?.toString()); // null 출력
 - 개발자의 실수를 미연에 방지할 수 있음
 - 항상 예측 가능한 코딩을 할 수 있음
 - 컴파일러가 변수의 널 검사를 진행하지 않아도 돼 컴파일 속도가 향상됨
+<br>
 
 ### ✏️ 주의점
 - 사용 중인 외부 라이브러리도 모두 널 안정성을 지원해야 함
