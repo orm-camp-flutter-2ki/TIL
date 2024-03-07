@@ -1,6 +1,8 @@
 # 📖 Null Safety
+<br>
 
 ## 📄 Null 이란?
+<br>
 
 - null : 값이 존재하지 않는다는 뜻
 - dart 2.12 버전부터 지원
@@ -11,6 +13,7 @@ String? string = null;// OK
 ```
 - String과 String?은 타입이 다름
 ## 📄 null 처리에 관한 기능
+<br>
 
 ### ✏️ ?? 연산자
 ```dart
@@ -41,8 +44,11 @@ print(nullableValue?.toString()); // null 출력
 ```
 - ?. nullable 객체를 안전하게 사용하고자 할 때 사용
 - 최대한 안 쓰는 게 좋음
+<br>
+<br>
 
 ## 📄 Null Safety의 장점과 주의점
+<br>
 
 ### ✏️ 장점
 - 널을 허용하지 않는 변수는 널이 아님을 100% 보장
