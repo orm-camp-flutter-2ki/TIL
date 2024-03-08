@@ -7,6 +7,7 @@
 - [24.03.05 - Android Studio 세팅](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.05.md)
 - [24.03.06 - CLI I&O 방법, String관련](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.06.md)
 - [24.03.07 - nullable, Random값 생성](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.07.md)
+- [24.03.08 -](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.08.md)
 ### 2주차
 ### 3주차
 ### 4주차
