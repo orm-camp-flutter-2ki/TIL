@@ -1,47 +1,34 @@
+
+
+### 연산자
 #### 산술 연산자
 /  나누기 (double 타입 반환)
 ~/ 몫 (int 타입 반환)
 %  나머지 (int 타입 반환)
-
-
+<br>
+<br>
+### 형변환
 #### String to int
 String str = '';
 int num = int.parse(str);
+
 #### as
 - 관련 에러
 A value of type 'num' can't be assigned to a variable of type 'int'.
 
-**일부 언어에서는 더 큰 자료형인 double 타입에 int 타입을 대입하는 자동 형변환을 지원하기도 하지만 다트에서는 지원하지 않음**
+* **일부 언어에서는 더 큰 자료형인 double 타입에 int 타입을 대입하는 자동 형변환을 지원하기도 하지만 다트에서는 지원하지 않음**
 
-#### 형변환
+#### Error type
 
-### 런타임 / 컴파일
+* toInt() compile E <br>
+int.parse(str) runtime E <br>
+-> 우선은 toInt() 활용할 것<br><br>
+* String to int <br>
+문자열이 숫자가 아닐 때(숫자가 아닌 문자가 포함) `FormatException`이 발생합니다.
 
-int.parse(str) 도 runtime E 남
-toInt()와 다름
-만약 문자열이 숫자가 아닐 때(숫자가 아닌 문자가 포함) `FormatException`이 발생합니다.
-
-### 매개변수 vs. 인자(parameter vs. argument)
-매개변수 : 함수를 정의할 때 사용하는 변수 (=인자)
-인자 : 실제로 함수를 호출할 때 넘기는 변수값
-
-### named parameter
-#### 초기값
-예전에는 
-```
-void something({int age, String name})
-```
-도 가능했으나
-dart 업데이트 이후에는
-```
-void something({int age = 10, String name = 'john'})
-```
-처럼 초기값 넣어야 함
-
-단, nullable하면 초기값 안넣어도 됨
-
-### nullSafety
+###  nullSafety
 * value가 null이면 0
+
 ```
 int value = nulllableValue ?? 0
 ```
@@ -56,17 +43,37 @@ int value = nullableValue!;
 int value = nulllableValue ?? 0
 ```
 
-
 <br>
 * String과 String?은 다른 타입이라고 봐도 됨
 앞으로 할 건 ?를 떼는 방법을 배워야함
 <br>
+<hr>
 
 ## 클래스
 
-### 클래스 작성
+### 필드
 
 * 필드 (=멤버변수=전역변수(global variable))
+
+### 매개변수 인자(parameter vs. argument) <br>
+* 매개변수 : 함수를 정의할 때 사용하는 변수 (=인수)<br>
+인자 : 실제로 함수를 호출할 때 넘기는 변수값
+
+#### named parameter
+* 인수 넘길 때 초기값
+
+    예전에는 
+    ```
+    void something({int age, String name})
+    ```
+    도 가능했으나
+    dart 업데이트 이후에는
+    ```
+    void something({int age = 10, String name = 'john'})
+    ```
+    처럼 초기값 넣어야 함. 단, nullable하면 초기값 안넣어도 됨
+* 
+
 
 ### 함수 vs. 메소드
 클래스 안의 함수 = 메소드
@@ -78,8 +85,8 @@ int value = nulllableValue ?? 0
 
 int, String, double, bool 외의 인스턴스 만드려고 할 때 class 만드는 것
 
-
-## 상수와 변수 중에 어떤 걸 선택할 것인가
+<hr>
+### 상수와 변수 중에 어떤 걸 선택할 것인가
 (조건을 모를 경우)
 
 재할당을 할 일이 없는 경우라면
@@ -90,6 +97,7 @@ final(상수)로 선언하는 것이 바람직하다.
 ++ random으로 부여된 것도 재활용하는 게 있다면
 변수로 선언해놓는 것이 낫다.
 
+ 
 ## dart:math
 ### Random
 To create a non-negative random integer uniformly distributed in the range from 0, inclusive, to max, exclusive, use [nextInt(int max)](https://api.flutter.dev/flutter/dart-math/Random/nextInt.html).
@@ -127,3 +135,4 @@ result = sqrt(0);
 print(result); // 0.0
 result = sqrt(-2.2);
 print(result); // NaN
+
