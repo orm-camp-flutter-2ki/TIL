@@ -24,8 +24,8 @@ class Person {
 
 ```dart
 void main() {
-Person girt = Person('amy', 10);  // 생성자: 객체, 인스턴스를 만드는 것이다.
-Person boy = Person('jason', 14); // Person 클래스에 boy 객체, 인스턴스이다.
+    Person girt = Person('amy', 10);  // 생성자: 객체, 인스턴스를 만드는 것이다.
+    Person boy = Person('jason', 14); // Person 클래스에 boy 객체, 인스턴스이다.
 }
 ```
 <br/>
