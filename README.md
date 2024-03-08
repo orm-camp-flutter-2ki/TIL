@@ -1,13 +1,9 @@
-# TIL
+# 🎆TIL
 
 Today I Learned
 
-오늘 학습한 내용을 정리하는 것
-
-화이팅
+하루하루 최선을 다하기 화이팅~
 
 
-## 샘플
-- https://github.com/namjunemy/TIL
-- https://github.com/milooy/TIL
-- https://github.com/YutoMizutani/til
+## 🎉블로그
+- https://htaenggu.tistory.com/
