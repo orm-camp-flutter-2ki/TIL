@@ -22,8 +22,7 @@ Null-safety 관련 키워드들을 사용하여 미리 오류를 잡고 안전�
 
 ### Nullable type ? (Question Mark)
 <br>
-<img src="https://velog.velcdn.com/images/chojja7188/post/1b485487-5de4-4ae2-94e6-69e9a9dce12c/image.png
-" width=200>
+<img src="https://velog.velcdn.com/images/chojja7188/post/1b485487-5de4-4ae2-94e6-69e9a9dce12c/image.png" width=200>
 <br>
 Dart에서는 타입 뒤에 "?" 물음표를 붙여서 null이 들어갈 수 있는 Nullable 타입을 만들 수 있습니다. 물론 타입에 맞는 값을 넣는 것도 가능합니다.
 ```dart
