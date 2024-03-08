@@ -1,0 +1,96 @@
+day 4 note ✍🏻
+=============
+공부 기록
+> **null**  
+> - null의 개념과 처리 방법에 대해 배웠다.
+> - [?] null은 어떨 때 사용하는 걸까?
+<br/>
+
+### null 이란?   
+- 값이 존재하지 않는다.  
+<br/>  
+
+**null safety**   
+- 안정성을 높이기 위해 도입되었다   
+<br/>
+
+**nullable**    
+- 변수나 매개변수가 null 값을 가질 수 있는지 여부를 나타내는 것이다.  
+<br/>
+
+**null safety**    
+- 안정성을 높이기 위해 도입되었다 
+<br/>
+
+**장점**  
+- null을 허용하지 않는 변수는 null이 아님을 보증할 수 있다.  
+- 개발자의 실수를 미연에 방지할 수 있다.  
+- 예측 가능한 코딩을 할 수 있다.  
+- null 검사를 진행하지 않아도 되어 컴파일 속도가 향상된다.  
+<br/>
+
+**주의사항**  
+- 외부 라이브러리도 모두 null safety를 지원해야 한다
+- ?, !, ?., late 등 새로운 연산자나 키워드가 어렵게 느껴질 수 있다.
+- 사용 중인 프로젝트에 갑자기 컴파일 에러가 발생할 수 있고, 이를 위한 추가 수정 작업이 필요하다.
+<br/>
+
+### null   
+**? null 선언**  
+```dart
+
+// name 변수 선언, null이 아님
+String name = '';
+
+// null이지만 dart에서는 error
+String name;
+String name = null;
+
+// ? : null 선언
+String? name;
+String? name = null;
+
+// error type이 달라 선언이 되지 않음
+int? i = 10;
+int j = i;
+
+```
+<br/>  
+
+**null처리에 대한 기능**  
+```dart
+
+// ?? : 앞의 객체가 null인 경우 ?? 뒤에 작성한 값으로 반환
+int value = nullableValue ?? 0;
+
+// ! : 값이 null이 아님을 보증 하는 것, 주의해서 사용..
+int? nullableValue = 10;
+int value = nullableValue!;
+
+// ?. : nullable 객체를 안전하게 사용하고자 할때 사용
+// null이 아니면 해당 코드 수행, null이면 null 반환
+int? nullableValue = 10;
+print(nullableValue?.toString()); // 10 출력
+
+int? nullableValue = null;
+print(nullableValue?.toString()); // null 출력
+
+```
+<br/>  
+- 타입을 명확하게 정의하는 것이 좋다. 아래 4개의 코드는 서로 다른 코드이다.  
+```dart
+
+// 문자열 타입의 변수들을 담는 리스트이다. (이렇게 코드를 짜는 연습을 해야한다.)
+List<String>
+
+// 문자열 타입의 변수들을 담는 리스트는 null일 수 있다.
+List<String>?
+
+// null일 수 있는 문자열들을 담는 리스트이다.
+List<String?>
+
+// null일 수 있는 문자열들을 담는 리스트는 null일 수 있다.
+List<String?>?
+
+```
+<br/>  
