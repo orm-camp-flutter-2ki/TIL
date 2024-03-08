@@ -6,7 +6,7 @@ class와 method
   
 ```dart  
 class 클래스명 { // 클래스명은 pascal case 표기
- print('Hello, class');
+    final String name = 'test'; // field 필드(멤버 변수, 전역 변수), camel case로 표기한다.
 }
 ```
 <br/>
@@ -17,8 +17,8 @@ class 클래스명 { // 클래스명은 pascal case 표기
 
 ```dart  
 class 클래스명 {
-	public void 메소드명() { // 메소드명은 camel case 표기
-		print('Hello, method');
+    public void 메소드명() { // 메소드명은 camel case 표기
+    print('Hello, method');
 	}
 }
 ```
