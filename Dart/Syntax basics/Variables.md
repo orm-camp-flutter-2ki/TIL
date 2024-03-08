@@ -57,4 +57,31 @@ non-nullable한 변수를 선언만 하고 초기화를 하지 않고 접근하�
     => 초기화에 필요한 참조가 변수 선언 시점에 아직 없음
 
 
-## ~~Final and Const~~
+<br/>
+
+## Final and Const
+`final`과 `const`는 모두 상수를 선언하는 키워드로 초기화 이 후, 값을 변경할 수 없다.
+
+둘은 비슷해 보이지만 조금의 차이가 있다.
+
+### `final`
+- 초기화 시점: 런타임
+- instance 변수 초기화 가능
+- 변수의 값 초기화 이후, 변경 불가능
+- 소속된 객체마다 다른 인스턴스
+
+### `const`
+- 초기화 시점: 컴파일 타임
+- instance 변수 초기화 : 불가능
+- 변수가 리터럴 그 자체
+- 항상 단일 인스턴스
+
+또한, `const`의 경우 변수가 아닌 값에도 붙일 수 있고 값의 생성자에게 constant 값(단일 인스턴스)을 생성하도록 한다.  
+```dart
+void main() {
+  var foo = const [];
+  final bar = const [];
+  print(foo.hashCode); // 1042999748
+  print(bar.hashCode); // 1042999748
+}
+```
