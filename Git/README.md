@@ -16,7 +16,7 @@ winget install -e --id Git.Git
    - 상대 Repository를 본인 계정의 Repository로 복사하여 저장하기 위해 사용함.
    - 본인 계정에 Fork된 Repository는 수정해도 상대 Repository에 영향을 주지 않음.
 
-### 5. **Clone, Push, Commit, Push**
+### 5. **Clone, Add, Commit, Push**
   - Clone : 원격 저장소(repository) -> 로컬 저장소(작업 디렉터리)로 복사.
   - Add : Commit하기 원하는 파일(ex. 수정된 코드)을 스테이지(커밋 준비공간)에 올림. 실제 변경은 Commit 단계에서 수행됨.
   - Commit : **로컬에** 실제 변경된 사항을 저장. 이때, 수행한 변경 사항에 대한 메시지를 함께 설정한다. (ex. first commit)
