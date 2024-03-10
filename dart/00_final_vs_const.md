@@ -40,6 +40,32 @@ final의 경우에는 코드가 실행되는 런타임 시점 동안에 할당�
 const는 그 전에 할당을 받아야하기 때문에 오류가 발생.
 따라서 const는 프로그램을 실행하기 전에 값이 할당되어 있어야 정상적으로 사용 가능.
 
+생성자의 경우에서도 차이점이 있음.
+#### final
+```dart
+class Warrior() {
+  static final int maxHp = 100;
+  String name;
+  String hp;
+  
+  Warrior(this.name, this.hp = maxHp);
+  // 오류: The default value of an optional parameter must be constant
+}
+```
+#### const
+```dart
+class Warrior() {
+  static const int maxHp = 100;
+  String name;
+  String hp;
+  
+  Warrior(this.name, this.hp = maxHp);
+}
+```
+static과 생성자는 런타임 전에 값이 결정되어야 하기 때문에
+런타임 시점에 할당되는 final은 이 경우에 사용할 수 없음.
+따라서 이런 상황에서는 const를 사용.
+
 또한 처음 상수를 선언할 때에도 다른 부분이 있다.
 
 #### final

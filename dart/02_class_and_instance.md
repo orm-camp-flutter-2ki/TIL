@@ -1,4 +1,4 @@
-# Class And Instance
+# Class and Instance
 
 > 클래스와 인스턴스
 
