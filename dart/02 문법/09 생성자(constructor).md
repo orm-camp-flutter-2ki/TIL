@@ -30,6 +30,27 @@ class Family extends Person { // Person 클래스를 상속받고 있다
   // Family();
 }
 ```
+- dart에서는 약식표현을 권장한다.  
+```dart
+class Person {
+  String name = '';
+  int age = 0;
+
+  // 약식 표현된 기본 생성자
+  Person(this.name, this.age);
+
+  // 구 기본 생성자
+   Person(String name, int age)
+       : this.name = name,
+         this.age = age;
+}
+
+void main() {
+  // 기본 생성자를 사용해 인스턴스 생성
+  Person man = Person('jack', 54);
+  print('Guest Name:${man.name} Age:${man.age}');
+}
+```
 <br/>
 
 ## 이름있는 생성자 (named constructor)  
@@ -39,9 +60,6 @@ class Person {
   String name = '';
   int age = 0;
 
-  // 기본 생성자
-  Person(this.name, this.age);
-
   // named 생성자
   Person.guest() {
     name = 'lola';
@@ -50,10 +68,6 @@ class Person {
 }
 
 void main() {
-  // 기본 생성자를 사용해 인스턴스 생성
-  Person man = Person('jack', 54);
-  print('Guest Name:${man.name} Age:${man.age}');
-
   // named 생성자를 사용해 인스턴스 생성
   Person women = Person.guest();
   print('Guest Name:${women.name} Age:${women.age}');
