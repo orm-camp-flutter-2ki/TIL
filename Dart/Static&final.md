@@ -1,3 +1,5 @@
+### Static, Final, Const 비교
+
 # Static
 - 예) 게임의 최대 레벨이나 캐릭터의 기본 체력 같은 거
 
