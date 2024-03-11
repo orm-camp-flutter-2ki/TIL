@@ -10,6 +10,26 @@
 
 ## 기본 테스트 프레임워크
 [Dart-testing](https://dart.dev/guides/testing)
+
+### 0. test code 작성
+- 여러가지의 테스트 기법 중 밑의 기법을 사용한다.  
+> 준비(given) -> 실행(when) -> 검증(then)
+```dart
+void main() {
+  test('cleric test', () {
+    // 준비 given
+    Cleric cleric = Cleric('지존법사', hp: 70, mp: 10);
+    
+    // 실행 when
+    cleric.pray(3);
+    
+    // 검증 then
+    expect(cleric.mp, equals(20));
+  });
+}
+```
+<br/>
+
 ### 1. test directory
 - 없다면 만들어 준다. 일반적인 directory를 만드는 방법과 똑같다. 이름은 'test'로 생성한다.    
 - test directory는 아이콘이 조금 다르다.  
