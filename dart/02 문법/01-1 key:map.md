@@ -36,6 +36,9 @@ Set<String> keys = person.keys;
 
 ## 저장된 값 하나씩 출력
 ```dart
-
+// entries.forEach 사용
+mapName.entries.forEach((element) {
+print('Key: ${element.key}, Value: ${element.value}');
+})
 ```
 
