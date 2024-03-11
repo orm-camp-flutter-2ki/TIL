@@ -244,7 +244,7 @@ solution(num){
 List<String> results = List.generate(9, (index) => ((index + 1) * setNumber).toString()); print(results.join(', '));
 ```
 
-비만도 계산기
+#### 비만도 계산기
 ```
  
 import 'dart:io';
@@ -306,5 +306,68 @@ solution(height, weight){
             print('BMI 수치가 유효하지 않습니다.');
             break;
         }
+}
+```
+
+#### 원주율 구하기
+```
+void main() {
+  int tries = 10000000 ;
+  int hits = 0;
+  int r = 5;
+
+  for (int i = 0; i < tries; i++) {
+    double x = Random().nextDouble() * 2 - 1;
+    double y = Random().nextDouble() * 2 - 1;
+    if (sqrt((0 - x) * (0 - y) + (0 - y) * (0 - y)) < r) {
+      hits++;
+    }
+  }  
+  print('hits:$hits');
+  double piEstimate = 4*hits/tries;;
+  print(piEstimate);
+}
+```
+#### x만큼 간격이 있는 n개의 숫자
+[문제 설명]<br>
+함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.
+
+[제한 조건]<br>
+x는 -10000000 이상, 10000000 이하인 정수입니다.
+n은 1000 이하인 자연수입니다.
+
+[입출력 예]<br>
+x	n	answer
+2	5	[2,4,6,8,10]
+4	3	[4,8,12]
+-4	2	[-4, -8]
+
+```
+import 'dart:io';
+
+void main(){
+  print('x를 입력하세요.');
+  num x = int.parse(stdin.readLineSync()!);
+  print('n을 입력하세요.');
+  int n = int.parse(stdin.readLineSync()!);
+  solution(x,n);
+}
+
+void solution(x, n){
+  List<num> result = [];
+  num sum = 0;
+  // for (int i = 0; i < n; i++ ){
+  //   sum += x as int;
+  //   //print('i: $i sum :$sum');
+  //   result.add(sum);
+  // }
+  int i = 0;
+  while(i < n){
+    //sum += x as int;
+    sum += x;
+    result.add(sum);
+    i++;
+  }
+  print(result);
 }
 ```
