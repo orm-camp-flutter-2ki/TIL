@@ -27,22 +27,28 @@ print(numbers); // 출력 결과: [1, 2, 3, 4, 5, 6]
 
 ## 값을 하나씩 얻는 방법
 ```dart
-  // for i 문
+  //[1] for i 문
   for (int i = 0; i < names.length; i++) {
     print(names[i]);
   }
 
-  // for in 문
+  //[2] for in 문
   for (final name in names) {
     print(name);
   }
 
-  //[1-1] forEach
+  //[3-1] forEach
   names.forEach((name) {
     print(name);
   });
 
-  //[1-2] forEach
+  //[3-2] forEach
   names.forEach(print);
+
+  //[4] iterator
+  final iterator = liteName.iterator;
+  while (iterator.moveNest()) {
+    print(iterator.current);
+}
 ```
 <br/>
