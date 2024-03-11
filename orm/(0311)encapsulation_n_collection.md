@@ -1,9 +1,4 @@
-   
-* [1. Test 코드 작성](#1.-test-코드-작성)
-* [2. 캡슐화(Encapsulation)](#2.-캡슐화(Encapsulation))
-* [3. 컬렉션(자료 구조)](#3.-컬렉션(자료-구조))
-* [4. Property(프로퍼티)](#4.-Property(프로퍼티))
-  
+    
 
 ## 1. Test 코드 작성
 
