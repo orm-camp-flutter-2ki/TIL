@@ -29,6 +29,7 @@ setter : 값을 수정함.매개변수만 있고, 리턴값은 없는 메서드�
 
 ```dart
 //getter의 사용
+//return된 값만 필요하고 굳이 변수로 등록할 일이 없다면 변수등록을 안해도 된다. 
 class Hero {
   static int money = 100;
   String name;
