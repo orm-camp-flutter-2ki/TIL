@@ -34,24 +34,8 @@ Set<String> keys = person.keys;
 ```
 <br/>
 
-## 값을 하나씩 얻는 방법
+## 저장된 값 하나씩 출력
 ```dart
-  // for i 문
-  for (int i = 0; i < names.length; i++) {
-    print(names[i]);
-  }
 
-  // for in 문
-  for (final name in names) {
-    print(name);
-  }
-
-  //[1-1] forEach
-  names.forEach((name) {
-    print(name);
-  });
-
-  //[1-2] forEach
-  names.forEach(print);
 ```
-<br/>
+
