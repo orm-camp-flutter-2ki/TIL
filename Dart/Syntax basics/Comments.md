@@ -41,7 +41,8 @@ void main() {
 - 문서 주석은 클래스, 메서드 등의 구현부 위에 작성하여 해당 구현부에 대한 문서로 처리된다.
 - 해당 문서는 IDE에서 클래스, 메서드 명에 대한 부가 설명로 제공된다.  
 <img src="../assets/Comments_document_comment.png" width="70%" height="70%" />
-- 문서 주식의 내부에서 `[...]`은 무시되지 않고, 문서 주석이 설명하는 대상의 클래스, 메서드, 필드, Top-level 변수, 함수, 파라미터에 대한 참조를 만든다.
+- 문서 주식의 내부에서 `[...]`은 무시되지 않고, 문서 주석이 설명하는 대상의 클래스, 메서드, 필드, Top-level 변수, 함수, 파라미터에 대한 참조를 만든다.  
+
 ```dart
 /// A domesticated South American camelid (Lama glama).
 ///
