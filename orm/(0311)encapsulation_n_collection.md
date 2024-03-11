@@ -1,4 +1,9 @@
-    
+* [1. Test 코드 작성](#1-test-코드-작성)
+* [2. 캡슐화(Encapsulation)](#2-캡슐화(encapsulation))
+* [3. 컬렉션(자료 구조)](#3-컬렉션(자료-구조))
+* [4. Property(프로퍼티)](#4-property(프로퍼티))
+  
+
 
 ## 1. Test 코드 작성
 
@@ -88,11 +93,11 @@ class Person {
 
 ## 3. 컬렉션(자료 구조)
 
-**List**
-**Map**
-**Set**
+**List**  
+**Map**  
+**Set**  
 
-1. List
+### 1. List
 - 순서대로 쌓여있는 구조(아이템의 중복 허용)
 - 크기를 정해두지 않고 요소를 추가할 때마다 커진다.
 
@@ -102,7 +107,7 @@ List<String> names = ['Alice', 'Bob', 'Charlie'];
 
 <br></br>
 
-2. Set
+### 2. Set
 - 순서가 없는 집합(중복 불가)
 - 속도가 빠르다.
 
@@ -112,7 +117,7 @@ Set<String> uniqueNames = {'Alice', 'Bob', 'Charlie'};
 
 <br></br>
 
-3. Map
+### 3. Map
 - 키(key)와 값(value)의 쌍을 저장하는 자료 구조
 - 순서가 없고 키의 중복은 허용되지 않는다.
 
@@ -125,15 +130,14 @@ Map<String, int> ages = {'Alice': 25, 'Bob': 30, 'Charlie': 35};
 ## 4. Property(프로퍼티)
 property(프로퍼티)는 클래스 내부의 멤버 변수에 대한 접근자(getter)와 설정자(setter)를 통합한 개념이다.
 
-<br></br>
 
-```dart
-Person 클래스를 작성하시오.
-이름과 태어난 해를 생성자로 받는다 (name, birthYear)
-이름과 태어난 해는 한번 정해지면 수정이 불가능하다.
-age 프로퍼티를 통해 나이를 제공하지만, 임의로 수정은 불가능하다.
-나이 계산은 올해년도에서 birthYear 년도를 뺀 값을 리턴한다.
-현재 시간과 날짜는 DateTime 클래스를 활용하면 얻을 수 있다.
+```
+- Person 클래스를 작성하시오.
+- 이름과 태어난 해를 생성자로 받는다 (name, birthYear)
+- 이름과 태어난 해는 한번 정해지면 수정이 불가능하다.
+- age 프로퍼티를 통해 나이를 제공하지만, 임의로 수정은 불가능하다.
+- 나이 계산은 올해년도에서 birthYear 년도를 뺀 값을 리턴한다.
+- 현재 시간과 날짜는 DateTime 클래스를 활용하면 얻을 수 있다.
 ```
 
 이 문제에서 age 프로퍼티는 다음과 같다.
