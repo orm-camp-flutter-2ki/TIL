@@ -185,7 +185,7 @@
     class Object {
     String name;
     int num;
-    Field? field; // Nam
+    Field? field; // Named Parameter
     
     Object(this.name, this.num, {this.field});
     ```
