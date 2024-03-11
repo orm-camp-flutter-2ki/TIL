@@ -260,4 +260,10 @@ num++ -> 나중에 계산, 일반적
 인터프리터 언어 : 한 줄 읽으면서 바로 실행하는 것  
 컴파일 언어 : 전체를 다 읽고 실행하는 것
 ----
-    
+----
+----
+
+## 오늘의 블로깅 
+- [객체지향형 프로그래밍과 절차지향형  프로그래밍 그리고 함수형 프로그래밍](https://somarok.tistory.com/4)
+- [컴파일 타임과 런타임](https://somarok.tistory.com/5)
+- [const와 final의 차이점](https://somarok.tistory.com/6)
