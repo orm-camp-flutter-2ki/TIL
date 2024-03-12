@@ -55,6 +55,7 @@ int get hp{
 void set hp(int value){
   _hp = value;
 }
+```
 숨긴 언어에 값을 부여할 수 있다.
 
 위의 getter와 setter의 메리트
