@@ -12,12 +12,12 @@
 ## Single-line 주석
 - `//`를 통해 하나의 줄을 주석 처리할 수 있다.
 - 해당 줄의 마지막까지 컴파일러에게 무시된다.
-```dart
-void main() {
-  // print('이건 무시됩니다ㅠ');
-  print('이건 출력됩니다.');
-}
-```
+  ```dart
+  void main() {
+    // print('이건 무시됩니다ㅠ');
+    print('이건 출력됩니다.');
+  }
+  ```
 
 <br/>
 
@@ -26,17 +26,16 @@ void main() {
 - 여러 줄 주석은 `/*`로 시작하며, `*/`으로 끝이난다.
 - 내부의 모든 줄은 컴파일러에게 무시된다.
 
-```dart
-/*
-void printFail() {
-  print('이 함수는 없는 존재입니다ㅠ');
-}
-*/
-void main() {
-  printFail(); // Error: The function 'printFail' isn't defined.
-}
-
-```
+  ```dart
+  /*
+  void printFail() {
+    print('이 함수는 없는 존재입니다ㅠ');
+  }
+  */
+  void main() {
+    printFail(); // Error: The function 'printFail' isn't defined.
+  }
+  ```
 
 <br/>
 
@@ -50,31 +49,31 @@ void main() {
 - 해당 문서는 IDE에서 클래스, 메서드 명에 대한 부가 설명로 제공된다.  
 <img src="../assets/Comments_document_comment.png" width="50%" height="50%" />  
 
-- 문서 주식의 내부에서 `[...]`은 무시되지 않고, 문서 주석이 설명하는 대상의 클래스, 메서드, 필드, Top-level 변수, 함수, 파라미터에 대한 참조를 만든다.  
+- 문서 주석의 내부에서 `[...]`은 무시되지 않고, 문서 주석이 설명하는 대상의 클래스, 메서드, 필드, Top-level 변수, 함수, 파라미터에 대한 참조를 만든다.  
 
-```dart
-/// A domesticated South American camelid (Lama glama).
-///
-/// Andean cultures have used llamas as meat and pack
-/// animals since pre-Hispanic times.
-///
-/// Just like any other animal, llamas need to eat,
-/// so don't forget to [feed] them some [Food].
-class Llama {
-  String? name;
-
-  /// Feeds your llama [food].
+  ```dart
+  /// A domesticated South American camelid (Lama glama).
   ///
-  /// The typical llama eats one bale of hay per week.
-  void feed(Food food) {
-    // ...
-  }
+  /// Andean cultures have used llamas as meat and pack
+  /// animals since pre-Hispanic times.
+  ///
+  /// Just like any other animal, llamas need to eat,
+  /// so don't forget to [feed] them some [Food].
+  class Llama {
+    String? name;
 
-  /// Exercises your llama with an [activity] for
-  /// [timeLimit] minutes.
-  void exercise(Activity activity, int timeLimit) {
-    // ...
+    /// Feeds your llama [food].
+    ///
+    /// The typical llama eats one bale of hay per week.
+    void feed(Food food) {
+      // ...
+    }
+
+    /// Exercises your llama with an [activity] for
+    /// [timeLimit] minutes.
+    void exercise(Activity activity, int timeLimit) {
+      // ...
+    }
   }
-}
-```
-=> 주석 내부의 `[feed]`, `[Food]`를 클릭하면 해당 메서드로 이동한다.
+  ```
+  => 주석 내부의 `[feed]`, `[Food]`를 클릭하면 해당 메서드로 이동한다.
