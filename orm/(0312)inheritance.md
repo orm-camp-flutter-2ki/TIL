@@ -89,10 +89,14 @@ class Cat extends Animal {
 
 <img width="550" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/c473472b-a9ff-43e2-bf86-e55c2f1827a7">
 
+<br></br>
+
 2. 새 UML 파일을 생성한다.
 
 <img width="550" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/a94f6efc-9596-4525-921d-3710e5704c5c">
 <img width="376" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/0fdcbebf-30e8-4f5d-a677-0bb54153594e">
+
+<br></br>
 
 3. 작성 예시
 <img width="827" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/426c2211-f2ef-44d4-a286-f9b2d2d161f9">
