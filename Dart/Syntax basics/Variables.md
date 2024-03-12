@@ -25,15 +25,15 @@
 - nullable한 타입은 초기화하지 않아도 null로 초기화되기에, 초기화를 생략해도 된다.
 - non-nullable한 타입은 초기화 없이 접근시, 런타임 에러가 발생한다.
   => 단, 선언과 동시에 초기화할 필요는 없다. 변수 접근 이전에만 초기화하면 된다.
-```dart
-void main() {
-  String nonNull;
-  String? nullable;
+  ```dart
+  void main() {
+    String nonNull;
+    String? nullable;
 
-  print(nonNull); // Error: Non-nullable variable 'nonNull' must be assigned before it can be used.
-  print(nullable); // null 출력
-}
-```
+    print(nonNull); // Error: Non-nullable variable 'nonNull' must be assigned before it can be used.
+    print(nullable); // null 출력
+  }
+  ```
 
 <br/>
 
