@@ -10,6 +10,7 @@
 - [24.03.08 - static, naming 규칙 정리, Construct](https://github.com/JEON-Sungsu/TIL/blob/main/FirstWeek/24.03.08.md)
 ### 2주차
 - [24.03.11 - 캡슐화, 컬렉션타입, 생성자정리, Test code 작성](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.11.md)
+- [24.03.12 - Inheritance, Named Constructor, initializer-List, PlantUML](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.12.md)
 ### 3주차
 ### 4주차
 ### 5주차
