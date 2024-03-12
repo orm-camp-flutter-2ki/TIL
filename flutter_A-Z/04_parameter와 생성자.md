@@ -61,7 +61,7 @@ Date : 230308
 ### 다른 타입을 인자나 리턴값으로 사용하기
 
 다른 클래스를 타입 형태로 인자나 리턴값에 넣을 수 있다.
-~~~
+~~~dart
 class Wizard{
     String name;
     int hp;    
@@ -82,7 +82,7 @@ class Wizard{
   -   생성자는 인스턴스 생성하는 방법을 제공하는 것을 말한다.
   -   모든 클래스는 반드시 1개의 생성자를 가진다.
   -   클래스에 생성자를 만들지 않아도 기본 생성자를 가진다고 본다.
-  ~~~
+  ~~~dart
     class Wizard{
         String name;
         int hp;    
@@ -98,7 +98,7 @@ class Wizard{
  필수로 들어가야만 하는 파라미터에는 'required'를 붙여줌으로써 반드시 사용하도록 명시한다.  
  'required'가 붙은 파라미터의 값으로는 null이 들어갈 수 없다.  
  
-  ~~~
+  ~~~dart
   class Sword{
     String name;
     String damage;
@@ -109,7 +109,7 @@ class Wizard{
   
   =======
 
-  Sword sword = Sword(name:'마법사', damage: 0); // 사용할 때는 변수명을 써주고 넣을 값을 기재한다.
+  Sword sword = Sword(name:'마법사', damage: 0); // 사용할 때는 변수명을 써주고 넣을 값을 기재한다.  
   Sword sword = Sword(name:'마법사');
 
   ~~~
@@ -137,7 +137,7 @@ class Wizard{
   - 같은 이름의 생성자 또는 메서드를 여러개 만들 수 있는 것.
   
   
-  ~~~
+  ~~~dart
     class Sword{
     String name;
     int hp;
@@ -178,7 +178,7 @@ class Wizard{
 
 클래스 내에서 함수 작성시 필드와 같은 이름의 변수가 있을 경우, 필드를 선언할 때 'this.' 를 붙여주도록 한다.  
 
-~~~
+~~~dart
     Class Hero{
         String name;
 
@@ -198,7 +198,7 @@ class Wizard{
 
 </br> 
     
-    ~~~ 
+  ~~~dart
     int pray(final int second){
         ...(생략)
     }
@@ -210,4 +210,4 @@ class Wizard{
         ...(생략)
     }
     => 일반적으로 코드를 이렇게 작성한다.
-    ~~~
+   ~~~

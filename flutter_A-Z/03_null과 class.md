@@ -57,7 +57,7 @@ Date:240307
 
 -  ! : nullAble인 값을 null이 아님을 보증한다.  
 개발자에게 책임이 따르므로 주의해서 사용해야 함.
-    ~~~
+    ~~~ dart
     int nullVal=10;
     int value = nullVal!;
     ~~~
@@ -75,7 +75,7 @@ Date:240307
 
 
 > ### 타입을 명확하게
-~~~
+~~~dart
 List<String>
 List<String>? // 리스트가 nullable
 List<String?> // 리스트 속 string이 nullable
@@ -127,7 +127,7 @@ List<String?>? // 리스트도, 속에 들어갈 string도 nullable
   -   기본 자료형 이외의 것을 커스텀해서 만들자. = 클래스
   -   이 클래스로 생성한 인스턴스를 넣을 수 있는 새로운 변수의 타입이 이용 가능해 진다.  
       Hero 클래스를 정의하면 Hero 타입의 변수를 선언해서 사용 가능.
-      ~~~
+      ~~~dart
       Hero hero = Hero('용사쿠키', 100);
       ~~~
 
@@ -149,7 +149,7 @@ List<String?>? // 리스트도, 속에 들어갈 string도 nullable
   - 어떤 클래스 타입 변수에 인스턴스가 담겨 있을 때 그 인스턴스의 필드나 메소드 이용가능  
    
   
-  ~~~
+  ~~~dart
   Hero hero = new Hero();
   Hero hero2 = Hero();
 
