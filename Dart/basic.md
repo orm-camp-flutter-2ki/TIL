@@ -86,17 +86,17 @@
   ```
 
 ### NULL Safety
+- Dart는 변수 타입이 기본 자료형(String, int, double, bool) type인 경우, **값이 null(없음)이 될 수 없다.**
+  - 컴파일러에서 코드를 실행하기 전에 NULL로 인한 에러를 찾아주어 문법 오류를 미리 지적해준다. (**Null Safety**)
   ```dart
   int str = null; // 불가능
   ```
-  - Dart는 기본 자료형을 명시한 경우, 값이 null(없음)이 될 수 없다.
-  - 컴파일러에서 코드를 실행하기 전에 NULL로 인한 에러를 찾아주어 문법 오류를 미리 지적해준다. (**Null Safety**)
-  
+
+  - 단, 타입 앞에 ```?```을 명시할 때는 null로 초기화하여도 에러가 나지 않게 할 수 있다. (**Nullable**)
   ```dart
   int str = null; // 불가능
   ?int str = null; 가능
   ```
-  - 단, 윗줄과 같이 타입 앞에 ?을 명시할 때는 입력으로 NULL을 받아도 에러가 나지 않게 할 수 있다. (**Nullable**)
 
   
 ### NULL 처리에 관한 기능
