@@ -10,11 +10,11 @@
 
 
 ### 2. 환경변수 설정
-  - **'C:\Program Files\Flutter' 경로에 플러터 폴더가 위치해있다고 하면, 하위 폴더 bin 까지의 경로를 복사하여
-    *C:\Program Files\Flutter\bin* 을 시스템 변수 Path에 추가한다.** (공식 홈페이지에서는 'C\Program Files'이 아닌 다른 위치를 권장하고 있음.)
+  - **'C:\dev\flutter' 경로에 플러터 폴더가 위치해있다고 하면, 하위 폴더 bin 까지의 경로를 복사하여
+    *C:\dev\flutter\bin* 을 시스템 변수 Path에 추가한다.**
     - CMD을 이용한 환경변수 설정은 다음과 같이 할 수 있다.
     ```cmd
-    setx path %path%; C:\Program Files\Flutter\bin;
+    setx path %path%; C:\dev\flutter\bin;
     ```
 
 
