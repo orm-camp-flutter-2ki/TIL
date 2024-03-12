@@ -1,6 +1,9 @@
 # Operators
+[공식문서](https://dart.dev/language/operators)  
 
-Dart에만 있는 혹은 특별한 연산자만 정리
+### 다트 연산자의 우선 순위
+
+![연산자우선순위](../assets/Operator_opertor_precedence.png)
 
 <br/>
 
