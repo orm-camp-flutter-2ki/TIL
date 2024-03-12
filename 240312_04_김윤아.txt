@@ -1,0 +1,41 @@
+어제 쓴 TIL이 보이지 않는다..
+매일 작성했는데 왜 다 없지 ? 
+....
+
+
+오늘의 한말씀
+-무리하지 말고 열심히 해라 
+-코드 예쁜 회사 잘 없다. 개인 프로젝트가 젤 예쁨 
+
+TIL Markdown 문법 작성 : 가독성 높이기 
+
+##제목
+> 인용
+₩ 어쩌구 ₩ 
+-목록
+₩₩₩dart 
+adjfaljfe
+
+문법안쓸거면 txt로 저장 
+
+
+late type 변수명;
+쓰지말 것들 : dynamic, var, name!
+map 에서 dynamic 쓰는 건 어쩔 수 없다.
+
+initialize list (초기화 리스트) 
+: 이거 들어가는 거!
+
+다트에서 
+m method
+= constructor
+p property(getter)
+f field 
+
+named constructor 도 있다.
+
+상속 inheritance 는 '확장'의 개념 
+부모 클래스 써먹는 거 
+@override (annotation개념) 
+
+plantuml : class diagram 그리는 것 . 다트에서 기능 추가했다. 한번 해보고 자야지 .. 
