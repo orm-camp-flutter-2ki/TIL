@@ -78,20 +78,19 @@
       }
       ```
 
-#### 생성자 사용 시 주요 문법
-- **타입 뒤에 ```?```을 붙이면 ```Nullable```이 된다.**
-- **데이터 타입이 Null을 허용하지 않으면 required를 붙여야 한다.**
-    ```dart
-    class Object {
-    String name; // Null 허용 X -> required
-    int num; // Null 허용 X -> required
-    Field? field; // Null 허용
-  
-    // Object(this.name, this.num, this.field);
-    Object(required this.name, required this.num, this.field);
-    }
+4. 생성자 사용 시 주요 문법 (수정 중)
+   - **타입 뒤에 ```?```을 붙이면 ```Nullable```이 된다.**
+   - **데이터 타입이 Null을 허용하지 않으면 required를 붙여야 한다.**
+     ```dart
+     class Object {
+     String name; // Null 허용 X -> required
+     int num; // Null 허용 X -> required
+     Field? field; // Null 허용
+    
+     // Object(this.name, this.num, this.field);
+     Object(required this.name, required this.num, this.field);
+     }
     ```
-
     ```dart
     void main() {
     Object object = Object('하준', 5); // 위의 생성자 문법에 따라, 'name', 'num'은 필수로 입력하여야 한다. (required)
@@ -100,7 +99,6 @@
     // Object object = Object(); // 그렇지 않으면 컴파일 에러
     }
     ```
-    
   
 - **생성자에 { }를 사용하면 선택(Optional 혹은 Named) Parameter이다.**
   - **필수 parameter와 선택 parameter를 동시에 사용할 경우, 필수 parameter가 앞에 와야한다.**
@@ -156,5 +154,5 @@
       
   - UML 다이어그램 : 클래스 간 관계를 표시할 때 사용. [(참고)](https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ko.pdf)
   
-  - 오버라이딩 : 자식클래스와 부모클래스와 같은 메소드명을 사용할때, 자식클래스에서 메소드 기능을 덮어 쓰는 것
+  - 오버라이딩 : 자식클래스와 부모클래스와 같은 메소드명을 사용할때, 자식클래스에서 메소드 기능을 덮어 쓰는 것 ```@overide```
     - (예시 코드추가 예정)
