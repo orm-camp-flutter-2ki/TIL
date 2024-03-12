@@ -19,6 +19,7 @@ velog : https://velog.io/@chojja7188/posts
 - [Null-safety](https://github.com/chojja7188/TIL/blob/main/dart/03_null_safety.md)
 - [Parameter](https://github.com/chojja7188/TIL/blob/main/dart/04_parameter.md)
 - [Getter and Setter](https://github.com/chojja7188/TIL/blob/main/dart/05_getter_and_setter.md)
+- [Inheritance](https://github.com/chojja7188/TIL/blob/main/dart/05_inheritance.md)
 
 **etc**
 - [Compile and runtime](https://github.com/chojja7188/TIL/blob/main/etc/00_compile_and_runtime.md)
