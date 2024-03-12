@@ -7,22 +7,22 @@
 
 
 ### Dart 단일 클래스 자료형
-  1. 변수 Data Type: **int(정수), double(실수), String(문자열), bool(논리)**  *~ 기본 자료형*
+  1. 변수 Data Type 지정: **int(정수), double(실수), String(문자열), bool(논리)**  *기본 자료형*
   2. 변수 Data Type을 직접 지정하지 않는 경우 : **var, dynamic**
      - var : Data Type을 추론하여 Type 할당됨. 단, 이후 형변환이 불가능함.
      - dynamic : Data Type을 추론하여 Type 할당됨. 이후에도 형 변환이 가능함.
   3. 상수 Data Type : **const, final**
      - 공통점 : 모두 상수 할당 시 사용하는 type. (상수 : 한 번 선언하면, 값이 바뀌지 않는다.)
      - 차이점 : **final 문법을 통해서 만든 상수는, 초기화하지 않고 만들어지고 나서 상수에 값을 저장할 수 있다.**
-       - const 상수 = 1; (반드시 초기화; 컴파일 시 바로) : 프로그램의 시작 시점에서 상수에 저장할 값을 알 수 있을 때 사용
-       - final 상수; (초기화 없이 먼저 할당한 후, 이후 값 할당 가능) : 프로그램이 시작된 후 계산에서 의해서 상수 값 만들때 사용
+       - const 상수 = 1; (컴파일 시 바로 작동, 사용시 반드시 초기화) : 프로그램의 시작 시점에서 상수에 저장할 값을 알 수 있을 때 사용
+       - final 상수; (런타임 시 작동, 초기화 하지 않고도 할당 가능) : 프로그램이 시작된 후 계산에서 의해서 상수 값 만들때 사용
 
 
-### Dart 복수 클래스 자료형
-  1. List[(참고)](https://dart-tutorial.com/collections/list-in-dart/)
-  2. Set[(참고)](https://dart-tutorial.com/collections/set-in-dart/)
-  3. Map[(참고)](https://dart-tutorial.com/collections/map-in-dart/)
-
+### Dart 복수 클래스 자료형 (컬렉션)
+  1. List : 순서대로 쌓여있는 구조 (중복 허용) [(참고)](https://dart-tutorial.com/collections/list-in-dart/)
+  2. Set : 키와 값의 쌍으로 구성 (키의 중복 불가) [(참고)](https://dart-tutorial.com/collections/set-in-dart/) 
+  3. Map : 순서가 없는 집합(중복 불가) [(참고)](https://dart-tutorial.com/collections/map-in-dart/) 
+     
 
 ### Dart 코딩 컨벤션
   - Dart에서는 **" "**(Double Qoutes)보다 **' '**(Single Quotes)를 사용할 것을 권장 (cf. Java 같은 경우 "" 를 사용)
@@ -46,8 +46,8 @@
 ### 입력 받아오기 (알고리즘 문제 풀이 시 사용)
   ```
   import 'dart:io'
-  String str = stdin.readLineSync()!; // 문자열
-  int integer = int.parse(stdin.readLineSync()!); // 정수
-  double double = double.parse(stdin.readLineSync()!); // 실수
-  List<String> input = stdin.readLineSync()!.split(' '); // 한 줄로 공백으로 구분된 여러 값 불러오기
+  String str = stdin.readLineSync()!; // 입력 type이 문자열일 경우
+  int intNum = int.parse(stdin.readLineSync()!); // 입력 type이 정수일 경우
+  double doubleNum = double.parse(stdin.readLineSync()!); // 입력 type이 실수일 경우
+  List<String> input = stdin.readLineSync()!.split(' '); // 한 줄에서 공백으로 구분된 여러 값 불러오기(문자열)
   ```
