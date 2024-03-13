@@ -6,7 +6,7 @@
 
 # Dart
 [Dart.dev](https://dart.dev/guides) 공식문서를 정리하였습니다.  
-(중요도가 너무 낮은 내용은 생략하였습니다)
+기본적으로 공식문서 + α의 내용을 담고 있지만, 중요도가 너무 낮은 내용은 생략하였습니다
 
 ### Syntax basics
 - [Variables](/Dart/Syntax%20basics/Variables.md)
@@ -16,4 +16,13 @@
 ### Types
 - [Built-in-types](/Dart/Types/Built-in%20types.md)
 - [Records](/Dart/Types/Records.md)
-- [Collection]
+- [Collection](/Dart/Types/Collection.md)
+- [Generics](/Dart/Types/Generics.md)
+- [Typedefs](/Dart/Types/Typedefs.md)
+- [Type system](/Dart/Types/Type%20system.md)
+
+
+
+
+### 편집 필요
+- Typedefs의 `inline function types` -> `Effective Dart`
