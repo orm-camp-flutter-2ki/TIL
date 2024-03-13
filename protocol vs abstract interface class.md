@@ -76,7 +76,7 @@ final class HeaderView: HeaderViewProtocol {
 }
 ```
 - 이 기능은 HeaderView1, HeaderView2, HeaderView3 ... 등 이들이 HedaerViewPorotocol을 모두 채택한다면 
-- 각각 구현 해주는 건 귀찮기에 한번에 프로토콜에서 공통구현해주는 기능이다.
+- 각각 구현 해주는 건 귀찮기에 extension을 활용하여 한번에 프로토콜 extension에서 공통구현해주는 기능이다.
 
 
 **dart (불가능)**
@@ -122,17 +122,19 @@ HeaderViewInterface something(HeaderViewInterface headerView) {
   return HeaderView(Content());
 }
 ```
+- 둘 다 사용가능하다. 
+- 이 부분을 심화하면 생성자에서 인터페이스를 implement하는 타입을 설정하여 다양한 활용이 가능할 것 같다.(mock 객체 활용 등) 
 
 ## 4. 다중상속
-```swift=
+**Swift (가능)**
+```swift
 protocol Aprotocol {}
 protocol Bprotocol {}
 protocol Cprotocol {}
 
 class Star: Aprotocol, Bprotocol, Cprotocol {}
 ```
-
-
+**Dart (가능)**
 ```dart
 abstract interface class Ainterface{ }
 abstract interface class Binterface{ }
