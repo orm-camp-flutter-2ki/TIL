@@ -34,6 +34,7 @@ class A implements a{
 1. 같은 인터페이스를 구현한 클래스들은 공통 메소드를 구현하고 있음을 보장한다.
 2. 어떤 클래스가 인터페이스를 구현하고 있다면, 적어도 그 인터페이스에 정의된 메소드를 가지고 있다는 것이 보증 된다.
 
+![스크린샷 2024-03-13 104357](https://github.com/BAUu/TIL/assets/44741680/8e5d05d3-7b6a-49b0-b3b9-2d800ea720dd)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/86296f50-858e-40b3-b09a-5faedc04c2f9/d1cb6c5c-9007-4d0e-b376-3edfaf2db58f/Untitled.png)
+
 인터페이스는- 구현- Has a 관계- 같은 기능 구현 강제가 목적이다.
