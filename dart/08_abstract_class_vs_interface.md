@@ -32,10 +32,12 @@ class Dog extends Animal {
 ```
 추상 클래스도 일반적인 클래스처럼 extends를 통해 상속하는 것이 일반적입니다.
 올바르게 사용했는지 알아보기 위해 is-a 원칙을 사용할 수 있습니다.
+
 **자식 클래스 is a 부모 클래스**가 어색하지 않아야 합니다.
 
 ### Interface
 인터페이스를 사용하려면 interface 키워드를 사용해야 합니다.
+인터페이스에서는 모든 것이 추상 메소드입니다.
 ```dart
 abstract interface class animal {
   void makeSound(); // 추상 메소드 선언
@@ -57,3 +59,5 @@ class Dog implements Animal {
 ```
 인터페이스의 추상 메소드를 구현하려면 implements를 사용합니다.
 extends는 한 클래스, implements는 여러 인터페이스를 받을 수 있습니다.
+
+**자식 클래스 has a 부모 클래스**가 어색하지 않아야 합니다.
