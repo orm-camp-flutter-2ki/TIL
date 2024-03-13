@@ -94,8 +94,7 @@
 
   - 단, 타입 뒤에 ```?```을 명시할 때는 null로 초기화하여도 에러가 나지 않게 할 수 있다. (**Nullable**)
   ```dart
-  int str = null; // 불가능
-  int? str = null; 가능
+  int? str = null; // 가능
   ```
 
   
