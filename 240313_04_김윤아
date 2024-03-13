@@ -1,0 +1,44 @@
+3/13 
+
+#code review 
+
+test code 로 test 안해도 되는 함수는 return 이 없고 상태가 변하지 않는 함수
+변하는 값이 있어야 test 가능
+
+int i,int j ->한줄쓰기 no!
+변수 하나만 수정했는데 같은 줄 변경으로 뜨면 혼란
+
+삼항연산자 ternary conditional operator
+조건분기에 따른 값 반환은 삼항연산자 사용
+조건분기 처리는 if 문
+
+세훈님 사각형 코드 good 
+
+#TIL
+
+서우님꺼 과제랑 같이 정리 good~ 
+
+#한말씀
+
+class diagram 일본에서 그리지만 한국회사에서 그릴 일 없다.
+
+open work : 일본취업
+paiza : 알고리듬 사이트
+취업은 한국보다 일본이 훨씬 쉽다.
+
+#문법
+
+class 는 상속만 (extends)
+abstract interface class 는 implement만 
+abstract class 는 상속만 (extends) 
+써라 .. (이게 맞는지? )
+
+추상클래스 앞으로 만들 일 없음.
+나중에 설계할 때 만들거나 만들어진 거 가져다 쓰게 된다. (아주 먼 미래)
+
+#면접
+
+데드락 : 교착상태
+다트에선 교착상태 발생하지 않아요
+
+경쟁상태 : race condition 
