@@ -9,3 +9,6 @@
 - [Nullable을 안전하게 다루는 방법](https://github.com/iOS-Woong/TIL/blob/main/Nullable%EC%9D%84%20%EC%95%88%EC%A0%84%ED%95%98%EA%B2%8C%20%EB%8B%A4%EB%A3%A8%EB%8A%94%20%EB%B0%A9%EB%B2%95.md) 24/03/07
 - [final 상수의 값이 없었던 이유 (+ const의 활용)](https://github.com/iOS-Woong/TIL/blob/main/final_%EC%83%81%EC%88%98%EC%9D%98_%EA%B0%92%EC%9D%B4_%EC%97%86%EC%97%88%EB%8D%98%EC%9D%B4%EC%9C%A0.md) 24/03/08
 - [late 키워드를 잘 활용하는 방법](https://github.com/iOS-Woong/TIL/blob/main/late%20%ED%82%A4%EC%9B%8C%EB%93%9C%EB%A5%BC%20%EC%9E%98%20%ED%99%9C%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95.md) 24/03/08
+- [특이한 형태의 3가지 생성자](https://github.com/iOS-Woong/TIL/blob/main/%ED%8A%B9%EC%9D%B4%ED%95%9C%20%ED%98%95%ED%83%9C%EC%9D%98%203%EA%B0%80%EC%A7%80%20%EC%83%9D%EC%84%B1%EC%9E%90.md) 24/03/11
+- [싱글톤패턴](https://github.com/iOS-Woong/TIL/blob/main/%EC%8B%B1%EA%B8%80%ED%86%A4%ED%8C%A8%ED%84%B4.md) 24/03/12
+- [Protocol vs Abstract interface](https://github.com/iOS-Woong/TIL/blob/main/protocol%20vs%20abstract%20interface%20class.md) 24/03/13
