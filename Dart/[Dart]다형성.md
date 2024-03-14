@@ -10,7 +10,7 @@ _예시)_<br> ![](https://velog.velcdn.com/images/hee462/post/2a3a4713-e1ef-427b
 > ###   다형성을 활용하는 방법
 - 선을 상위 개념으로 인스턴스 생성은 하위 개념으로 한다![](https://velog.velcdn.com/images/hee462/post/4a027932-147a-4196-aca4-af75672b9158/image.png)
 - 인터페이스를 변수의 타입으로 사용한다
-- 타입 변경 방법(cast) -> as, is 형으로 타입 변경
+- 타입 변경 방법(cast) ->  as는 형변환, type casting 이라고 하고, is는 type 을 검사!
 _ex) 하지만 as타입 위험하니까 is형으로 확인하고 is형으로 사용할것_
  ![](https://velog.velcdn.com/images/hee462/post/2a90eb41-d787-469e-9cef-69caf163dd75/image.png)
  
