@@ -7,6 +7,7 @@
 <br/>
 
 ## Android Studio  
+`shift` 연속 3번 : 파일 검색  
 `cmd` + `,` : setting 팝업 열기  
 `cmd` + `;` : 프로젝트 구조 팝업 열기  
 `cmd` + `E` : 최근 사용한 탭 목록  
