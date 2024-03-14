@@ -221,4 +221,37 @@
           }
         }
         ```  
-    
+
+#### 다형성(Polymorphism)
+ - 정의 : 객체를 다양한 형태로 볼 수 있는 것 (예: 자동차, 벤츠, 세단, ... 어쨌든 대충보면 자동차다.)
+ - 선언 방법 : ```선언을 상위 개념으로 인스턴스 생성은 하위 개념으로 한다.```
+   - ```Character character = Hero('홍길동', 100);``` // Character는 Hero의 상위개념
+   - 어떤 멤버를 이용할 수 있는 가는 선언부(Character) 타입이 결정한다. (Hero가 아닌 ```Chracter의 메소드만을 사용가능```)
+   - 멤버가 어떻게 움직이는지는 인스턴스 생성부(Hero) 타입이 결정한다. (Hero 생성자로 인스턴스화되어 ```character.메소드``` 로 메소드 사용)
+  
+
+ - 용례
+   - Class를 Interface로 선언
+     a. Interface 정의
+       ```dart
+       abstract interface class Drawable {
+         void draw();
+       }
+       ```
+       
+     b. Interface 구현
+       ```dart
+       class House implements Drawable {
+         void draw() {
+          ...
+        }
+       }
+       }
+       ```
+
+     c. **Class를 Interface로 선언**
+       ```dart
+       Drawable element = House(...);
+       List<Drawable> elements = [];
+       elements.add(Dog(...));
+       ```
