@@ -50,6 +50,7 @@ class Dancer extends Character implements Human
 * 상속`extends` 키워드를 통해 사용
 * 추상 클래스는 `필드와 메소드 모두` 가지고 있음
 * 추상클래스가 가진 메소드 중 정의만 존재하고 구현이 되지 않은 메소드를 추상 메소드라고 부른다.
+*   @override
 ex) void make();{요기에 설명 없음}
 * 자식클래스에서 추상클래스를 상속할 때, 추상 메소드를 반드시 구현해야 한다.
 * 다중상속 X
