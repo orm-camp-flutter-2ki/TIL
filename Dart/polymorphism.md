@@ -5,4 +5,7 @@
 - 강제성을 주는 것임
 - 타입변경 시 'as'만 쓸 수 있음
 - List를 사용해서 묶고, for문으로 반복가능
+
+  ![image](https://github.com/dmm-asmong/TIL/assets/120648380/dae63970-c25b-4ca7-b723-5e658c5320c3)
+
   
