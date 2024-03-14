@@ -24,6 +24,6 @@ Dart는 개발자들의 편의를 위해 아래의 타입에 대해 생성자가
 - Iterable: for-in 반복문과 동기 제네리이터에 사용  
 - Never: 해당 표현식이 절대 성공적으로 끝날 수 없음을 나타냄    
     => 항상 예외를 던지는 함수에 주로 사용  
-- dynamic: static 타입 검사를 diable    
+- dynamic: static 타입 검사를 disable    
     => dynamic 대신 `Object`, `Object?`를 사용할 것  
 - void: 해당 값이 절대 사용되지 않음을 명시  
