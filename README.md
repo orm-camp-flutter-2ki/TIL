@@ -20,7 +20,7 @@ velog : https://velog.io/@chojja7188/posts
 - [Parameter](https://github.com/chojja7188/TIL/blob/main/dart/04_parameter.md)
 - [Getter and Setter](https://github.com/chojja7188/TIL/blob/main/dart/05_getter_and_setter.md)
 - [Inheritance](https://github.com/chojja7188/TIL/blob/main/dart/06_inheritance.md)
-- [var vs dynamic](https://github.com/chojja7188/TIL/blob/main/dart/07_var_vs_dynamic.md)
+- [var, dynamic, object](https://github.com/chojja7188/TIL/blob/main/dart/07_var_dynamic_object.md)
 - [Abstract class vs Interface](https://github.com/chojja7188/TIL/blob/main/dart/08_abstract_class_vs_interface.md)
 
 **etc**
