@@ -10,7 +10,7 @@
 <br/>
 
 ## 다형성 구현 방법
-### 추상화 (abstract - extends)
+### 추상클래스 (abstract class)
 > 서브클래스가 슈퍼클래스의 메서드를 override하거나 확장함으로써 다형성을 구현할 수 있으며, 서브클래스의 인스턴스를 슈퍼클래스의 타입으로 다룰 수 있다.
 ### 인터페이스 (interface - implements)
 > 인터페이스는 클래스가 구현해야 하는 메서드의 집합을 정의하며 인터페이스를 구현한 클래스들은 해당 인터페이스의 타입으로 다룰 수 있다.
@@ -31,12 +31,15 @@ abstract class Animal {
   }
 }
 ```
+
 ### 인터페이스 Drawable class
 ```dart
 abstract interface class Drawable {
   void draw();
 }
 ```
+<br/>
+
 ## 두 클래스를 사용한 Cat, Dog class
 ### 클래스 작성
 ```dart
@@ -58,6 +61,10 @@ class Cat extends Animal implements Drawable {
   void draw() {
     print('나는 $name을 그렸다.');
   }
+
+  void golgolSong() {
+    print('$name은 기분이 좋아 골골송을 한다.')
+  }
 }
 
 // dog
@@ -72,6 +79,10 @@ class Dog extends Animal implements Drawable {
   @override
   void draw() {
     print('나는 $name을 잘 그렸다.');
+  }
+
+  void tugPlay() {
+    print('$name은 신나게 터그놀이를 한다.')
   }
 }
 ```
@@ -156,4 +167,71 @@ void main() {
 레오: 멍멍멍멍
 ```
 <br/>
+
+## 타입 cast 방법
+### as 사용
+- 지양되었던 `as` 사용이 불가피하다. 우리가 만든 class는 `.toString`.. 등을 사용한 cast가 불가능하기 때문이다.  
+<br/>
+
+### 어떤 경우에 사용?
+- 아래와 같이 선언한 경우, Cat과 Dog이 가진 메서드 golgolSong(), tugPlay()를 사용할 수 없다.
+```dart
+  Animal aniCat = Cat(name: '순베냥');
+  Animal aniDog = Dog(name: '멍뭉망');
+
+  // 사용 불가능
+  // aniCat.golgolSong();
+  // aniDog.tugPlay();
+```
+
+- as로 타입을 cast하면 사용 가능하다.
+```dart
+  Cat catCat = aniCat as Cat;
+  Dog dogDog = aniDog as Dog;
+
+  aniCat.golgolSong(); 
+  aniDog.tugPlay();
+  // catCat, dogDog로 메소드를 호출해도 되는데 주소는 하나라...
+```
+
+```dart
+// 콘솔 출력 결과
+순베냥은 기분이 좋아 골골송을 한다.
+멍뭉망은 신나게 터그놀이를 한다.
+```
+
+- 이런건 Animal과 Drawable 타입 간의 관계가 없기 때문에 불가능 하다.
+```dart
+  Animal aniCat = Cat(name: '순베냥');
+  Animal aniDog = Dog(name: '멍뭉망');
+
+  // 불가능
+  // Drawable draCat = aniCat;
+```
+<br/>
+
+### 형변환 시 주의할 점
+- as로 강제 형변환 시 문제가 있을 때, 컴파일 에러는 안뜨지만 돌리면 터진다.  
+```dart
+// 터지는 코드..
+Animal aniDog2 = drawDog as Cat;
+```
+
+- 타입 검사 후 사용하는 if is 검사 문을 통과하면 된다.
+```dart
+  // 스마트 캐스트
+  if (drawDog is Dog) {
+    Animal aniDog2 = drawDog;
+  }
+
+  // IDE 가 위 코드로 변경해줬다. if is로 이미 검증이 되었기 때문에 as가 없어도 괜찮다.
+  // if (drawDog is Dog) {
+  //   Animal aniDog2 = drawDog as Dog;
+  // }
+```
+<br/>
+
+
+
+
 
