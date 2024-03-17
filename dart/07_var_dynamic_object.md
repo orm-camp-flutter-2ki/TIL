@@ -1,5 +1,5 @@
-# var vs dynamic
-Dart에서 모든 타입으로 초기화할 수 있는 var와 dynamic를 각각 어떻게 쓰고
+# var, dynamic, object
+Dart에서 모든 타입으로 초기화할 수 있는 var와 dynamic과 Object(Object?)를 각각 어떻게 쓰고
 무슨 차이가 있는지에 대해서 알아보겠습니다.
 
 ### var
@@ -45,13 +45,34 @@ dynamic a = '1';
 int b = a + 3;
 // 런타임 오류: type 'int' is not a subtype of type 'String' of 'other'
 ```
+심지어는 없는 메소드와 프로퍼티를 사용해도 컴파일이 됩니다.
+```dart
+dynamic a = 1;
+a.fakeMethod(); // 런타임 오류
+print(a.fakeProperty); // 런타임 오류
+```
 따라서 dynamic을 무분별하게 사용하면 오류가 발생할 가능성이 있기 때문에
 Map<String, dynamic>과 같이 특수한 상황을 제외하고는
 사용을 지양해야 합니다.
 
+### Object, Object?
+Dart에서는 모든 것이 객체입니다.
+따라서 모든 클래스가 Object 클래스를 상속하고 있습니다.
+Nullable 클래스는 Object? 클래스를 상속합니다.
+```dart
+Object a = 1;
+a = 'Hi';
+a = 3.14;
+
+Object? b = 1;
+b = null;
+```
+타입에 대한 검사가 있기 때문에 dynamic보다는 Object/Object?를 활용하는게 적절할 수 있겠습니다.
+
 ### 정리
 - var는 처음 할당된 값의 타입을 따라감
 - dynamic은 모든 값이 들어올 수 있음
+- Object는 Non-nullable의 최상위, Object?는 Nullable의 최상위 타입
 - dynamic은 런타임 오류를 발생시킬 수 있으므로 사용에 유의
 
 자료 :
