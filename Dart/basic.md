@@ -290,12 +290,14 @@
   
 - 얕은 복사 : = 연산자로 인스턴스 바로 복사. (기존 참조값을 공유하여 값 복사)
   ```dart
+  // main
   Person person = Person(name: '김나박', age: 30);
   Person person2 = person; // 얕은 복사 shallow copy
   ```
   
 - 깊은 복사 : Dart는 깊은 복사를 기본 메소드로 지원하지 않음. copyWith() 과 같이 직접 작성해서 사용해야함. (새로운 참조값에 값 복사)
   ```dart
+  // 클래스 내 정의
   Person copyWith({
     String? name,
     int? age,
@@ -305,6 +307,9 @@
       age: age ?? this.age,
     );
   }
+  ```
 
+  ```dart
+  // main
   Person person3 = person.copyWith(name: '김나박이');
   ```
