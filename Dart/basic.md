@@ -288,14 +288,14 @@
     - hashCode : 해시값을 얻음
   - ==와 같은 연산자를 @overide 하여 사용하기 위해서는 [**Comparable 인터페이스**](https://api.flutter.dev/flutter/dart-core/Comparable-class.html)를 구현해야 한다.
   
-- 얕은 복사 : = 연산자로 인스턴스 바로 복사. (기존 참조값을 공유하여 값 복사)
+- 얕은 복사(기존 참조값을 공유하여 값 복사) : = 연산자로 인스턴스 바로 복사. 
   ```dart
   // main
   Person person = Person(name: '김나박', age: 30);
   Person person2 = person; // 얕은 복사 shallow copy
   ```
   
-- 깊은 복사 : Dart는 깊은 복사를 기본 메소드로 지원하지 않음. copyWith() 과 같이 직접 작성해서 사용해야함. (새로운 참조값에 값 복사)
+- 깊은 복사(새로운 참조값에 값 복사) : Dart는 깊은 복사를 기본 메소드로 지원하지 않음. copyWith() 과 같이 직접 작성해서 사용해야함.
   ```dart
   // 클래스 내 정의
   Person copyWith({
