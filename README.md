@@ -22,7 +22,8 @@
 - [Type system](/Dart/Types/Type%20system.md)
 
 
-
+# Dev
+기타 개발 관련 학습 내용 정리
 
 ### 편집 필요
 - Typedefs의 `inline function types` -> `Effective Dart`
