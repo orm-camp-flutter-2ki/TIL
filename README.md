@@ -13,6 +13,7 @@
 - [24.03.12 - Inheritance, Named Constructor, initializer-List, PlantUML](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.12.md)
 - [24.03.13 - 추상클래스, 인터페이스](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.13.md)
 - [24.03.14 - 다형성](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.14.md)
+- [24.03.15 - 인스턴스 기본조작, Operator, Object, sort](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.15.md)
 ### 3주차
 ### 4주차
 ### 5주차
