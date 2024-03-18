@@ -1,6 +1,7 @@
 # Polymorphism, 다향성
 
 다향성은 대개 하나의 타입에 여러 가지 타입이 들어갈 수 있다는 것을 말합니다.
+다향성을 이용하면 타입을 하나로 묶어서 코드 중복을 줄일 수 있습니다.
 
 ```dart
 abstract interface class Creature {
@@ -41,6 +42,9 @@ void main() {
   });
   // 출력 : 멍멍
   // 출력 : 야옹
+
+ // animal1.makeSound(); animal2.makeSound().....
+ // 일일히 치는 것보다 코드 중복을 줄일 수 있음
 }
 ```
 위와 같은 예시로 사용할 수 있습니다.
