@@ -15,6 +15,7 @@
 - [24.03.14 - 다형성](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.14.md)
 - [24.03.15 - 인스턴스 기본조작, Operator, Object, sort](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.15.md)
 ### 3주차
+- [24.03.18 - 제네릭, 열거형, String 관련 메서드 정리](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.18.md)
 ### 4주차
 ### 5주차
 ### 6주차
