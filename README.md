@@ -1,4 +1,4 @@
-# TIL
+# TIL with 오름캠프 🤩
 
 Today I Learned 🤓
 by Chojja
@@ -23,6 +23,8 @@ velog : https://velog.io/@chojja7188/posts
 - [var, dynamic, object](https://github.com/chojja7188/TIL/blob/main/dart/07_var_dynamic_object.md)
 - [Abstract class vs Interface](https://github.com/chojja7188/TIL/blob/main/dart/08_abstract_class_vs_interface.md)
 - [Polymorphism](https://github.com/chojja7188/TIL/blob/main/dart/09_polymorphism.md)
+- [Generic](https://github.com/chojja7188/TIL/blob/main/dart/10_generic.md)
+- [enum](https://github.com/chojja7188/TIL/blob/main/dart/11_enum.md)
 
 **etc**
 - [Compile and runtime](https://github.com/chojja7188/TIL/blob/main/etc/00_compile_and_runtime.md)
