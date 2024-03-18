@@ -93,6 +93,7 @@ enum AuthState{
 'Hello' + ' Dart'
 => 'Hello Dart'
 
+***
 ### 수식을 활용한 문자열 결합
 
 String
@@ -100,6 +101,7 @@ String
 '${"word".toUpperCase()}' =>WORD
 'myObject' => the value of myObject.toString()
 
+***
 ### 문자열 처리 (일부 떼어네기)
 
 'HELLO'
@@ -108,6 +110,7 @@ String
 const string = 'HELLO';
 print(string.substring(0 , 2);
 
+***
 ### 문자열 처리 (일부 치환)
 
 'HELLO'
@@ -116,6 +119,7 @@ print(string.substring(0 , 2);
 const sting = 'HELLO';
 print(string.replaceAll('LL', 'XX'));
 
+***
 ### 문자열 처리 (분리)
 
 '1,2,3'
@@ -127,6 +131,7 @@ splited.forEach((e) {
   print(e);
   });
 
+***
 ### 문자열 처리 (대소문자 변경)
 
 ###### 'HELLO'
@@ -138,6 +143,7 @@ print(string.toLowerCase());
 //대문자 변경
 print(string.toUpperCase());
 
+***
 ### 문자열 처리 (검색)
 
 'Dart and Flutter'
@@ -150,6 +156,7 @@ print(string.contains('Flutter')); //true 포함 관계
 print(string.endsWith('Flutter')); //true 끝나는 단어가 맞는지
 print(string.lastIndexOf('t')); // 13 뒤에서 몇번째에 단어가 있는지
 
+***
 ### 문자열 처리 (내용비교)
 
 final s1 = 'Dart';
@@ -158,6 +165,7 @@ final s2 = 'dart';
 print(s1 == s2); // false
 print(s1.toLowerCase() == s2.toLowerCase()); // true
 
+***
 ### 문자열 처리 (길이)
 
 final s1 = 'Dart';
@@ -165,6 +173,7 @@ final s1 = 'Dart';
 print(s1.length); // 4  길이
 print(s1.isEmpthy); // false  길이가 0인
 
+***
 ### 문자열 처리 (변환)
 final s1 = 'Dart and Flutter';
 
@@ -172,3 +181,18 @@ print(s1. toLowerCase()); // 소문자로
 print (s1.toUpperCase()); // 대문자로
 print(s1.trim()); // 좌우 공백 제거
 print(s1. replaceAll('and', 'or')); // 교체체
+
+***
+문자열(String) 관련 생각할 점
+-
+```dart
+void main() {
+String string = 'Dart is fun';
+
+string = 'hello';
+}
+```
+위의 코드를 보면 string 변수의 타입을 String으로 선언 뒤에 string의 입력값을 'hello'로 바꾸었다.
+이때 'Dart is fun'이라는 문장은 사라지는 가?
+답은 '아니다' String 타입은 불변하는 타입이기 때문에 string에 대입하는 값이 달라진 것이지 원래의 문장은 사라지지 않고 메모리에 남아있는다. 하지만 나중에 가비지 컬랙터가 사용하지 않는 메모리를 최적하기 위해 정리한다.
+String 타입이 느린 이유도 이와 같이 기존에 문자열을 추가하는 것이 아닌 new 생성자로 계속 계속 새롭게 만드는 거이기 때문이다.
