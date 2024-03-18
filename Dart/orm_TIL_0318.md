@@ -2,7 +2,8 @@
 
 플러터 과정 11일차
 
-## 제네릭 
+ 제네릭 
+ =
 객체 지향에서 지원하는 것
 List<E> class & Map<K, V> class
 
@@ -12,7 +13,7 @@ List<E> class & Map<K, V> class
 
 타입 안전 (type safe) 효과
 
-#### 제네릭을 사용하지 않는 Pocket 클래스(ver 1)
+### 제네릭을 사용하지 않는 Pocket 클래스(ver 1)
 ```dart
 class Pocket {
 Object? _data;
@@ -29,7 +30,7 @@ return _data;
 }
 ```
 
-#### 제네릭을 사용한 Pocket 클래스 (ver 2)
+### 제네릭을 사용한 Pocket 클래스 (ver 2)
 ```dart
 class Pocket<E> {
 E? _data;
@@ -44,7 +45,7 @@ return _data;
 }
 ```
 
-#### 타입에 제약을 추가한 Pocket 클래스 (ver 3)
+### 타입에 제약을 추가한 Pocket 클래스 (ver 3)
 ```dart
 class Pocket<E extends book> {
 E? _data;
@@ -84,22 +85,22 @@ enum AuthState{
 	authenticated,	unauthenticated, unknown
 }
 ```
-## 문자열 정리
+ 문자열 정리
+=
 
-
-#### 문자열 처리 (결합)
+### 문자열 처리 (결합)
 
 'Hello' + ' Dart'
 => 'Hello Dart'
 
-#### 수식을 활용한 문자열 결합
+### 수식을 활용한 문자열 결합
 
 String
 '${3 +2}' => 5
 '${"word".toUpperCase()}' =>WORD
 'myObject' => the value of myObject.toString()
 
-#### 문자열 처리 (일부 떼어네기)
+### 문자열 처리 (일부 떼어네기)
 
 'HELLO'
 => 'HE'
@@ -107,7 +108,7 @@ String
 const string = 'HELLO';
 print(string.substring(0 , 2);
 
-#### 문자열 처리 (일부 치환)
+### 문자열 처리 (일부 치환)
 
 'HELLO'
 => 'HEXXO'
@@ -115,7 +116,7 @@ print(string.substring(0 , 2);
 const sting = 'HELLO';
 print(string.replaceAll('LL', 'XX'));
 
-#### 문자열 처리 (분리)
+### 문자열 처리 (분리)
 
 '1,2,3'
 => '1', '2', '3'
@@ -126,10 +127,10 @@ splited.forEach((e) {
   print(e);
   });
 
-#### 문자열 처리 (대소문자 변경)
+### 문자열 처리 (대소문자 변경)
 
-'HELLO'
-=> 'hello'
+###### 'HELLO'
+###### => 'hello'
 
 final string = 'HELLO';
 //소문자 변경
@@ -137,7 +138,7 @@ print(string.toLowerCase());
 //대문자 변경
 print(string.toUpperCase());
 
-#### 문자열 처리 (검색)
+### 문자열 처리 (검색)
 
 'Dart and Flutter'
 => D는 1번째 글자
