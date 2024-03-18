@@ -148,3 +148,5 @@ T? get() {
   return _usageCount < limitCount ? null : _data;
 }
 ```
+
+[참고][Dart switch statements](https://dart.dev/language/branches#switch-expressions)
