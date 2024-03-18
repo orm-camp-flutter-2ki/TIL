@@ -70,8 +70,6 @@ sort의 제약이 있다.
 
 comparable은 메소드가 1개
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/86296f50-858e-40b3-b09a-5faedc04c2f9/94bde85c-65dc-48d9-b607-cf656f7ce01c/Untitled.png)
-
 comparble 정의 하는 방법
 
 *static 함수는 다른 메모리를 사용하는 것 comparable 내의 메소드가 아니다.
