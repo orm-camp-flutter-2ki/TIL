@@ -33,7 +33,7 @@
      }
      ```
      - 생성자 : Object(this.name, this.num) ```여기서 this는 현재 클래스 Object을 의미
-     - 메소드 : 클래스 내에서 동작하는 함수 ```[반환타입] [함수명]() {}```
+     - 메소드 : 클래스 내에서 동작하는 함수 ```반환타입 함수명() {}```
      
   
 2. 인스턴스 생성
@@ -133,7 +133,27 @@
 ### Dart 테스트코드 작성
   1. 테스트하고자 하는 파일을 고른다 (lib/파일명.dart)
   2. test 디렉토리 아래 동일 위치에 _test를 붙인 파일을 작성한다. (test/파일명_test.dart)
-  3. 여러가지 테스트 기법 중 given > when > then 기법을 사용한다. (*더 공부 필요*)
+     2-1. 파일명_test.dart 파일에서 아래의 패키지를 import한다.
+     ```dart
+     import 'package:test/test.dart' show equals, expect, test;
+     ```
+  3. 여러가지 테스트 기법 중 given > when > then 기법을 사용한다.
+     ```dart
+     void main() {
+       test('테스트명', () {
+       // given(준비)
+       final wizard = Wizard(name: '마법사', hp : 100);
+       final hero = Hero(name: '히어로', hp: 10);
+       // when(실행)
+       wizard.heal(hero);
+       // then(검증)
+       expect(hero.hp, equals(20));
+     });
+     }
+     ```
+     - given : 테스트할 자료가 주어질 때
+     - when : 테스트할 자료에 메소드가 실행된 때
+     - then : ```expect()``` 함수 사용 expect(a, equals(b)) 함수로 a 결과와 b를 비교 (같으면 테스트 통과, 아니면 실패)
 
 
   
@@ -170,8 +190,8 @@
       ```
     - 메소드 오버라이드 : 자식클래스와 부모클래스와 같은 메소드명을 사용할때, 자식클래스에서 메소드 기능을 덮어 쓰는 것 ```@overide``` 으로 주석처리
   
-  - UML 다이어그램 : 클래스 간 관계를 표시할 때 사용. [(참고)](https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ko.pdf)
-    - 
+    - UML 다이어그램 : 클래스 간 관계를 표시할 때 사용. [(참고)](https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ko.pdf)
+  
 
 #### 3. 추상화
   - 추상 클래스(abstract calss)
@@ -192,7 +212,8 @@
       ```
   
   - 인터페이스(interface)
-    - 개념 : **추상 클래스 중, 추상메소드만 가지고 있는 것을 인터페이스**로 특별히 취급한다. (interface 키워드는 Dart3에 추가되었음.)
+    - 개념 : **추상 클래스 중, 추상메소드만 가지고 있는 것을 인터페이스**로 특별히 취급한다.
+      (interface 키워드는 Dart3에 추가되었음.)
 
     - **필요조건**
       1. **모든 메소드는 추상 메소드여야 한다**
@@ -222,7 +243,7 @@
         }
         ```  
 
-#### 다형성(Polymorphism)
+#### 4. 다형성(Polymorphism)
  - 정의 : 객체를 다양한 형태로 볼 수 있는 것 (예: 자동차, 벤츠, 세단, ... 어쨌든 대충보면 자동차다.)
  - 선언 방법 : ```선언을 상위 개념으로 인스턴스 생성은 하위 개념으로 한다.```
    - ```Character character = Hero('홍길동', 100);``` // Character는 Hero의 상위개념
@@ -232,6 +253,7 @@
 
  - 용례
    - Class를 Interface로 선언
+     
      a. Interface 정의
        ```dart
        abstract interface class Drawable {
@@ -255,3 +277,39 @@
        List<Drawable> elements = [];
        elements.add(Dog(...));
        ```
+
+#### 인스턴스의 기본 조작
+- Object Class
+  - 모든 클래스는 Object 클래스의 메서드와 프로퍼티를 가지고 있다
+  - Object 타입 변수에는 모든 인스턴스를 대입할 수 있다
+  - Object 클래스의 대표 메서드 및 프로퍼티 **(오버라이드하여 원하는 결과를 얻도록 수정할 수 있음)**
+    - toString() : 문자열 표현을 얻음
+    - operator == : 비교 
+    - hashCode : 해시값을 얻음
+  - ==와 같은 연산자를 @overide 하여 사용하기 위해서는 [**Comparable 인터페이스**](https://api.flutter.dev/flutter/dart-core/Comparable-class.html)를 구현해야 한다.
+  
+- 얕은 복사(기존 참조값을 공유하여 값 복사) : = 연산자로 인스턴스 바로 복사. 
+  ```dart
+  // main
+  Person person = Person(name: '김나박', age: 30);
+  Person person2 = person; // 얕은 복사 shallow copy
+  ```
+  
+- 깊은 복사(새로운 참조값에 값 복사) : Dart는 깊은 복사를 기본 메소드로 지원하지 않음. copyWith() 과 같이 직접 작성해서 사용해야함.
+  ```dart
+  // 클래스 내 정의
+  Person copyWith({
+    String? name,
+    int? age,
+  }) {
+    return Person(
+      name: name ?? this.name,
+      age: age ?? this.age,
+    );
+  }
+  ```
+
+  ```dart
+  // main
+  Person person3 = person.copyWith(name: '김나박이');
+  ```
