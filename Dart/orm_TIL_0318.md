@@ -150,7 +150,7 @@ print(string.contains('Flutter')); //true 포함 관계
 print(string.endsWith('Flutter')); //true 끝나는 단어가 맞는지
 print(string.lastIndexOf('t')); // 13 뒤에서 몇번째에 단어가 있는지
 
-#### 문자열 처리 (내용비교)
+### 문자열 처리 (내용비교)
 
 final s1 = 'Dart';
 final s2 = 'dart';
@@ -158,14 +158,14 @@ final s2 = 'dart';
 print(s1 == s2); // false
 print(s1.toLowerCase() == s2.toLowerCase()); // true
 
-#### 문자열 처리 (길이)
+### 문자열 처리 (길이)
 
 final s1 = 'Dart';
 
 print(s1.length); // 4  길이
 print(s1.isEmpthy); // false  길이가 0인
 
-#### 문자열 처리 (변환)
+### 문자열 처리 (변환)
 final s1 = 'Dart and Flutter';
 
 print(s1. toLowerCase()); // 소문자로
