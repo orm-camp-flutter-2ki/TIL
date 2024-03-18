@@ -1,6 +1,6 @@
 # 제네릭(generic)과 이넘(enum)
 ## 제네릭(generic)
-[param]()
+[매개변수 네이밍](https://dart.dev/effective-dart/design#do-follow-existing-mnemonic-conventions-when-naming-type-parameters)  
 - 무엇을 담고 싶은데 타입을 확정하기 어려울 때 타입을 나중에 원하는 형태로 정의할 수 있으며, 타입-안전(type-safe) 효과가 있다.
 ```dart
 class WhatIsInTheBox<T> {
