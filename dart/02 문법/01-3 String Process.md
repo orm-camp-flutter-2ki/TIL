@@ -1,5 +1,5 @@
-# 문자열 처리
-## 문자열 String
+# 문자열 String
+[스트링 클래스 공식문서](https://api.dart.dev/stable/3.0.2/dart-core/String-class.html)
 - 문자열(String)은 불변(immutable)한 데이터 타입으로, 한번 생성된 문자열은 수정할 수 없다.
 문자열에 어떤 변경이 가해지면 새로운 문자열이 생성되고, 그 값을 새로운 메모리에 할당하는 것이다.
 즉, 원래의 문자열은 변경되지 않고 그대로 유지되고, 가비지 컬렉터가 청소한다.  
@@ -8,7 +8,9 @@
 > 원래 음식은 먹거나 버리는 등 다른 곳으로 보내고(?) 새 음식을 넣을 수 있다. 그렇지만 원래 음식은 없어지는게 아니라 내 뱃속이나 쓰레기 통 속에 있는 것...
 > 이렇게 이해했는데 맞는지는 모르겠다...  
 <br/>
-## .stopwatch
+
+# 문자열 처리   
+## ⏰ .stopwatch
 - 코드의 성능을 측정할 수 있다.  
 ```dart
 final stopwatch = Stopwatch()..start();
@@ -41,7 +43,7 @@ print(stopwatch.elapsed);
 ```
 <br/>
 
-## ..(cascade)
+## 💬 ..(cascade)
 - void 리턴인 함수 앞에 사용하면 해당 객체의 레퍼런스를 반환하여 메서드 체인을 사용할 수 있다.
 ```dart
   final buffer = StringBuffer('Cat');
