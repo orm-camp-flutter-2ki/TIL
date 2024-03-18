@@ -314,15 +314,29 @@
   Person person3 = person.copyWith(name: '김나박이');
   ```
 
+  
+---
+
+
 #### 제네릭, 열거형
  - 제네릭 : ```< >``` 괄호 안에 특정 데이터 타입 지정 
    용례 : 타입을 나중에 원하는 형태로 정의할 수 있음(클래스가 다루는 데이터 타입이 많은 경우에 개발을 용이하게 함), 타입 안전 효과
    ```dart
-   List <E> class
-   Map <K,V> class
+   class List <E>
+   class HashSet<E> {}
+   class Map<K,V> {}
+
+   abstract class ExpressionVisitor<R> {
+    R visitBinary(BinaryExpression node);
+    R visitLiteral(LiteralExpression node);
+    R visitUnary(UnaryExpression node);
+    }
    ```
+   E : 컬렉션의 **요소** 유형
+   K, V : 연관 컬렉션의 **키 및 값** 유형
+   R : **함수 또는 클래스의 메서드의 반환** 유형
    
- - 열거형 : 정해둔 값만 넣어둘 수 있는 타입 (예 : 인증상태), switch문과의 조합으로 모든 케이스를 강제로 작성해야 함
+ - 열거형 : **정해둔 값만 넣어둘 수 있는 타입** (예 : 인증상태), **switch문과의 조합으로 모든 케이스를 강제로 작성해야 함**
    ```dart
    enum AuthState {
      authenticated,
@@ -330,6 +344,8 @@
      unknown,
    }
    ```
+   
+---
 
 #### 문자열 조작
 - ${수식}을 활용한 문자열 결합
@@ -409,7 +425,7 @@
   ```
 
 - StringBuffer을 이용한 문자열 결합 : ```+``` 연산자를 이용할 때 보다 매우 빠르다.
-  - ```+``` 연산자가 느린 이유 : String 인스턴스는 불변 객체로, 결합하려는 문자에 대해 계속 메모리 생성
+  - ```+``` 연산자가 느린 이유 : String 인스턴스는 불변 객체로, 결합하려는 문자마다 각각 메모리 생성해야하는 문제가 있다. 
   ```dart
   final buffer = StringBuffer('Dart');
 
