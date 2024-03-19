@@ -1,4 +1,5 @@
 # test code
+- [유닛 테스트 작성방법](https://yozm.wishket.com/magazine/detail/2483/)  
 - 코드가 의도대로 작동하는지 확인하기 위한 것이다.
 <br/>
 
