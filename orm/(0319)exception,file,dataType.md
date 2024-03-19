@@ -16,11 +16,14 @@
 <img width="400" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/7e6e13f7-5467-4bce-ba8d-34c487bb3da7"> <p>
 * try-catch문의 finally 블록으로 나중에 꼭 해야하는 처리를 할 수 있다.
 * throw문을 사용하면 임의로 예외를 발생시킬 수 있다.
-  * implemeter에 다양한 exception과 error의 종류가 있기 때문에 에러 타입을 나타내는 implemeter 사용하는 것 권장.
 
 ```dart
 // throw 예시
 throw FormatException('Expected at least 1 section');
+
+throw 'Out of llamas!';
+
+void distanceTo(Point other) => throw UnimplementedError();
 ```
 
 <br></br>
@@ -55,8 +58,8 @@ String str = '홍길동, 철수, 신사임당';
 * 프로퍼티 형식
   * Properites 클래스를 이용하여 키(key)와 값(value)의 쌍으로 읽고 쓰기가 가능
 ```dart
-hereName=홍길동
-hereHp=100
+hereName = 홍길동
+hereHp = 100
 ```
 
 * XML 형식
