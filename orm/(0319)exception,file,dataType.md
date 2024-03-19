@@ -85,32 +85,45 @@ hereHp = 100
 * 클래스 -> Json
 * toJson() 메서드
 
+```dart
+// toJson() : 객체를 Json 형태로 표현하는 메서드, encode
+Map<String, dynamic> toJson() => {
+  'name' : name,
+  'age' : age,
+};
+```
+
 ### 역직렬화
+* 직렬화된 데이터를 다시 객체의 형태로 변환한다.
 * Json -> 클래스
 * fromJson() 생성자
+
 ```dart
 // fromJson() : json (실제로는 Map) 으로부터 객체를 생성하는 생성자
 Employee.fromJson(Map<String, dynamic> json)
   : name = json['name'],
     age = json['age'];
-
-// toJson() : 객체를 Json 형태로 표현하는 메서드
-Map<String, dynamic> toJson() => {
-    'name' : name,
-    'age' : age,
-  };
 ```
 
-### String 형태의 Json을 Map으로 변환
-* jsonDecode() 함수 사용
-```dart
-String jsonString = '{"name": "John Smith", "email": "john@example.com"}';
-Map<String, dynamic> json = jsonDecode(jsonString);
-```
+### Endcode(인코딩)
+* 데이터를 다른 형식으로 변환하는 것
 
 ### Map을 Json 형태의 String으로 변환
 * jsonEncode() 함수 사용
+
 ```dart
 Map<String, dynamic> json = {"name": "John Smith", "email": "john@example.com"};
 String jsonString = jsonEncode(json);
+```
+
+### Decode(디코딩)
+* 인코딩된 데이터를 원래 형식으로 변환하는 것
+
+### String 형태의 Json을 Map으로 변환
+* jsonDecode() 함수 사용
+
+```dart
+String jsonString = '{"name":"총무부","leader":{"name":"홍길동","age":41}}';
+Map<String, dynamic> json = jsonDecode(jsonString);
+// json = {name: 총무부, leader: {name: 홍길동, age: 41}}
 ```
