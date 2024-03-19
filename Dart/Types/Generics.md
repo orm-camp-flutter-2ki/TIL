@@ -63,3 +63,46 @@ class Foo<T extends SomeBaseClass> {
 var foo = Foo();
 print(foo); // Instance of 'Foo<SomeBaseClass>'
 ```
+
+<br>
+
+## Variance
+
+Dart는 기본적으로 제네릭 클래스에 대해 공변적(Covariant)이다.  
+타입 파라미터의 상/하위 타입 관계까 제네릭 인스턴스 타입에도 유지된다.   
+```dart
+void main() {
+  List<Object> list = <int>[]; // 에러가 나지 않는다.
+}
+```
+
+<br>
+
+### 선언 지점 변성
+Dart에서도 vm option을 설정하여 선언 지점 변성을 사용할 수 있다.  
+- vm option : --enable-experiment=variance
+- `in`: 반공변성
+- `out`: 공변성
+
+```dart
+class Writer<in T> {
+  void write(T value) => print(value);
+}
+
+class Reader<out T> {
+  final T value;
+  Reader(this.value);
+  T read() => value;
+}
+
+main() {
+  Writer<int> intWriter = Writer<Object>();
+  // Writer<Object> intWriter = Writer<int>(); Error
+  intWriter.write(2);
+
+  Reader<Object> objectReader = Reader<String>("Wow, this is soundly variant!");
+  print(objectReader.value);
+}
+```
+
+=> 다른 언어에서와 같이 공변성과 반공변성을 지정할 수 있고, 컴파일러가 잘못된 캐스팅에 대해 에러를 표시해준다.
