@@ -97,6 +97,8 @@ print(buffer.toString()); // 출력 결과 : Dart and Flutter
 ## 4. 기타
 ### Switch statements의 Switch expressions
 * switch 문을 아래처럼 작성도 가능하다.
+* `식` 처럼 사용해서 값이 리턴되는 형태
+
 ```dart
 var x = switch (y) { ... };
 
@@ -150,3 +152,5 @@ T? get() {
 ```
 
 [참고][Dart switch statements](https://dart.dev/language/branches#switch-expressions)
+
+### Test 할 때는 모든 경우를 테스트 하는 것이 좋다.
