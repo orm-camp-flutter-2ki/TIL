@@ -313,3 +313,127 @@
   // main
   Person person3 = person.copyWith(name: '김나박이');
   ```
+
+  
+---
+
+
+#### 제네릭, 열거형
+ - 제네릭 : ```< >``` 괄호 안에 특정 데이터 타입 지정 
+   용례 : 타입을 나중에 원하는 형태로 정의할 수 있음(클래스가 다루는 데이터 타입이 많은 경우에 개발을 용이하게 함), 타입 안전 효과
+   ```dart
+   class List <E>
+   class HashSet<E> {}
+   class Map<K,V> {}
+
+   abstract class ExpressionVisitor<R> {
+    R visitBinary(BinaryExpression node);
+    R visitLiteral(LiteralExpression node);
+    R visitUnary(UnaryExpression node);
+    }
+   ```
+   E : 컬렉션의 **요소** 유형
+   K, V : 연관 컬렉션의 **키 및 값** 유형
+   R : **함수 또는 클래스의 메서드의 반환** 유형
+   
+ - 열거형 : **정해둔 값만 넣어둘 수 있는 타입** (예 : 인증상태), **switch문과의 조합으로 모든 케이스를 강제로 작성해야 함**
+   ```dart
+   enum AuthState {
+     authenticated,
+     unauthenticated,
+     unknown,
+   }
+   ```
+   
+---
+
+#### 문자열 조작
+- ${수식}을 활용한 문자열 결합
+  ```dart
+  '${3+2}' // 5
+  '${"word".toUpperCase()}' // 'WORD'
+  '$myObject // The Value of myObject.toString()
+  ```
+
+- 문자열 일부 떼어내기(Substring)
+  ```dart
+  const string = 'HELLO';
+  print(string.substring(0, 2)); // 'HE'
+  ```
+
+- 문자열 일부 치환
+  ```dart
+  const string = 'HELLO';
+  print(string.replaceALL('LL', 'R'));; // 'HERO'
+  ```
+
+- 문자열 분리
+  ```dart
+  final string = '1,2,3';
+  final splited = string.split(',');
+
+  splited.forEach((e) {
+    print(e);
+  });
+  ```
+
+- 대소문자 변경
+  ```dart
+  final string = 'HELLO';
+  print(string.toLowerCase()); // 'hello'
+  ```
+
+- 검색
+  ```dart
+  final string = 'HELLO';
+  print(string.indexOf('E')); // 2
+  ```
+
+- 내용 비교
+  ```dart
+  final s1 = 'Dart';
+  final s2 = 'dart';
+  print(s1 == s2); // false
+  print(s1.toLowerCase() == s2.toLowerCAse()); // true
+  ```
+
+- 길이
+  ```dart
+  final s1 = 'Dart';
+
+  print(s1.length); // 4
+  print(s1.isEmpty); // false (길이가 0이 아니면 false, 길이가 0이면 true)
+  ```
+
+- 검색
+  ```dart
+  final s1 = 'Dart and Flutter';
+  print(s1.contains('Flutter')); // true
+  print(s1.endsWith('Flutter')); // true
+  print(s1.indexOf('Dart')); // 0
+  print(s1.lastIndexOf('t')); // 13 (뒤에서 몇번째에 단어가 있는지)
+  ```
+
+- 변환
+  ```
+  final s1 = 'Dart and Flutter';
+
+  print(s1.toLowerCase()); // 소문자로
+  print(s1.toUpperrCase()); // 대문자로
+  print(s1.trim()); // 좌우 공백 제거
+  print(s1.replaceAll('and', 'or)); // 교체
+  ```
+
+- StringBuffer을 이용한 문자열 결합 : ```+``` 연산자를 이용할 때 보다 매우 빠르다.
+  - ```+``` 연산자가 느린 이유 : String 인스턴스는 불변 객체로, 결합하려는 문자마다 각각 메모리 생성해야하는 문제가 있다. 
+  ```dart
+  final buffer = StringBuffer('Dart');
+
+  buffer
+    ..write(' and ')
+    ..write('Flutter');
+
+  print(buffer.toString());
+  ```
+  - ```write()```메서드로 결합한 결과를 내부 메모리(버퍼)에 담아두고 toString()으로 결과를 얻음. 
+  - ```..```(cascade) 연산자 : void 리턴인 함수의 앞에 사용하면 해당 객체의 레퍼런스를 반환하여 메서드 체인을 사용할 수 있음.
