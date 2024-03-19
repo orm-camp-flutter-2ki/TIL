@@ -43,6 +43,7 @@ myFile.writeAsStringSync('Hello, world!');
 ```dart
 final text = myFile.readAsStringSync();
 print(text);
+// 출력 결과: Hello, world!
 ```
 
 <br></br>
