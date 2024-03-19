@@ -49,7 +49,7 @@ print(text);
 <br></br>
 
 ## 3. 여러가지 데이터 형식(Data type)
-### 데이터 형식
+### 3.1. 데이터 형식
 * CSV
   * 데이터를 콤마(,)로 나눈 형식
 ```dart
@@ -77,7 +77,7 @@ hereHp = 100
   * Dart의 Map<String, dynamic>과 똑같이 생겼음
 <img width="585" alt="스크린샷 2024-03-19 오후 7 20 38" src="https://github.com/NalaJang/TIL/assets/73895803/5363f2cf-7471-42f3-af51-20fe96470dbf">
 
-### Dart의 직렬화(Serialization)
+### 3.2. Dart의 직렬화(Serialization)
 ### 직렬화
 * 데이터 구조나 객체 상태를 저장하고, 나중에 재구성할 수 있는 포맷으로 변환하는 과정
 * 객체를 파일의 형태 등으로 저장하거나, 통신하기 쉬운 포맷으로 변환하는 과정
@@ -108,7 +108,7 @@ Employee.fromJson(Map<String, dynamic> json)
 ### Endcode(인코딩)
 * 데이터를 다른 형식으로 변환하는 것
 
-### Map을 Json 형태의 String으로 변환
+#### [Map을 Json 형태의 String으로 변환]
 * jsonEncode() 함수 사용
 
 ```dart
@@ -119,7 +119,7 @@ String jsonString = jsonEncode(json);
 ### Decode(디코딩)
 * 인코딩된 데이터를 원래 형식으로 변환하는 것
 
-### String 형태의 Json을 Map으로 변환
+#### [String 형태의 Json을 Map으로 변환]
 * jsonDecode() 함수 사용
 
 ```dart
