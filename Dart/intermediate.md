@@ -318,7 +318,56 @@
   
 --- 
 
-### <여러가지 데이터 형식>
+### <데이터 형식>
+1. CSV(comma-separated values) : 몇 가지 필드를 쉼표(,)로 구분한 텍스트 데이터 및 텍스트 파일
+2. XML(eXtensible Markup Language) : XML(확장 가능한 마크업 언어)은 HTML과 유사하지만, 미리 정의된 태그가 없는 마크업 언어인 것이 특징. 대신 필요에 맞게 특별히 설계된 태그를 직접 정의하는 방식으로 사용됨.
+3. JSON(JavaScript Object Notation) : Javascript 객체 문법으로 구조화된 데이터를 표현하기 위한 문자 기반의 표준 포맷입니다. 웹 어플리케이션에서 데이터를 전송할 때 일반적으로 사용(서버-클라이언트 간 데이터를 전송하여 표현)
 
+- 직렬화
+  - 데이터 구조나 객체 상태를 저장하고 나중에 재구성할 수 있는 포맷으로 변환하는 과정
+  - 객체를 파일의 형태로 저장하거나, 통신하기 쉬운 포맷으로 변환하는 과정
+  - 클래스 내부의 필드에 다른 클래스가 있다면 모두 직렬화 처리를 해줘야함
+- 역직렬화
+  - 파일의 형태(JSON, XML)로부터 객체를 읽어들이는 과정
+
+- Dart의 직렬화
+  - 직렬화 : 클래스 -> Json (**toJson() 메서드 이용**)
+  - 역직렬화 : Json -> Class (**fromJson() 생성자 이용**)
+  ```dart
+  class User {
+    final String name;
+    final String email;
+  
+    User(this.name, this.email);
+  
+    // 역직렬화
+    User.fromJson(Map<String, dynamic> json)
+        : name = json['name'],
+          email = json['email'];
+  
+    // 직렬화
+    Map<String, dynamic> toJson() => {
+      'name': name,
+      'email': email,
+    };
+  }
+  ```
+
+
+- String 형태 Json을 Map으로 변환 시 ```jsonDecode()``` 함수 사용
+  ```dart
+  import 'dart:convert';
+  
+  String jsonString = '{"name": "John Smith", "email": "john@example.com"}';
+  Map<String, dynamic> json = jsonDecode(jsonString);
+  ```
+
+- Map을 Json 형태의 String으로 변환 시 ```jsonEncode()``` 함수 사용
+  ```dart
+  import 'dart:convert';
+  
+  Map<String, dynamic> json = {"name": "John Smith", "email": "john@example.com"};
+  String jsonString = jsonEncode(json); 
+  ```
 
 --- 
