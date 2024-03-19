@@ -1,147 +1,159 @@
 # [Dart 기본]
 
-## 객체 지향 프로그래밍, OOP
+## [객체 지향 프로그래밍, OOP]  
 
-0. 기본 개념
-   - **a. 오브젝트(객체)** : 현실 세계의 모든 객체 : **상태(속성)과 동작으로 구성**
-   - **b. 클래스** : 객체를 가상세계 용으로 구체화한 것 : **필드와 메소드**
-     - 클래스를 정의하면, 그 클래스 타입의 변수를 선언할 수 있다.(String type도 클래스(레퍼런스 타입)이다.)
-   - **c. 인스턴스** : 클래스가 컴퓨터 내의 Heap 메모리에 할당된 상태 : **인스턴스는 ```생성자```를 통해 생성됨**
-   
+<객체 관련 개념>
+  - **a. 오브젝트(객체)** : 현실 세계의 모든 객체 : **상태(속성)과 동작으로 구성**
+  - **b. 클래스** : 객체를 가상세계 용으로 구체화한 것 : **필드와 메소드**
+    - 클래스를 정의하면, 그 클래스 타입의 변수를 선언할 수 있다.(String type도 클래스(레퍼런스 타입)이다.)
+  - **c. 인스턴스** : 클래스가 컴퓨터 내의 Heap 메모리에 할당된 상태 : **인스턴스는 ```생성자```를 통해 생성됨**
+    
 
-2. 클래스 생성
-   - a. 클래스명은 대문자로 시작하고, 클래스가 가지는 필드명을 정의한다.
+
+**1. 클래스 생성**
+   - a. 클래스명은 대문자로 시작해야 하고, 클래스가 가지는 필드/메소드를 정의할 수 있다.
      ```dart
      // 클래스
-     class Object {
-     // 필드(멤버변수)
-     String name;
-     int num;
+     class Student {
+     
+        // 필드(멤버변수)
+        String name;
+        int age;
+     
+        // 메소드
+        void study() {
+        print('공부합니다.');
+        }
      }
      ```
-
-   - b. 생성자/메소드를 함께 정의한다.
-     ```dart
-     // 클래스
-     class Object {
-     // 필드
-     String name;
-     int num;
-     // 생성자
-     Object(this.name, this.num);
-     // 메소드
-     void study() {
-     print('공부합니다.');
-     }
-     }
-     ```
-     - 생성자 : Object(this.name, this.num) ```여기서 this는 현재 클래스 Object을 의미
+     - 필드(멤버변수) : 클래스의 특징이나 상태를 표현 (클래스의 인스턴스마다 고유한 값을 가질 수 있음) ```타입 변수명```
      - 메소드 : 클래스 내에서 동작하는 함수 ```반환타입 함수명() {}```
+
+   - b. 생성자를 함께 정의한다.
+     ```dart
+     // 클래스
+     class Student {
+        // 필드
+        String name;
+        int age;
+        // 메소드
+        void study() {
+        print('공부합니다.');
+        }
+     
+        // 생성자
+        Student(this.name, this.age);
+     }
+     ```
+     - 생성자 : Student(this.name, this.age) 여기서 ```this```는 현재 클래스(Student)을 의미
      
   
-3. 인스턴스 생성
-   - 클래스명 Object가 선언되어있을 때, 인스턴스는 다음과 같이 생성한다. ```클래스명 인스턴스명 = 클래스명(생성자)```
+**2. 인스턴스 생성**
+   - 클래스가 선언되어있을 때, 인스턴스는 다음과 같이 생성한다. ```클래스명 인스턴스명 = 클래스명(생성자)```
      ```dart
      // Object object = new Object() // Dart에서는 우항의 생성자 생성을 위한 new 문법이 불필요하다.
-     Object object = Object() // 즉, new를 생략하고 인스턴스를 생성한다. 
+     Student student = Student() // 즉, new를 생략하고 인스턴스를 생성한다. 
      ```     
+   
    - 인스턴스가 가진 필드/메소드 값은 ```인스턴스명.필드명``` 으로 접근할 수 있다.
      ```dart
-     print(object.name);
-     print(object.num);
+     print(student.name);
+     print(student.age);
      object.study();
      ```
      
    - 1-b에 대한 프로그램 실행(결과)
      ```dart
      void main() {
-     Object object = Object('나', 1); // 생성자가 Object(this.name, this.num) 이므로 필드 Type에 맞게 입력(String, int)
+     Student student = Student('나', 30); // 생성자가 Object(this.name, this.num) 이므로 필드 Type에 맞게 입력(String, int)
       // 생성자에 따라 생성된 인스턴스의 필드값 확인
-     print(object.name); // 출력 결과 : 나 
-     print(object.num); // 출력 결과 :  1
-     object.study(); // 출력 결과 : 공부합니다.
+     print(student.name); // 출력 결과 : 나 
+     print(student.age); // 출력 결과 : 30
+     student.study(); // 출력 결과 : 공부합니다.
 
      // 필드 type이 const/final가 아니면, 인스턴스의 필드값 재변경 가능
-     object.name = '김하준';
-     object.num = 5;
-     print(object.name); // 출력 결과 : 김하준
-     print(object.num); // 출력 결과 : 5
+     student.name = '하준';
+     student.age = 28;
+     print(student.name); // 출력 결과 : 하준
+     print(student.age); // 출력 결과 : 28
      }
      ```
 
-4. ```static``` 문법 : Class 내에서 정적(static) 필드를 정의할 때 사용
+3. ```static``` 문법 : Class 내에서 정적(static) 필드를 정의할 때 사용
    
    a. 정적 필드/메소드 정의
      - sNum 필드와 func() 메소드 의 type 앞에 static을 추가하였다.
        ```dart
-       class Object {
-       static int sNum = 0; // 정적 필드
-       String name;
-       int num;
-      
-       // 정적 메소드
-       static void func() {
-         print('안녕하세요');
-       }
-      
-       // 생성자
-       Object(this.name, this.num);
-       }
+       class Student {
+         static int sNum = 5; // 정적 필드
+         String name;
+         int age;
+        
+         // 정적 메소드
+         static void greet() {
+           print('안녕하세요');
+         }
+        
+         // 생성자
+         Student(this.name, this.age);
+         }
        ```
 
    b. 정적 필드/메소드 호출
    - ```static``` 으로 정의된 필드/메소드는 인스턴스를 생성하지 않고 다음과 같이 접근 가능 ```클래스명.필드명();```
      ```dart
       // 기본적으로 (static이 아닌) 필드/메소드 는 인스턴스 생성 후에 접근 가능
-      // Object object = Object();
-      // print(object.num); // 필드 값 출력
+      // Student student = Student();
+      // print(student.age); // 필드 값 출력
       ```
 
       ```dart
       // static인 필드/메소드 는 클래스명으로 바로 접근 가능
       void main() {
-      print(Object.sNum); // 필드 값 출력 : 0
-      Object.func(); // 메소드 사용 : 안녕하세요
+      print(Student.sNum); // 필드 값 출력 : 5
+      Student.greet(); // 메소드 사용 : 안녕하세요
       }
       ```
 
-5. 생성자 사용 시 주요 문법 : Named Parameter
-   - **생성자에 { }를 사용하면 선택(Optional 혹은 Named) Parameter이다.**
-   - **데이터 타입이 Null을 허용하지 않으면 required를 붙여야 한다.**
-   - **타입 뒤에 ```?```을 붙이면 ```Nullable```(Null을 허용)이 된다.**
-   - **필수 parameter와 선택 parameter를 동시에 사용할 경우, 필수 parameter가 앞에 와야한다.**
+4. **생성자 사용 시 주요 문법 : Named Parameter**
+   - 생성자() 안에 ```{ }```를 사용하면 선택(Optional 혹은 Named) Parameter이다.
+   - 데이터 타입이 Null을 허용하지 않으면 ```required```를 붙여야 한다.
+   - 타입 뒤에 ```?```을 붙이면 Nullable(Null을 허용)이 된다.
+   - 필수 parameter와 선택 parameter를 동시에 사용할 경우, 필수 parameter가 앞에 와야한다.
      ```dart
      class Object {
      String name; // Null 허용 X -> required
-     int num; // Null 허용 X -> required
+     int age; // Null 허용 X -> required
      String? field; // Null 허용
     
-     // Object(this.name, this.num, this.field); // 생성자 기본 문법
-     // 생성자에 Named Paramter 적용
-     Object({required this.name, required this.num, this.field}); // (required가 붙은) name, num이 field보다 앞에 와야 한다.
+     // Student(this.name, this.age, this.field); // 기본 생성자
+     
+     // Named Paramter을 받는 생성자
+     Student({required this.name, required this.age, this.field}); // (required가 붙은) name, age이 field보다 앞에 와야 한다.
      }
      ```
      
    - 생성자가 Named Parameter인 경우, 인스턴스 생성시 ```named : value``` 형식으로 생성자를 불러와야 한다.
      ```dart
      void main() {
-     Object object = Object(name:'하준', num:5); // 'name', 'num'은 필수로 입력하여야 한다. (required)
-     Object object = Object(name:'하준'); // 그렇지 않으면 컴파일 에러
-     Object object = Object(num:5); // 그렇지 않으면 컴파일 에러
-     Object object = Object(); // 그렇지 않으면 컴파일 에러
+     // Student student = Sbject('하준', 28); // 생성자 값을 Named parameter로 받지 않아 에러
+     Student student = Student(name:'하준', age:28); // 'name', 'age'은 필수로 입력하여야 한다. (required)
+     // Student student = Student(name:'하준'); // 에러
+     // Student student = Student(age:28); // 에러
+     // Student student = Student(); // 에러
      }
      ```
 
 ---
-
-### 객체지향 4가지 특성
+  
+### <객체지향 4가지 특성>
 1. 캡슐화
 2. 상속(계승)
 3. 추상화
 4. 다형성
 
   
-#### 1. 캡슐화 
+#### 1. 캡슐화
   - 캡슐화의 개요
     - 캡슐화를 하여 멤버나 클래스로서의 접근을 제어하기 위함
     - 필드에 현실세계에서 불가능한 값이 들어가지 않도록 제어
@@ -151,7 +163,7 @@
   - 함수, 변수와 동일한 방식으로 클래스에 대한 접근 지정도 할 수 있음.
 
   
-#### 2. 상속(계승) : 기능의 확장
+#### 2. 상속(계승)
   - 상속 관계에 따른 클래스 명칭
     - SuperClass : 상위 클래스
     - SubClass : 하위 클래스
@@ -159,13 +171,12 @@
   - ```SubClas is a SuperClass``` 처럼 ```하위클래스 is a 상위클래스``` 관계가 되어야 한다.
     - 해석 : 하위클래스는 상위클래스의 일종이다. ```예 : 체어맨(하위클래스)은 자동차(상위클래스)의 일종이다.```
   
-  - 상속 문법
+  - 상속 문법 (추가 예정..)
     - 클래스 상속 관계 표시 : SuperClass가 존재할 때, 상속받아 작성하는 SubClass는 다음과 같이 정의한다. ```class SubClass extends SuperClass```
       ```dart
       class SuperClass {...} 
       class SubClass extends SuperClass {} 
       ```
-      
     - 메소드 오버라이드 : 자식클래스와 부모클래스와 같은 메소드명을 사용할때, 자식클래스에서 메소드 기능을 덮어 쓰는 것 ```@overide``` 으로 주석처리
   
     - UML 다이어그램 : 클래스 간 관계를 표시할 때 사용. [(참고)](https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ko.pdf)
@@ -190,7 +201,8 @@
       ```
   
   - 인터페이스(interface)
-    - 개념 : **추상 클래스 중, 추상메소드만 가지고 있는 것을 인터페이스**로 특별히 취급한다. *(interface 키워드는 Dart3에 추가되었음.)*
+    - 개념 : **추상 클래스 중, 추상메소드만 가지고 있는 것을 인터페이스**로 특별히 취급한다.
+      (interface 키워드는 Dart3에 추가되었음.)
 
     - **필요조건**
       1. **모든 메소드는 추상 메소드여야 한다**
@@ -255,4 +267,4 @@
        elements.add(Dog(...));
        ```
 
----
+--- 
