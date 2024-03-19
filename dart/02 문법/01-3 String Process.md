@@ -117,6 +117,13 @@ String text = '$name의 나이는 ${age + 1}살 입니다.';
   // split.forEach((element) {print(element);});
   print(numList); // '1,2,3'
 ```
+```dart
+  final String numList = '담소';
+  final split = numList.split(''); // 한글자씩 분리된다
+
+  // 이렇게도 사용 가능
+  print('담소'.split(''));
+```
 <br/>
 
 ## 🔎 검색
