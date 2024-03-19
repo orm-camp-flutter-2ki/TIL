@@ -26,6 +26,11 @@ abstract interface class a {
 // 이렇게 인터페이스 클래스를 만들고
 class A implements a{
   ...
+
+  @override
+  void b(){
+    ...//기능 구현이 가능
+}
 }
 // 이렇게 클래스에 불러와서 사용할 수 있다.
 ```
