@@ -20,8 +20,9 @@ class Pocket<E> {
 > 상수들이 집합을 이루는 자료형이다. 리팩토링 시 변경 범위가 최소화 된다. 내용을 추가해도 Enum 코드만 수정하면 된다. 휴먼 에러 최소화.
 
 ```dart
-//기본형
+//간단한 열거형 선언
 //type과 count는 다릇곳에서 작성해야한다.
+//switch문과 쓰이는 경우가 많다.
 enum KeyType {
   padlock,
   button,
@@ -29,7 +30,7 @@ enum KeyType {
   finger,
 }
 
-//아래와 같이 사용할 수 도 있다.
+//향상된 열거형 선언
 enum KeyType {
   padlock(type: 'padlock', count: 1024),
   button(type: 'button', count: 10000),
@@ -42,4 +43,9 @@ enum KeyType {
   const KeyType({required this.type, required this.count});
 }
 ```
-- switch문과 쓰이는 경우가 많다.
+향상된 열거형 선언을 쓰기위해서는 몇가지 규칙이 있다
+- 변수는 모두 final로 선언되어야 한다.
+- 생성자는 무조건 const여야 한다.
+- index, hashCode, == 연산자들을 override할 수 없다.
+- 인스턴스는 시작부에 선언되어야 하며, 인스턴스가 하나 이상 있어야 한다.
+ 
