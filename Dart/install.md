@@ -1,4 +1,4 @@
-## [Dart & Flutter 작업환경 설정] (*Windows 기준으로 작성)
+# [Dart & Flutter 작업환경 설정] (*Windows 기준으로 작성)
 
 
 ### 1. Dart & Flutter 설치
