@@ -16,7 +16,8 @@
 - [24.03.15 - 인스턴스 기본조작, Operator, Object, sort](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.15.md)
 ### 3주차
 - [24.03.18 - 제네릭, 열거형, String 관련 메서드 정리](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.18.md)
-- [24.03.19 - 예외, 파일조작, 정규식표현, 데이터 다루기(디코딩,인코딩)](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.18.md)
+- [24.03.19 - 예외, 파일조작, 정규식표현, 데이터 다루기(디코딩,인코딩)](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.19.md)
+- [24.03.20 - ](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.20.md)
 ### 4주차
 ### 5주차
 ### 6주차
