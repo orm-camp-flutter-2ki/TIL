@@ -80,6 +80,9 @@ list.sort((a,b)=> a.value.compareTo(b.value));
 - 사용 시 경우에 따라 ()로 감싸서 우선순위를 매겨줘야 한다.
   
 ### .sorted vs ..sort
+- sorted는 링크에서 설치 후 사용 가능하다.
+https://pub.dev/packages/collection/install
+
 - sorted는 복사본을 가공한후 List타입으로 리턴한다.
 - sort는 void를 리턴한다. 따라서 체인메서드가 불가능 이기에 ..cascade를 사용한다.
 - sort는 void이기 때문에 변수에 등록 안된다.
