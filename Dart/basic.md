@@ -1,163 +1,151 @@
-# [Dart 기초]
+# [Dart 기본]
 
-## 객체 지향 프로그래밍, OOP
-- 오브젝트(객체) : 현실 세계의 모든 객체 : **상태(속성)과 동작으로 구성**
-- 클래스 : 객체를 가상세계 용으로 구체화한 것 : **필드와 메소드**
-  - 클래스를 정의하면, 그 클래스 타입의 변수를 선언할 수 있다.(String type도 클래스(레퍼런스 타입)이다.)
-- 인스턴스 : 클래스가 컴퓨터 내의 Heap 메모리에 할당된 상태 : **인스턴스는 ```생성자```를 통해 생성됨**
+## [객체 지향 프로그래밍, OOP]  
 
-1. 클래스 및 생성자 정의
-   - a. 클래스명은 대문자로 시작하고, 클래스가 가지는 필드명을 정의한다.
+**0. 객체 관련 기본용어**
+  - **a. 객체(Object)** : 현실 세계의 모든 것 : **상태(속성)과 동작으로 구성**
+  - **b. 클래스(Class)** : 객체를 가상세계 용으로 구체화한 것 : **필드와 메소드로 구성**
+    - 클래스를 정의하면, 그 클래스 타입의 변수를 선언할 수 있다.(String type도 클래스(레퍼런스 타입)이다.)    
+  - **c. 인스턴스(Instance)** : 클래스가 컴퓨터 내의 Heap 메모리에 할당된 상태 : **인스턴스는 ```생성자```를 통해 생성됨**  
+  
+    
+**1. 클래스 생성**
+   - a. 클래스명은 대문자로 시작해야 하고, 클래스가 가지는 필드/메소드를 정의할 수 있다.
      ```dart
      // 클래스
-     class Object {
-     // 필드(멤버변수)
-     String name;
-     int num;
+     class Student {
+     
+        // 필드(멤버변수)
+        String name;
+        int age;
+     
+        // 메소드
+        void study() {
+        print('공부합니다.');
+        }
      }
      ```
-
-   - b. 생성자/메소드를 함께 정의한다.
-     ```dart
-     // 클래스
-     class Object {
-     // 필드
-     String name;
-     int num;
-     // 생성자
-     Object(this.name, this.num);
-     // 메소드
-     void study() {
-     print('공부합니다.');
-     }
-     }
-     ```
-     - 생성자 : Object(this.name, this.num) ```여기서 this는 현재 클래스 Object을 의미
+     - 필드(멤버변수) : 클래스의 특징이나 상태를 표현 (클래스의 인스턴스마다 고유한 값을 가질 수 있음) ```타입 변수명```
      - 메소드 : 클래스 내에서 동작하는 함수 ```반환타입 함수명() {}```
+
+   - b. 생성자를 함께 정의한다.
+     ```dart
+     // 클래스
+     class Student {
+        // 필드
+        String name;
+        int age;
+        // 메소드
+        void study() {
+        print('공부합니다.');
+        }
+     
+        // 생성자
+        Student(this.name, this.age);
+     }
+     ```
+     - 생성자 : Student(this.name, this.age) 여기서 ```this```는 현재 클래스(Student)을 의미
      
   
-2. 인스턴스 생성
-   - 클래스명 Object가 선언되어있을 때, 인스턴스는 다음과 같이 생성한다. ```클래스명 인스턴스명 = 클래스명(생성자)```
+**2. 인스턴스 생성**
+   - 클래스가 선언되어있을 때, 인스턴스는 다음과 같이 생성한다. ```클래스명 인스턴스명 = 클래스명(생성자)```
      ```dart
      // Object object = new Object() // Dart에서는 우항의 생성자 생성을 위한 new 문법이 불필요하다.
-     Object object = Object() // 즉, new를 생략하고 인스턴스를 생성한다. 
+     Student student = Student() // 즉, new를 생략하고 인스턴스를 생성한다. 
      ```     
+   
    - 인스턴스가 가진 필드/메소드 값은 ```인스턴스명.필드명``` 으로 접근할 수 있다.
      ```dart
-     print(object.name);
-     print(object.num);
+     print(student.name);
+     print(student.age);
      object.study();
      ```
      
    - 1-b에 대한 프로그램 실행(결과)
      ```dart
      void main() {
-     Object object = Object('나', 1); // 생성자가 Object(this.name, this.num) 이므로 필드 Type에 맞게 입력(String, int)
+     Student student = Student('나', 30); // 생성자가 Object(this.name, this.num) 이므로 필드 Type에 맞게 입력(String, int)
       // 생성자에 따라 생성된 인스턴스의 필드값 확인
-     print(object.name); // 출력 결과 : 나 
-     print(object.num); // 출력 결과 :  1
-     object.study(); // 출력 결과 : 공부합니다.
+     print(student.name); // 출력 결과 : 나 
+     print(student.age); // 출력 결과 : 30
+     student.study(); // 출력 결과 : 공부합니다.
 
      // 필드 type이 const/final가 아니면, 인스턴스의 필드값 재변경 가능
-     object.name = '김하준';
-     object.num = 5;
-     print(object.name); // 출력 결과 : 김하준
-     print(object.num); // 출력 결과 : 5
+     student.name = '하준';
+     student.age = 28;
+     print(student.name); // 출력 결과 : 하준
+     print(student.age); // 출력 결과 : 28
      }
      ```
 
-3. ```static``` 문법 : Class 내에서 정적(static) 필드를 정의할 때 사용
-   
+**3. ```static``` 문법** : Class 내에서 정적(static) 필드를 정의할 때 사용
+
    a. 정적 필드/메소드 정의
-     - sNum 필드와 func() 메소드 의 type 앞에 static을 추가하였다.
+   - sNum 필드와 func() 메소드 의 type 앞에 static을 추가하였다.
        ```dart
-       class Object {
-       static int sNum = 0; // 정적 필드
-       String name;
-       int num;
-      
-       // 정적 메소드
-       static void func() {
-         print('안녕하세요');
-       }
-      
-       // 생성자
-       Object(this.name, this.num);
-       }
+       class Student {
+         static int sNum = 5; // 정적 필드
+         String name;
+         int age;
+        
+         // 정적 메소드
+         static void greet() {
+           print('안녕하세요');
+         }
+        
+         // 생성자
+         Student(this.name, this.age);
+         }
        ```
 
    b. 정적 필드/메소드 호출
    - ```static``` 으로 정의된 필드/메소드는 인스턴스를 생성하지 않고 다음과 같이 접근 가능 ```클래스명.필드명();```
      ```dart
       // 기본적으로 (static이 아닌) 필드/메소드 는 인스턴스 생성 후에 접근 가능
-      // Object object = Object();
-      // print(object.num); // 필드 값 출력
+      // Student student = Student();
+      // print(student.age); // 필드 값 출력
       ```
 
       ```dart
       // static인 필드/메소드 는 클래스명으로 바로 접근 가능
       void main() {
-      print(Object.sNum); // 필드 값 출력 : 0
-      Object.func(); // 메소드 사용 : 안녕하세요
+      print(Student.sNum); // 필드 값 출력 : 5
+      Student.greet(); // 메소드 사용 : 안녕하세요
       }
       ```
 
-5. 생성자 사용 시 주요 문법 : Named Parameter
-   - **생성자에 { }를 사용하면 선택(Optional 혹은 Named) Parameter이다.**
-   - **데이터 타입이 Null을 허용하지 않으면 required를 붙여야 한다.**
-   - **타입 뒤에 ```?```을 붙이면 ```Nullable```(Null을 허용)이 된다.**
-   - **필수 parameter와 선택 parameter를 동시에 사용할 경우, 필수 parameter가 앞에 와야한다.**
+4. **생성자 사용 시 주요 문법 : Named Parameter**
+   - 생성자() 안에 ```{ }```를 사용하면 선택(Optional 혹은 Named) Parameter이다.
+   - 데이터 타입이 Null을 허용하지 않으면 ```required```를 붙여야 한다.
+   - 타입 뒤에 ```?```을 붙이면 Nullable(Null을 허용)이 된다.
+   - 필수 parameter와 선택 parameter를 동시에 사용할 경우, 필수 parameter가 앞에 와야한다.
      ```dart
      class Object {
      String name; // Null 허용 X -> required
-     int num; // Null 허용 X -> required
+     int age; // Null 허용 X -> required
      String? field; // Null 허용
     
-     // Object(this.name, this.num, this.field); // 생성자 기본 문법
-     // 생성자에 Named Paramter 적용
-     Object({required this.name, required this.num, this.field}); // (required가 붙은) name, num이 field보다 앞에 와야 한다.
+     // Student(this.name, this.age, this.field); // 기본 생성자
+     
+     // Named Paramter을 받는 생성자
+     Student({required this.name, required this.age, this.field}); // (required가 붙은) name, age이 field보다 앞에 와야 한다.
      }
      ```
      
    - 생성자가 Named Parameter인 경우, 인스턴스 생성시 ```named : value``` 형식으로 생성자를 불러와야 한다.
      ```dart
      void main() {
-     Object object = Object(name:'하준', num:5); // 'name', 'num'은 필수로 입력하여야 한다. (required)
-     Object object = Object(name:'하준'); // 그렇지 않으면 컴파일 에러
-     Object object = Object(num:5); // 그렇지 않으면 컴파일 에러
-     Object object = Object(); // 그렇지 않으면 컴파일 에러
+     // Student student = Sbject('하준', 28); // 생성자 값을 Named parameter로 받지 않아 에러
+     Student student = Student(name:'하준', age:28); // 'name', 'age'은 필수로 입력하여야 한다. (required)
+     // Student student = Student(name:'하준'); // 에러
+     // Student student = Student(age:28); // 에러
+     // Student student = Student(); // 에러
      }
      ```
 
+---
   
-### Dart 테스트코드 작성
-  1. 테스트하고자 하는 파일을 고른다 (lib/파일명.dart)
-  2. test 디렉토리 아래 동일 위치에 _test를 붙인 파일을 작성한다. (test/파일명_test.dart)
-     2-1. 파일명_test.dart 파일에서 아래의 패키지를 import한다.
-     ```dart
-     import 'package:test/test.dart' show equals, expect, test;
-     ```
-  3. 여러가지 테스트 기법 중 given > when > then 기법을 사용한다.
-     ```dart
-     void main() {
-       test('테스트명', () {
-       // given(준비)
-       final wizard = Wizard(name: '마법사', hp : 100);
-       final hero = Hero(name: '히어로', hp: 10);
-       // when(실행)
-       wizard.heal(hero);
-       // then(검증)
-       expect(hero.hp, equals(20));
-     });
-     }
-     ```
-     - given : 테스트할 자료가 주어질 때
-     - when : 테스트할 자료에 메소드가 실행된 때
-     - then : ```expect()``` 함수 사용 expect(a, equals(b)) 함수로 a 결과와 b를 비교 (같으면 테스트 통과, 아니면 실패)
-
-
-  
-### 객체지향 4가지 특성
+### <객체지향 4가지 특성>
 1. 캡슐화
 2. 상속(계승)
 3. 추상화
@@ -278,162 +266,4 @@
        elements.add(Dog(...));
        ```
 
-#### 인스턴스의 기본 조작
-- Object Class
-  - 모든 클래스는 Object 클래스의 메서드와 프로퍼티를 가지고 있다
-  - Object 타입 변수에는 모든 인스턴스를 대입할 수 있다
-  - Object 클래스의 대표 메서드 및 프로퍼티 **(오버라이드하여 원하는 결과를 얻도록 수정할 수 있음)**
-    - toString() : 문자열 표현을 얻음
-    - operator == : 비교 
-    - hashCode : 해시값을 얻음
-  - ==와 같은 연산자를 @overide 하여 사용하기 위해서는 [**Comparable 인터페이스**](https://api.flutter.dev/flutter/dart-core/Comparable-class.html)를 구현해야 한다.
-  
-- 얕은 복사(기존 참조값을 공유하여 값 복사) : = 연산자로 인스턴스 바로 복사. 
-  ```dart
-  // main
-  Person person = Person(name: '김나박', age: 30);
-  Person person2 = person; // 얕은 복사 shallow copy
-  ```
-  
-- 깊은 복사(새로운 참조값에 값 복사) : Dart는 깊은 복사를 기본 메소드로 지원하지 않음. copyWith() 과 같이 직접 작성해서 사용해야함.
-  ```dart
-  // 클래스 내 정의
-  Person copyWith({
-    String? name,
-    int? age,
-  }) {
-    return Person(
-      name: name ?? this.name,
-      age: age ?? this.age,
-    );
-  }
-  ```
-
-  ```dart
-  // main
-  Person person3 = person.copyWith(name: '김나박이');
-  ```
-
-  
----
-
-
-#### 제네릭, 열거형
- - 제네릭 : ```< >``` 괄호 안에 특정 데이터 타입 지정 
-   용례 : 타입을 나중에 원하는 형태로 정의할 수 있음(클래스가 다루는 데이터 타입이 많은 경우에 개발을 용이하게 함), 타입 안전 효과
-   ```dart
-   class List <E>
-   class HashSet<E> {}
-   class Map<K,V> {}
-
-   abstract class ExpressionVisitor<R> {
-    R visitBinary(BinaryExpression node);
-    R visitLiteral(LiteralExpression node);
-    R visitUnary(UnaryExpression node);
-    }
-   ```
-   E : 컬렉션의 **요소** 유형
-   K, V : 연관 컬렉션의 **키 및 값** 유형
-   R : **함수 또는 클래스의 메서드의 반환** 유형
-   
- - 열거형 : **정해둔 값만 넣어둘 수 있는 타입** (예 : 인증상태), **switch문과의 조합으로 모든 케이스를 강제로 작성해야 함**
-   ```dart
-   enum AuthState {
-     authenticated,
-     unauthenticated,
-     unknown,
-   }
-   ```
-   
----
-
-#### 문자열 조작
-- ${수식}을 활용한 문자열 결합
-  ```dart
-  '${3+2}' // 5
-  '${"word".toUpperCase()}' // 'WORD'
-  '$myObject // The Value of myObject.toString()
-  ```
-
-- 문자열 일부 떼어내기(Substring)
-  ```dart
-  const string = 'HELLO';
-  print(string.substring(0, 2)); // 'HE'
-  ```
-
-- 문자열 일부 치환
-  ```dart
-  const string = 'HELLO';
-  print(string.replaceALL('LL', 'R'));; // 'HERO'
-  ```
-
-- 문자열 분리
-  ```dart
-  final string = '1,2,3';
-  final splited = string.split(',');
-
-  splited.forEach((e) {
-    print(e);
-  });
-  ```
-
-- 대소문자 변경
-  ```dart
-  final string = 'HELLO';
-  print(string.toLowerCase()); // 'hello'
-  ```
-
-- 검색
-  ```dart
-  final string = 'HELLO';
-  print(string.indexOf('E')); // 2
-  ```
-
-- 내용 비교
-  ```dart
-  final s1 = 'Dart';
-  final s2 = 'dart';
-  print(s1 == s2); // false
-  print(s1.toLowerCase() == s2.toLowerCAse()); // true
-  ```
-
-- 길이
-  ```dart
-  final s1 = 'Dart';
-
-  print(s1.length); // 4
-  print(s1.isEmpty); // false (길이가 0이 아니면 false, 길이가 0이면 true)
-  ```
-
-- 검색
-  ```dart
-  final s1 = 'Dart and Flutter';
-  print(s1.contains('Flutter')); // true
-  print(s1.endsWith('Flutter')); // true
-  print(s1.indexOf('Dart')); // 0
-  print(s1.lastIndexOf('t')); // 13 (뒤에서 몇번째에 단어가 있는지)
-  ```
-
-- 변환
-  ```
-  final s1 = 'Dart and Flutter';
-
-  print(s1.toLowerCase()); // 소문자로
-  print(s1.toUpperrCase()); // 대문자로
-  print(s1.trim()); // 좌우 공백 제거
-  print(s1.replaceAll('and', 'or)); // 교체
-  ```
-
-- StringBuffer을 이용한 문자열 결합 : ```+``` 연산자를 이용할 때 보다 매우 빠르다.
-  - ```+``` 연산자가 느린 이유 : String 인스턴스는 불변 객체로, 결합하려는 문자마다 각각 메모리 생성해야하는 문제가 있다. 
-  ```dart
-  final buffer = StringBuffer('Dart');
-
-  buffer
-    ..write(' and ')
-    ..write('Flutter');
-
-  print(buffer.toString());
-  ```
-  - ```write()```메서드로 결합한 결과를 내부 메모리(버퍼)에 담아두고 toString()으로 결과를 얻음. 
-  - ```..```(cascade) 연산자 : void 리턴인 함수의 앞에 사용하면 해당 객체의 레퍼런스를 반환하여 메서드 체인을 사용할 수 있음.
+--- 
