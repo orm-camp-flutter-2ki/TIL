@@ -27,6 +27,7 @@ velog : https://velog.io/@chojja7188/posts
 - [enum](https://github.com/chojja7188/TIL/blob/main/dart/11_enum.md)
 - [Serialization](https://github.com/chojja7188/TIL/blob/main/dart/12_serialization.md)
 - [Highr-order function](https://github.com/chojja7188/TIL/blob/main/dart/13_highr_order_function.md)
+- [Async](https://github.com/chojja7188/TIL/blob/main/dart/14_async.md)
 
 **etc**
 - [Compile and runtime](https://github.com/chojja7188/TIL/blob/main/etc/00_compile_and_runtime.md)
