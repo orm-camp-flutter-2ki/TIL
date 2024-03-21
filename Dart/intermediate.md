@@ -479,7 +479,7 @@
       final numbers = <double>[10, 2, 5, 0.5];
       const initialValue = 100.0;
       final result = numbers.fold<double>(initialValue, (previousValue, element) => previousValue + element);
-      print(result);
+      print(result) // 117.5;
       ```
 
     - [any](https://api.flutter.dev/flutter/dart-core/Iterable/any.html) : 하나 이상의 요소가 조건을 만족하면 true를 반환
