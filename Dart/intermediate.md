@@ -479,7 +479,7 @@
       final numbers = <double>[10, 2, 5, 0.5];
       const initialValue = 100.0;
       final result = numbers.fold<double>(initialValue, (previousValue, element) => previousValue + element);
-      print(result) // 117.5;
+      print(result);
       ```
 
     - [any](https://api.flutter.dev/flutter/dart-core/Iterable/any.html) : 하나 이상의 요소가 조건을 만족하면 true를 반환
@@ -510,4 +510,102 @@
     - 기존 컬렉션이 변경되지 않는 한, 동일한 요소를 동일한 순서로 반환해야 한다.
     - 컬렉션 수정 시 새 반복자가 다른 요소를 생성할 수 있고, 기존 요소의 순서가 바뀔 수 있다.
 
+---
+
+### 비동기 프로그래밍
+<img src="https://github.com/algochemy/TIL/assets/152131529/318d9a4f-e311-4aad-8db1-2695d3b1fa71" height="400px" width="600px">  
+  
+- 동기(Synchronous)
+  - 개념 : 모든 작업은 이전 작업의 실행이 완료될 때까지 기다려야 한다. (하나의 작업이 종료될 때 까지 기다린 후 다음 작업)
+  - 특징 : 코드가 순서대로 실행된다.
+  - 동기 함수는 동기 작업만을 수행
+    
+- [비동기(Asynchronous)](https://dart.dev/codelabs/async-await)
+  - 개념 : 임의의 순서로 또는 동시에 작업이 실행된다. (두 개 이상의 작업이 동시에 수행)
+  - 비동기 처리 방법 : 콜백 함수, Future(비동기 작업 결과 제공), *Stream(비동기 작업 결과가 다수인 경우)*, async - await 방식(비동기 결과와 상호작용)
+  - 비동기 함수는 적어도 한 개 이상의 비동기 작업을 수행하며 동기작업도 수행이 가능
+  - **장점 : 다른 작업이 완료되기를 기다리는 동안 작업을 완료할 수 있다.**
+  - **자주 사용되는 비동기 작업**
+    - 네트워크를 통해 데이터를 가져올 때
+    - 데이터베이스에 쓰기를 수행할 때
+    - 파일로부터 데이터를 읽을 때
+  
+- Future 클래스
+  - 개념 : 미래에 완료되는 객체, 미래에 받아올 값을 의미
+    ```dart
+    Futrue<String> name;
+    Futrue<int> number;
+    Futrue<Person> person;
+    ```
+    ```dart
+    Future<T> 
+    ```
+    Future는 제네릭으로 이해될 수 있다.
+
+  - 지연 문법 : ```Future.delayed(Duration(seconds: A), B)``` : A초 후에 B 작업이 이루어지도록 한다.
+ 
+  - [async, await](https://dart.dev/codelabs/async-await#execution-flow-with-async-and-await)
+    - async
+      - 함수 본문 앞에 키워드를 사용하여 비동기식으로 표시
+      - Future 클래스는 {} 앞에 ```async``` 키워드를 지정해 줘야 한다.
+    - await
+      - 비동기 표현식의 완성된 결과를 얻을 수 있다.
+      - 대기하고 싶은 비동기 함수를 실행할 때 **```await```키워드를 사용해주면 코드를 작성한 순서대로 실행된다.**
+      - await 키워드는 async 키워드가 있는 함수에서만 사용할 수 있다.
+      - **await 키워드 뒤에는 반드시 Future 타입이 와야 한다.**
+        
+    ```dart
+    Future<void> main() async {
+      print(1);
+
+      int value = await Future<int>.delayed(
+         Duration(seconds: 2), 
+         () => 2 
+      );
+      print(value);
+    
+      print(3);
+    }
+    ```
+    ```dart
+    1
+    2 // 1 출력되고 -> (2초 대기 후) -> 2가 출력
+    3
+    ```
+  
+- [future](https://dart.dev/codelabs/async-await#what-is-a-future)
+  - 개념 : Future 클래스의 인스턴스
+  - 특징 : 비동기 작업의 결과를 나타내며, 완료(completed)/미완료(uncompleted) 중 한 가지 상태를 가진다. 미완료는 future가 값을 생성하기 전의 상태를 의미한다.
+    - 미완료 : 비동기 함수를 호출하면, 미완료된 future를 반환한다. 해당 future는 함수의 비동기 작업이 끝나거나 에러 발생을 기다린다
+    - 완료 : 비동기 작업이 성공적으로 끝나면, future는 값으로 완료되고 그렇지 않으면 에러로 완료된다.
+      - 값으로 완료 : Future<T> 타입의 future는 T값으로 완료된다. **제너릭**
+        - Future<String> 타입의 future는 문자열 값을 생성한다.
+        - Future<int> 타입의 future는 정수 값을 생성한다. 
+        - **Future<void>** 타입의 future는 사용가능 한 값을 생성하지 않는 경우 사용 (예: **main 함수 호출 시 사용**)
+      - 에러로 완료 : 어떤 이유로 함수가 수행하는 비동기 작업이 실패하면, future는 에러로 완료된다.
+
+
+- [callback](https://dart.dev/codelabs/async-await#what-is-a-future) : future가 완료되면 콜백을 실행하여 결과를 처리할 수 있다. 이 Future<T>클래스는 콜백을 예약하기 위한 세 가지 메서드를 제공
+  - then() : 값과 함께 성공적으로 완료되면 메서드에 콜백을 추가하여 결과를 얻음 (예외처리의 try 개념과 유사)
+  - catchError() : 오류로 인해 future가 실패하는 경우 오류를 처리 (예외처리의 catch 개념과 유사)
+  - whenComplete() : future의 성공 여부에 관계없이 항상 실행 (예외처리의 finally 개념과 유사)
+
+  - 콜백 처리 예시
+    ```dart
+      void main() {
+          print(1);
+          var future = Future<int>.delayed(Duration(seconds: 1), () => 2);
+          future.then((value) => print(value)); // future가 완료되어 then 메서드를 통해 콜백을 추가하여 결과를 얻음
+          print(3);
+      }
+    ```
+  
+    ```dart
+    final server = connectToServer();
+    server
+      .post(myUrl, fields: const {'name': 'Dash', 'profession': 'mascot'})
+      .then(handleResponse)
+      .catchError(handleError)
+      .whenComplete(server.close);
+    ```
 ---
