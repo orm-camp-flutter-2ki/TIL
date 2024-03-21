@@ -1,4 +1,4 @@
-# Highr-order function, 고계 함수
+# Higher-order function, 고계 함수
 
 고계 함수는 함수형 프로그래밍의 개념에서 활용되며 함수를 파라미터로 받는 함수입니다.
 대표적인 함수 몇 가지를 알아보겠습니다.
