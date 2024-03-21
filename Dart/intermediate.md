@@ -370,3 +370,144 @@
   ```
 
 --- 
+
+### <디버깅>
+- 개념 : 소프트웨어의 오류를 식별하고 수정하는 과정
+- 중요성 : 소프트웨어가 올바르게 작동하는지 확인하는데 필수적 (하지 않으면 오류 발생하거나, 제대로 작동하지 않음)
+- 디버깅 기술
+  - 로깅(Logging) : 코드가 실행되는 동안 발생하는 이벤트를 기록
+    - Flutter에서는 ```debugPrint()``` 등을 활
+  - 중단점(Breakpoint) : 코드의 특정 지점에서 실행을 중지하는데 사용
+    ![image](https://github.com/algochemy/TIL/assets/152131529/c8ef73cd-58c8-4e00-96da-a9b5352bfded)
+  - 디버거(Debugger) : 디버깅을 도와주는 도구. 디버거 모드로 실행하여 브레이크 포인트에서 멈추거나 에러가 나면 다양한 도구를 활용하여 에러를 찾는데 도움이 된다
+    ![image](https://github.com/algochemy/TIL/assets/152131529/a9d729c5-316d-4364-a505-32b057e868fb)
+  - 스택 추적 : 호출 스택을 추적하여 코드가 실행 중인 위치를 확인하는데 사용
+  ![image](https://github.com/algochemy/TIL/assets/152131529/81e8d9c5-7e9c-47e6-b9d4-c8431ad5c8a0)
+
+- 디버깅 팁 (중요)
+  - 작게 시작 :  한 번에 한 가지 문제에 집중하기 (큰 문제로 넘어가기 전에 작은 문제부터 시작)
+  - 단순하게 유지 : 디버깅 시 코드를 단순하게 유지하기 (오류의 원인을 파악하기 더 쉬움)
+  - 인내심 유지 : 디버깅은 시간이 많이 걸릴 수 있음 (오류를 즉시 찾지 못해도 포기하지 말것)
+
+---
+
+### <람다식과 함수>
+- 개념
+  - [1급 객체(first-class object)](https://dart.dev/language/functions#functions-as-first-class-objects) : 함수를 다른 함수의 매개변수로 전달할 수 있다.
+    ```dart
+    void main() {
+
+    void printElement(int element) {
+    print(element);
+    }
+
+    var list = [1, 2, 3];
+
+    // Pass printElement as a parameter.
+    list.forEach(printElement);
+    }
+    ```
+    - 대표적인 1급 객체 : 값, 인스턴스, 함수
+
+ - 함수를 람다식으로 표현하기 : 함수에 **단일 표현식**이나 **return 문만 포함**되어 있는 경우 ```=>``` 표기법을 사용하여 이를 단축할 수 있다. 
+   - 기본 함수형태 (람다식 적용 X)
+   ```dart
+   bool isNoble(int atomicNumber) {
+     return _nobleGases[atomicNumber] != null;
+   }
+   ```
+   - 람다식 적용한 형태 (```{}``` 와 ```return``` 을 지우고, ```=>``` 을 사용)
+     ```dart
+     bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
+     ```
+
+  - [익명 함수](https://dart.dev/language/functions#anonymous-functions) : 이름이 없는 함수
+    ```dart
+    // 기존 함수(이름이 있음 : printElement)
+    void printElement(int element) {
+      print(element);
+    }
+
+    // 익명 함수(이름이 없음)
+    var list = [1,2,3]
+    list.forEach(element) { print(element); });
+    ```
+
+  - 함수형 프로그래밍
+    - 다트는 객체지향 프로그래밍(OOP)과 함수형 프로그래밍(FP) 특징을 모두 제공하는 멀티 패러다임 언어
+    - 함수형 프로그래밍은 자료 처리를 수학적 함수의 계산으로 취급하는 프로그래밍 패러다임
+    - 가변 데이터를 멀리하는 특징을 가짐
+
+  - 고계 함수(high-order function) : 함수를 파라미터로 받는 함수
+    - [where](https://dart.dev/codelabs/iterables#mapping) : 조건 필터링
+      - where의 output은 Iterable 이다. 필터링 결과를 리스트나 셋 형태로 출력하려면 ```toList()```, ```toSet()``` 사용
+        ```dart
+        List<int> numbers = [1,2,3,4,5];
+        Iterable<int> evenNumbers = numbers.where((number) => number.isEven);
+        print(evenNumbers); // (2, 4)
+        ```
+        
+    - [map](https://dart.dev/codelabs/iterables#mapping) : 모든 요소에 함수를 적용(각 요소에 함수를 적용하여 각 요소를 새 요소로 변환)
+      ```dart
+      List<int> numbers = [1,2,3,4,5];
+      Iterable<int> output = numbers.map((number) => number * 10); // (10, 20, 30, 40, 50)
+      ```
+      ```dart
+      List<int> numbers = [1,2,3,4,5];
+      Iterable<String> output = numbers.map((number) => number.toString()); // (1, 2, 3, 4, 5)
+      ```
+      - map은 요소가 반복될 때만 제공된 함수가 호출된다.
+     
+    - [forEach](https://api.dart.dev/stable/3.3.2/dart-core/Iterable/forEach.html) : for in 반복문에서, 전체 요소를 반복하는 경우 사용
+      ```dart
+      List<int> collection = [1, 2, 3];
+      collection.forEach(print);
+      // 1
+      // 2
+      // 3
+      ```
+    
+    - [reduce](https://api.flutter.dev/flutter/dart-core/Iterable/reduce.html) : **컬렉션의 요소를 반복적으로 결합하여 컬렉션을 단일 값으로 줄임(reduce)**
+      ```dart
+      final numbers = <double>[10, 2, 5, 0.5];
+      final result = numbers.reduce((value, element) => value + element);
+      print(result); // 17.5
+      ```
+    
+    - [fold](https://api.flutter.dev/flutter/dart-core/Iterable/fold.html) : **컬렉션의 각 요소를 기존 값과 반복적으로 결합하여 컬렉션을 단일 값으로 줄임**
+      ```dart
+      final numbers = <double>[10, 2, 5, 0.5];
+      const initialValue = 100.0;
+      final result = numbers.fold<double>(initialValue, (previousValue, element) => previousValue + element);
+      print(result);
+      ```
+
+    - [any](https://api.flutter.dev/flutter/dart-core/Iterable/any.html) : 하나 이상의 요소가 조건을 만족하면 true를 반환
+      ```dart
+      final numbers = <int>[1, 2, 3, 5, 6, 7];
+      var result = numbers.any((element) => element >= 5); // true;
+      result = numbers.any((element) => element >= 10); // false;
+      ```
+
+    - [every]() : 모든 요소가 조건을 만족하면 true를 반환
+      ```dart
+      final planetsByMass = <double, String>{0.06: 'Mercury', 0.81: 'Venus', 0.11: 'Mars'};
+      // Checks whether all keys are smaller than 1.
+      final every = planetsByMass.keys.every((key) => key < 1.0); // true
+      ```
+
+
+  - [Iterable](https://dart.dev/codelabs/iterables) : 반복 가능한 컬렉션, 순차적으로 액세스 할 수 있는 요소의 컬렉션
+    - List: 인덱스를 기준으로 요소를 읽는 데 사용
+    - Set: 한 번만 발생할 수 있는 요소를 포함하는 데 사용
+    - Map: 키를 사용하여 요소를 읽는 데 사용
+   
+  - [Iterator](https://api.flutter.dev/flutter/dart-core/Iterable/iterator.html) : Iterable(반복 가능한 객체)의 요소를 반복하게 하는 것
+    ```
+    Iterator<E> get iterator;
+    ```
+    - Iterator가 읽힐 때 마다, 새로운 Iterator를 반환하고 전체 요소에 반복될 때 까지 반복할 때 사용된다.
+    - 기존 컬렉션이 변경되지 않는 한, 동일한 요소를 동일한 순서로 반환해야 한다.
+    - 컬렉션 수정 시 새 반복자가 다른 요소를 생성할 수 있고, 기존 요소의 순서가 바뀔 수 있다.
+
+---
