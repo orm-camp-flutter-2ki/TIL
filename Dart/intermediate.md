@@ -601,11 +601,12 @@
     ```
   
     ```dart
-    final server = connectToServer();
-    server
-      .post(myUrl, fields: const {'name': 'Dash', 'profession': 'mascot'})
-      .then(handleResponse)
-      .catchError(handleError)
-      .whenComplete(server.close);
+    future
+        .then((value) => print('비동기 작업 성공: $value'))
+        .catchError((error) => print('비동기 작업 에러: $error'))
+        .whenComplete(() => print('종료'));
     ```
+    future의 리턴 값이 value라면 입력 파라미터를 value로 해서 handleValue()를 실행한다.
+    만약 future의 리턴 값이 value가 아니면 원하는 결과가 아니니 catchError()의 내용대로 handleError()을 수행한다.
+    
 ---
