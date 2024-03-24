@@ -27,11 +27,10 @@ void main() {
 # switch를 표현식으로 쓸 수 있음
 
 ```dart
-
-final keyCount = switch(_keyType){
-  KeyType.padlock => 1024,
-  KeyType.button => 10000,
-  KeyType.dial => 30000,
+깅final keyCount = switch(_keyType){
+KeyType.padlock => 1024,
+KeyType.button => 10000,
+KeyType.dial => 30000,
 };
 ```
 
