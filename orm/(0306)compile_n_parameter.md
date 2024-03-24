@@ -109,4 +109,8 @@ void user2(String name, {required int age, required String hobby}) { }
 
 required가 지정된 파라미터에 값을 넣어주지 않으면 컴파일 에러 발생
 
+<br></br>
 
+## 기타
+* `as`는 강제 형변환(강제 캐스팅)이다.
+    * 따라서, 변환이 불가능한 경우 런타임 에러 발생

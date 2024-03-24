@@ -49,26 +49,31 @@ switch(authState) {
 ```dart
 const String hello = 'HELLO';
 
-  // 일부 떼어내기
-  print(hello.substring(0,2)); // 출력 결과: HE
+// 일부 떼어내기
+print(hello.substring(0,2)); // 출력 결과: HE
 
-  // 일부 치환
-  print(hello.replaceAll('LL', 'GG')); // 출력 결과: HEGGO
+// 일부 치환
+print(hello.replaceAll('LL', 'GG')); // 출력 결과: HEGGO
 
-  // 분리
-  final number = '1,2,3';
-  final splited = number.split(',');
-  splited.forEach((element) {
-    print(element);
-  });
-  // 출력 결과
-  // 1
-  // 2
-  // 3
+// 분리
+final number = '1,2,3';
+final splited = number.split(',');
+splited.forEach((element) {
+  print(element);
+});
+// 출력 결과
+// 1
+// 2
+// 3
 
-  // 검색
-  print(hello.indexOf('E')); // 출력 결과 : 1
-  print(hello.contains('O')); // 출력 결과 : true
+// 검색
+print(hello.indexOf('E')); // 출력 결과 : 1
+print(hello.contains('O')); // 출력 결과 : true
+
+// 총 길이가 정해져 있고 특정 값에 특정 문자를 붙여주어야 할 때 padLeft, padRight
+DateTime dateTime = DateTime.now();
+print('${dateTime.year}-${dateTime.month.toString().padLeft(2,'0')}-${dateTime.day}');
+// 2024-03-18
 ```
 
 ### 3.2. 문자열 결합 방법
