@@ -85,12 +85,13 @@ https://pub.dev/packages/collection/install
 
 - sorted는 복사본을 가공한후 List타입으로 리턴한다.
 - sort는 void를 리턴한다. 따라서 체인메서드가 불가능 이기에 ..cascade를 사용한다.
+- 다만 메서드 체인으로 다른 기능을 호출할 것이 아니라면 cascade를 사용하지 않는다.
 - sort는 void이기 때문에 변수에 등록 안된다.
   ```dart
   List list1 = ['one', 'two', 'three'];
   
   //..sort
-  list1..sort((a, b) => b.length.compareTo(a.length));
+  list1..sort((a, b) => b.length.compareTo(a.length)).map((transaction) => transaction.trader.name);
   print(list1); // [three,one,two] 가 반환 Why? list1에 덮어 씌우니까
   ```
   ```dart
