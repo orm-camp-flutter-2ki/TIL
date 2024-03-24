@@ -77,6 +77,8 @@ hereHp = 100
   * Dart의 Map<String, dynamic>과 똑같이 생겼음
 <img width="585" alt="스크린샷 2024-03-19 오후 7 20 38" src="https://github.com/NalaJang/TIL/assets/73895803/5363f2cf-7471-42f3-af51-20fe96470dbf">
 
+<br></br>
+
 ### 3.2. Dart의 직렬화(Serialization)
 ### 직렬화
 * 데이터 구조나 객체 상태를 저장하고, 나중에 재구성할 수 있는 포맷으로 변환하는 과정
@@ -126,4 +128,28 @@ String jsonString = jsonEncode(json);
 String jsonString = '{"name":"총무부","leader":{"name":"홍길동","age":41}}';
 Map<String, dynamic> json = jsonDecode(jsonString);
 // json = {name: 총무부, leader: {name: 홍길동, age: 41}}
+```
+
+<br></br>
+
+## 4. 기타
+* 인스턴스란?
+1) 객체를 실제 메모리에 생성한 것
+
+* 클래스란?
+1) 붕어빵 틀로 붕어빵을 찍어낼 때, 붕어빵 틀에 해당함
+2) 객체를 구성하는 설계도
+
+* 상속
+1) 올바른 상속 올바른 상속은 "is-a원칙"이라고 하는 규칙에 따른 상속을 말한다.
+```dart
+Superman is a Hero.
+```
+2) 슈퍼 클래스의 전부를 물려 받는다.
+
+* 인터페이스
+1) 특정 행동 정의
+```dart
+Moveable moveable = Dog()
+Moveable moveable = Car()
 ```
