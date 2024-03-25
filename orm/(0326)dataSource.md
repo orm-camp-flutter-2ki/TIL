@@ -97,6 +97,7 @@ void main() {
 <br></br>
 
 ### 객체 -> json String으로 변환
+
 ```dart
 class User {
   String name;
@@ -111,7 +112,44 @@ Map<String, dynamic> toJson() => {
 ```
 
 ```dart
-String jsonString - jsonEncode(user);
+String jsonString = jsonEncode(user);
 ```
 
 ### json List String -> List<모델 클래스>
+
+```dart
+// json 코드를 List<dynamic> 으로 변환
+final jsonList = jsonDecode(response.body) as List;
+
+// jsonList 에 담긴 값들을 List<Todo> 에 담는다.
+List<Todo> todoList = jsonList.map((e) => Todo.fromJson(e)).toList();
+```
+
+## http
+* import 형태
+```dart
+import 'package:http/http.dart' as http;
+```
+* as + 별명
+* 탑 레벨에 접근할 수 있다.(get())
+* as http라고 적지 않으면 get() 함수만 적게 되는데, 너무 추상적이고 다른 개발자가 이 함수의 역할을 모를 수 있기 때문에 `as http`로 적어준다.
+
+* 예시
+<img width="752" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/551aa1cf-ded8-412d-9db3-1660b1eb35c1">
+
+## 기타
+* Object 클래스
+  * 모든 객체의 근간이 되는 최상위 클래스
+  * Object 타입에는 모든 객체 인스턴스를 담을 수 있다.
+
+* dynamic
+  * 런타임에 타입이 결정된다.
+
+* Dart에서 인스턴스를 복사하기 위해선 직접 copyWith() 같은 메서드를 만들어야 한다.
+* List에서 sort()를 하면 원본이 바뀐다.
+```dart
+final names = ['홍길동', '뽀로로', '철수', '영미'];
+names.sort();
+print(names); // [뽀로로, 영미, 철수, 홍길동]
+```
+* ==와 hashCode는 항상 함께 재정의하는 것이다.
