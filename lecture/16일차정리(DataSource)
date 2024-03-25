@@ -1,0 +1,36 @@
+**데이터 소스**
+
+데이터의 근간이 되는 원천 재료
+
+프로그램이 사용하는 원천 데이터 모든 것이 해당 함
+
+**데이터 소스를 활용할 데이터로 변환하자**
+
+**DataSource** 에서 추출한 **가공되지 않은 데이터**를 **->** 사용 가능한 **데이터**로 변환
+
+**DataSource 의 종류**
+
+- Text
+- File
+- JSON
+- XML
+- CSV
+- RDBMS
+- NoSQL
+- 등등
+
+fromJson , toJson 사용하는 클래스를 모델클래스라고 함 
+
+서버에서 보내는 것은 문자열 형태의 Json먼저 Dart의 Map형태로 바꿔야 함 
+
+jsonDecode() 함수
+
+jsonDecode() 함수는 Json String 을 Map 으로 변경해 주는 아주 고마운 함수다
+
+잘 기억하도록 그 반대의 함수인 jsonEncode() 도 있음
+
+참고로 탑레벨함수라도  import 한 패키지에 as 로별칭붙인 경우 별칭.탑레벨 함수 로 사용해야 한다.
+
+import 'package:http/http.dart' as http;
+
+await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/$id'));
