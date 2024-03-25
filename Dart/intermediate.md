@@ -640,6 +640,50 @@
       
       print(await http.read(Uri.https('example.com', 'foobar.txt')));
       ```
-   
+---
+
+
+### <Data Source>
+
+- 데이터 소스란?
+  - 데이터의 근간이 되는 원천 재료
+  - 프로그램이 사용하는 원천 데이터 모든 것이 해당
+    - Text, File, JSON, XL, CSV, RDBMS, NoSQL, etc...
+  - **DataSource에서 추출한 가공되지 않은 데이터를 사용가능한 데이터로 변환**해야 한다.
+    - [Json과 데이터 클래스의 상호변환](https://docs.flutter.dev/data-and-backend/serialization/json)
+      - 서버와 통신을 대부분 JSON으로 함
+      - 서버로부터 JSON 데이터 받기 (역직렬화)
+        - 서버에서 보내는 것은 문자열 형태의 Json이므로, 먼저 Dart의 Map 형태로 바꾼다. ```Map<String, Dynamic> json = jsonDecode(jsonString);```
+        - 이후 Map 자료구조인 json을 fromJson 생성자를 통해 ModelClass(데이터 클래스로)로 변환한다.
+          ```dart
+          class User {
+            final String name;
+            final String email;
+          
+            User(this.name, this.email);
+          
+            User.fromJson(Map<String, dynamic> json)
+                : name = json['name'] as String,
+                  email = json['email'] as String;
+          ```
+        
+       
+  - [http 통신](https://pub.dev/packages/http)
+    - 프로젝트 폴더에서 터미널을 열고 다음을 설치 (윈도우 환경에서 Android Studio 사용할 경우 ```Alt+F12```로 터미널 접근)
+      ```cmd
+      dart pub add http
+      ```
+
+    - 통신 예
+      ```dart
+      import 'package:http/http.dart' as http;
+  
+      var url = Uri.https('example.com', 'whatsit/create');
+      var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+      
+      print(await http.read(Uri.https('example.com', 'foobar.txt')));
+      ```
+
   ---
-    
