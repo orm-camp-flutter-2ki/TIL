@@ -26,6 +26,7 @@ nullable한 값을 손쉽게 처리할 수 있게 해준다.
 ## Cascade notation 
 `..` non-nullable한 객체에 대한 cascade   
 `?..` nullable한 객체에 대한 cascade  
+
 casecade를 통해 동일한 객체에 대한 일련의 연산과 메서드 호출을 간편하게 처리할 수 있다. (마치 빌더패턴처럼)
 
 단, `void`에 대해 사용할 수 없으며, cascade는 연산자(operator)가 아닌 Dart의 문법적 편의 기능이다.
