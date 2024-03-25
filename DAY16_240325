@@ -9,6 +9,7 @@ Text / File / JSON /  XML / CSV
 RDBMS /NoSQL 등등
 
 
+
 ```dart
 Map<String, dynamic> toJson() # {
   ‘name’: name,
