@@ -1,13 +1,23 @@
 Go dart_
 
-#DataSource 개념
+# DataSource 개념
 
-##### - J데이터의 근간이 되는 원천 재료
+##### - 데이터의 근간이 되는 원천 재료
 ##### - DataSource 에서 추출한 가공되지 않은 데이터를 -> 사용 가능한 데이터로 변환
 ##### 1) 종류
-Text / File / JSON /  XML / CSV
-RDBMS /NoSQL 등등
+##### - Text / File / JSON /  XML / CSV / RDBMS /NoSQL 등등
+##### 2) 실제통신
+##### - http 주소를 이용한 접근.
+```dart
+void main()async {
+  Todo todoData = await TodoApi().getTodo(1);
+  print(todoData);
 
+  // http
+  //     .get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'))
+  //     .then((response) => jsonDecode(response.body))
+  //     .then((json) => print(json));
+```
 
 
 ```dart
