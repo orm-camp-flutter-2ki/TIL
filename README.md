@@ -19,7 +19,9 @@
 - [24.03.19 - 예외, 파일조작(FILE class), 정규식표현, 데이터 다루기(디코딩,인코딩)](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.19.md)
 - [24.03.20 - 디버깅,람다식,고차함수](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.20.md)
 - [24.03.21 - 비동기, CSV, FILE class](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.21.md)
+- [24.03.22 - DataSource, Parsing 연습](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.22.md)
 ### 4주차
+- [24.03.25 - DataSource - API 호출, 데이터 파싱연습 ](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.25.md)
 ### 5주차
 ### 6주차
 ### 7주차
