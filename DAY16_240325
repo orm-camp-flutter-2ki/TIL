@@ -18,3 +18,4 @@ Map<String, dynamic> toJson() # {
 ### 모델클라스
 ### 들어온 데이터가 타입이 정의되어 있지 않으면, 타입 정의를 해줘야 됨. *ex) as String
 //TODO
+parse
