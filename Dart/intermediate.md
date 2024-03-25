@@ -512,7 +512,7 @@
 
 ---
 
-### 비동기 프로그래밍
+### <비동기 프로그래밍>
 <img src="https://github.com/algochemy/TIL/assets/152131529/318d9a4f-e311-4aad-8db1-2695d3b1fa71" height="400px" width="600px">  
   
 - 동기(Synchronous)
@@ -550,7 +550,7 @@
       - Future 클래스는 {} 앞에 ```async``` 키워드를 지정해 줘야 한다.
     - await
       - 비동기 표현식의 완성된 결과를 얻을 수 있다.
-      - 대기하고 싶은 비동기 함수를 실행할 때 **```await```키워드를 사용해주면 코드를 작성한 순서대로 실행된다.**
+      - 대기하고 싶은 비동기 함수를 실행할 때 **```await```키워드를 사용해주면 코드를 작성한 순서대로 실행된다.** (await 키워드 뒷 부분은 모두 event 큐로 보내지어, 동기코드라도 먼저 실행되지 않음.)
       - await 키워드는 async 키워드가 있는 함수에서만 사용할 수 있다.
       - **await 키워드 뒤에는 반드시 Future 타입이 와야 한다.**
         
@@ -581,7 +581,7 @@
       - 값으로 완료 : Future<T> 타입의 future는 T값으로 완료된다. **제너릭**
         - Future<String> 타입의 future는 문자열 값을 생성한다.
         - Future<int> 타입의 future는 정수 값을 생성한다. 
-        - **Future<void>** 타입의 future는 사용가능 한 값을 생성하지 않는 경우 사용 (예: **main 함수 호출 시 사용**)
+        - Future<void> 타입의 future는 사용가능 한 값을 생성하지 않는 경우 사용 (예: **main 함수 호출 시 사용**)
       - 에러로 완료 : 어떤 이유로 함수가 수행하는 비동기 작업이 실패하면, future는 에러로 완료된다.
 
 
@@ -590,7 +590,7 @@
   - catchError() : 오류로 인해 future가 실패하는 경우 오류를 처리 (예외처리의 catch 개념과 유사)
   - whenComplete() : future의 성공 여부에 관계없이 항상 실행 (예외처리의 finally 개념과 유사)
 
-  - 콜백 처리 예시
+  - 콜백 처리 예시 (future가 값으로 완료 => callback의 'then' 메소드를 추가하여 value 값을 얻음)
     ```dart
       void main() {
           print(1);
@@ -606,7 +606,93 @@
         .catchError((error) => print('비동기 작업 에러: $error'))
         .whenComplete(() => print('종료'));
     ```
-    future의 리턴 값이 value라면 입력 파라미터를 value로 해서 handleValue()를 실행한다.
-    만약 future의 리턴 값이 value가 아니면 원하는 결과가 아니니 catchError()의 내용대로 handleError()을 수행한다.
-    
+    future의 리턴 값이 value라면 입력 파라미터를 value로 해서 value을 출력한다.
+    만약 future의 리턴 값이 value가 아니면 원하는 결과가 아니니 catchError()의 내용대로 error을 출력한다.
+    future 값이 완료/미완료든 종료를 출력한다.
+
+- callback vs async-await 어떤걸 쓰는게 좋을까?
+  - callback
+    - 특징: 이해하기 쉽지만, 코드를 읽기 어렵다.(특히 값 반환)
+      ```dart
+      var future = Future<int>.delayed(Duration(seconds: 1), () => 2);
+      future.then((value) => print(value));
+      ```
+  - async-await
+    - 장점 : 콜백에 비해, 더 동기 코드처럼 보여진다. 코드를 읽기 쉽다.(특히 값 반환)
+      ```dart
+      final value = await Future<int>.delayed(Duration(seconds: 1), () => 2,
+      ```
+      - async-await 문법을 사용할 시, 콜백의 ```then-catchError-whenComplete``` 대신 ```try-catch-finally``` 문법을 함께 사용한다.
+      ```dart
+      Future<void> usingAsyncAwaitWithErrorHandling() async {
+        print('Before the future');
+      
+        try {
+          final value = await Future<int>.delayed(
+            Duration(seconds: 1),
+            () => 2,
+          );
+          print('Value: $value');
+        } catch (error) {
+          print(error);
+        } finally {
+          print('Future is complete');
+        }
+      
+        print('After the future');
+      }
+      ```
+      ```
+      Before the future
+      Value: 2
+      Future is complete
+      After the future
+      ```
+      
 ---
+
+### <Dart Source>
+
+- 데이터 소스란?
+  - 데이터의 근간이 되는 원천 재료
+  - 프로그램이 사용하는 원천 데이터 모든 것이 해당
+    - Text, File, JSON, XL, CSV, RDBMS, NoSQL, etc...
+  - **DataSource에서 추출한 가공되지 않은 데이터를 사용가능한 데이터로 변환**해야 한다.
+    - [Json과 데이터 클래스의 상호변환](https://docs.flutter.dev/data-and-backend/serialization/json)
+      - 서버와 통신을 대부분 JSON으로 함
+      - 서버로부터 JSON 데이터 받기 (역직렬화)
+        - 서버에서 보내는 것은 문자열 형태의 Json이므로, 먼저 Dart의 Map 형태로 바꾼다. ```Map<String, Dynamic> json = jsonDecode(jsonString);```
+        - 이후 Map 자료구조인 json을 fromJson 생성자를 통해 ModelClass(데이터 클래스로)로 변환한다.
+          ```dart
+          class User {
+            final String name;
+            final String email;
+          
+            User(this.name, this.email);
+          
+            User.fromJson(Map<String, dynamic> json)
+                : name = json['name'] as String,
+                  email = json['email'] as String;
+          ```
+        
+       
+  - [http 통신](https://pub.dev/packages/http)
+    - 프로젝트 폴더에서 터미널을 열고 다음을 설치 (윈도우 환경에서 Android Studio 사용할 경우 ```Alt+F12```로 터미널 접근)
+      ```cmd
+      dart pub add http
+      ```
+
+    - 통신 예
+      ```dart
+      import 'package:http/http.dart' as http;
+  
+      var url = Uri.https('example.com', 'whatsit/create');
+      var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+      
+      print(await http.read(Uri.https('example.com', 'foobar.txt')));
+      ```
+   
+  ---
+    
