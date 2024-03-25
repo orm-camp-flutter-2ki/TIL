@@ -9,4 +9,4 @@
 8. 심화 자료와 문서 링크
 9. 사전 요구사항
 
-출처 https://insight.infograb.net/blog/2023/08/23/good-readme/
+출처 까먹음
