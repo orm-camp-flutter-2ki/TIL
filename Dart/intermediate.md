@@ -831,9 +831,9 @@
         - 책임과 역할 : 데이터 소스와 상호작용하여 데이터를 추가,조회,수정,삭제하는 역할을 담당
         - 패턴 : **데이터 액세스 추상화** 비지니스 로직과 데이터를 분리함으로써 여러가지 이점을 얻음
       - DataSource : REST API, DB, File 등..
-    - 구현방법
-      - 1. 모델 클래스 생성 ```class```
-      - 2. Repository 인터페이스 생성 ```abstract interface class Repository```
-      - 3. Repository 클래스 구현 ```class RepositoryImpl implements Repository```
+    - [구현](https://github.com/algochemy/learn_dart_together/tree/master/lib/240326/repository)
+      - 1. 모델 클래스 생성 ```class Todo```
+      - 2. Repository 인터페이스 생성 ```abstract interface class TodoRepository```
+      - 3. Repository 클래스 구현 ```class TodoRepositoryImpl implements TodoRepository```
 
 ---
