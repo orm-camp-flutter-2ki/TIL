@@ -1,6 +1,5 @@
 ## **Model Class, Repository**
 
-[17일차 (1)](https://www.notion.so/17-1-358be4690ca2469cb2fe3b08624bd512?pvs=21)
 
 **Model Class 의 책임과 역할**
 
