@@ -409,13 +409,13 @@
     ```
     - 대표적인 1급 객체 : 값, 인스턴스, 함수
 
- - 함수를 람다식으로 표현하기 : 함수에 **단일 표현식**이나 **return 문만 포함**되어 있는 경우 ```=>``` 표기법을 사용하여 이를 단축할 수 있다. 
+ - **함수를 람다식으로 표현하기** : 함수에 **단일 표현식**이나 **return 문만 포함**되어 있는 경우 ```=>``` 표기법을 사용하여 이를 단축할 수 있다. 
    - 기본 함수형태 (람다식 적용 X)
-   ```dart
-   bool isNoble(int atomicNumber) {
-     return _nobleGases[atomicNumber] != null;
-   }
-   ```
+     ```dart
+     bool isNoble(int atomicNumber) {
+       return _nobleGases[atomicNumber] != null;
+     }
+     ```
    - 람다식 적용한 형태 (```{}``` 와 ```return``` 을 지우고, ```=>``` 을 사용)
      ```dart
      bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
@@ -541,37 +541,8 @@
     Future<T> 
     ```
     Future는 제네릭으로 이해될 수 있다.
-
   - 지연 문법 : ```Future.delayed(Duration(seconds: A), B)``` : A초 후에 B 작업이 이루어지도록 한다.
- 
-  - [async, await](https://dart.dev/codelabs/async-await#execution-flow-with-async-and-await)
-    - async
-      - 함수 본문 앞에 키워드를 사용하여 비동기식으로 표시
-      - Future 클래스는 {} 앞에 ```async``` 키워드를 지정해 줘야 한다.
-    - await
-      - 비동기 표현식의 완성된 결과를 얻을 수 있다.
-      - 대기하고 싶은 비동기 함수를 실행할 때 **```await```키워드를 사용해주면 코드를 작성한 순서대로 실행된다.** (await 키워드 뒷 부분은 모두 event 큐로 보내지어, 동기코드라도 먼저 실행되지 않음.)
-      - await 키워드는 async 키워드가 있는 함수에서만 사용할 수 있다.
-      - **await 키워드 뒤에는 반드시 Future 타입이 와야 한다.**
-        
-    ```dart
-    Future<void> main() async {
-      print(1);
 
-      int value = await Future<int>.delayed(
-         Duration(seconds: 2), 
-         () => 2 
-      );
-      print(value);
-    
-      print(3);
-    }
-    ```
-    ```dart
-    1
-    2 // 1 출력되고 -> (2초 대기 후) -> 2가 출력
-    3
-    ```
   
 - [future](https://dart.dev/codelabs/async-await#what-is-a-future)
   - 개념 : Future 클래스의 인스턴스
@@ -583,12 +554,61 @@
         - Future<int> 타입의 future는 정수 값을 생성한다. 
         - Future<void> 타입의 future는 사용가능 한 값을 생성하지 않는 경우 사용 (예: **main 함수 호출 시 사용**)
       - 에러로 완료 : 어떤 이유로 함수가 수행하는 비동기 작업이 실패하면, future는 에러로 완료된다.
-
+ 
+- [async, await](https://dart.dev/codelabs/async-await#execution-flow-with-async-and-await)
+  - async
+    - 함수 본문 앞에 키워드를 사용하여 비동기 함수임을 명시, 결과가 event queue로 보내진다.
+    - Future 클래스는 {} 앞에 ```async``` 키워드를 지정해줘야 한다.
+  - await
+    - 비동기 표현식의 완성된 결과를 얻을 수 있다.
+    - 대기하고 싶은 비동기 함수를 실행할 때 **```await```키워드를 사용해주면 코드를 작성한 순서대로 실행된다.** (Dart가 await 키워드를 보는 순간, await 뒷 부분은 모두 event 큐로 보내지어, 나머지 함수는 future가 완료될 때 까지 먼저 실행되지 않는다. ---> 즉, 동기 함수라도 먼저 실행되지 않음.)
+    - await 키워드는 async 키워드가 있는 함수에서만 사용할 수 있다.
+    - **await 키워드 뒤에는 반드시 Future 타입이 와야 한다.**
+   
+    - 예시
+      - async-await 문법을 쓰지 않으면, 동기 함수가 먼저 출력된다. (콜백 사용하는 경우)
+        ```dart
+        void main() {
+          print(1);
+        
+          Future<int>.delayed(Duration(seconds: 2), () => 2)
+              .then((value) {     
+            print(value);
+          });
+         
+          print(3);  
+        }
+        ```
+        ```
+        1
+        3
+        2
+        ```
+   
+      - async-await 문법을 쓰면, await 이후 부분의 동기 함수가 나중에 출력된다.
+        ```dart
+        Future<void> main() async {
+          print(1);
+    
+          int value = await Future<int>.delayed(
+             Duration(seconds: 2), 
+             () => 2 
+          );
+          print(value);
+        
+          print(3);
+        }
+        ```
+        ```dart
+        1
+        2 // 1 출력되고 -> (2초 대기 후) -> 2가 출력
+        3
+        ```
 
 - [callback](https://dart.dev/codelabs/async-await#what-is-a-future) : future가 완료되면 콜백을 실행하여 결과를 처리할 수 있다. 이 Future<T>클래스는 콜백을 예약하기 위한 세 가지 메서드를 제공
-  - then() : 값과 함께 성공적으로 완료되면 메서드에 콜백을 추가하여 결과를 얻음 (예외처리의 try 개념과 유사)
-  - catchError() : 오류로 인해 future가 실패하는 경우 오류를 처리 (예외처리의 catch 개념과 유사)
-  - whenComplete() : future의 성공 여부에 관계없이 항상 실행 (예외처리의 finally 개념과 유사)
+  - ```then()``` : 값과 함께 성공적으로 완료되면 메서드에 콜백을 추가하여 결과를 얻음 (예외처리의 try 개념과 유사)
+  - ```catchError()``` : 오류로 인해 future가 실패하는 경우 오류를 처리 (예외처리의 catch 개념과 유사)
+  - ```whenComplete()``` : future의 성공 여부에 관계없이 항상 실행 (예외처리의 finally 개념과 유사)
 
   - 콜백 처리 예시 (future가 값으로 완료 => callback의 'then' 메소드를 추가하여 value 값을 얻음)
     ```dart
@@ -610,7 +630,7 @@
     만약 future의 리턴 값이 value가 아니면 원하는 결과가 아니니 catchError()의 내용대로 error을 출력한다.
     future 값이 완료/미완료든 종료를 출력한다.
 
-- callback vs async-await 어떤걸 쓰는게 좋을까?
+- **callback vs async-await 어떤걸 쓰는게 좋을까?**
   - callback
     - 특징: 이해하기 쉽지만, 코드를 읽기 어렵다.(특히 값 반환)
       ```dart
@@ -618,7 +638,7 @@
       future.then((value) => print(value));
       ```
   - async-await
-    - 장점 : 콜백에 비해, 더 동기 코드처럼 보여진다. 코드를 읽기 쉽다.(특히 값 반환)
+    - 특징 : 콜백에 비해, 더 동기 코드처럼 보여진다. 또한, 코드를 읽기 쉽다.(특히 값 반환)
       ```dart
       final value = await Future<int>.delayed(Duration(seconds: 1), () => 2,
       ```
@@ -629,16 +649,18 @@
       
         try {
           final value = await Future<int>.delayed(
-            Duration(seconds: 1),시
-      ```dart
-      import 'package:http/http.dart' as http;
-  
-      var url = Uri.https('example.com', 'whatsit/create');
-      var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
-      print('Response status: ${response.statusCode}');
-      print('Response body: ${response.body}');
+            Duration(seconds: 1),
+            () => 42,
+          );
+          print('Value: $value');
+        } catch (error) {
+          print(error);
+        } finally {
+          print('Future is complete');
+        }
       
-      print(await http.read(Uri.https('example.com', 'foobar.txt')));
+        print('After the future');
+      }
       ```
 ---
 
@@ -684,4 +706,134 @@
       print(await http.read(Uri.https('example.com', 'foobar.txt')));
       ```
       
+---
+
+### <Model Class, Repository 개념>
+
+- 모델 클래스
+    - 정의 : **별도의 기능을 가지지 않는 순수한 클래스로서, 모델 객체 클래스의 속성에 대한 데이터를 조회할 수 있는 클래스**를 의미한다.  **View에 보여질 데이터를 담는 객체**로 이해될수 있다.
+      - 데이터 클래스 6종 필요하면 추가하여 사용! (**이는 별도의 기능으로 보지 않는다.**)
+        - 재정의 ==, hashCode (동등성 비교)
+        - 재정의 toString (출력)
+        - 생성자 fromJson (역직렬화)
+        - 메소드 toJson (직렬화)
+        - 메소드 copyWith (깊은 복사)
+    
+    - 역할 : 데이터 소스를 앱에 필요한 형태로 변환하여 앱 개발을 편리하게 해주는 역할
+    - 예시
+      ```
+      class User {
+        final String name;
+        final int age;
+      
+        User(this.name, this.age);
+      // 데이터 클래스 추가
+      }
+      ```
+      
+- 모델링 방법
+  - DDD(Domain Driven Design) : 도메인 기반(주도) 설계
+    - Domain 이란?
+      - 유사한 업무의 집합
+      - 특정 상황(주문,결제,로그인)이나 특정 객체(유저, 손님)가 중심이 될 수 있음
+    - Model Class 결론
+      - 모델 클래스를 정의하는 방법은 여러가지가 있음
+      - 프로젝트의 성격에 따라 다양한 방식으로 모델 클래스를 정의할 수 있음
+      - 데이터 클래스 6종 세트가 필요하면 추가하여 사용
+      - 예시
+        ```dart
+        class User {
+          final String name;
+          final int age;
+  
+          factory User.fromJson(Map<String, dynamic> json) {
+            return User(json['name'], json['age']);
+          }
+  
+          @override
+          String toString() => 'User(name: $name, age: $age)';
+        }
+        ```
+        
+  - ORM(Object-relational mapping) : 데이터 소스가 DB인 경우 DB와 모델간 상호 변환을 도와주는 기법
+
+
+- 디자인 패턴: SW 개발에서 설계 문제에 대한 해답을 문서화하기 위해 고안된 형식 방법
+
+- Factory 생성자
+  - 특징 : 클래스 유형의 개체를 반환하는 특수한 생성자이다. 일반 생성자는 클래스 자체의 새 인스턴스만 만들 수 있는 반면, Factory 생성자는 기존 인스턴스 또는 하위 클래스를 반환할 수 있다. 특히, 사용하는 코드에서 클래스의 구현 세부 정보를 숨기고 싶을 때 유용하다.
+
+  - 일반적인 생성자를 사용한 예 (factory 생성자 사용 X)
+    ```dart
+    User.fromJson(Map<String, Object> json)
+      : _id = json['id'] as int,
+        _name = json['name'] as String;
+
+    final map = {'id': 10, 'name': 'Sandra'};
+    final sandra = User.fromJson(map);
+    ```
+    위 방식을 이용하면, 만약 'id'나 'name'이 map에 존재하지 않으면 null을 처리하지 않기 때문에 앱이 다운되는 문제가 있다.
+
+  - factory 생성자를 사용한 예
+    ```dart
+    factory User.fromJson(Map<String, Object> json) {
+      final userId = json['id'] as int;
+      final userName = json['name'] as String;
+      return User(id: userId, name: userName);
+    }
+
+    final map = {'id': 10, 'name': 'Sandra'};
+    final sandra = User.fromJson(map);
+    ```
+    factory 생성자는 위 fromJson() 예시에서, 새 개체를 반환하기 전에 작업을 수행할 수 있도록 허용하고, 그 작업의 세부 사항을 클래스를 사용하는 사람에게 노출하지 않게 한다. 또한, factory 생성자를 사용하면 객체를 만들기 전에 모든 종류의 검증, 오류 검사, 인수 수정까지 할 수 있으므로 null을 처리하지 않기 때문에 앱이 다운되는 문제를 방지할 수 있다.
+
+ 
+ - Singleton 패턴
+   - 정의 : 1개의 인스턴스만 생성되는 것을 보증하기 위한 패턴
+   - 특징 : 인스턴스 생성을 여러번 시도해도 1개의 인스턴스가 공유됨
+   - 구현방법 : **팩토리 생성자를 사용하여 싱글톤 패턴을 구현할 수 있다.** (팩토리 생성자는 객체의 새 인턴스를 반환할 필요가 없기 때문)
+   - 용례 : 캐시나 공유 데이터, 처리의 효율화에 사용되는 테크닉, 데이터베이스에 대한 여러 연결을 방지
+   - 예시
+     ```dart
+     // 싱글턴 패턴
+     class RentCar {
+       static final RentCar _instance = RentCar._internal();
+
+       int _count = 0;
+
+       RentCar._internal();
+
+       factory RentCar.getInstance() {
+         return _instance;
+       }
+
+        void increment() {
+          _count++;
+        }
+      }
+      
+     void main() {
+       final car1 = RentCar.getInstance();
+       final car2 = RentCar.getInstance();
+
+       car1.increment();
+       print(identical(car1, car2));
+       print(car2._count);
+     }
+     ```
+    -> 싱글턴 패턴으로 인해 car1, car2 인스턴스는 2개의 인스턴스가 생성된게 아니라 동일한 1개의 인스턴스이다.
+  
+  - Repository 패턴
+    - 정의 : SW 개발에서 **데이터 저장소에 접근하는 객체를 추상화**하고, 데이터소스(DB, File)와의 **통신을 담당하는 객체를 캡슐화**하는 디자인 패턴
+    - 구성요소
+      - Client : 데이터 요청을 시작하는 구성요소 (cf. 서비스, 컨트롤러)
+      - Repository
+        - 책임과 역할 : 데이터 소스와 상호작용하여 데이터를 추가,조회,수정,삭제하는 역할을 담당
+        - 패턴 : **데이터 액세스 추상화** 비지니스 로직과 데이터를 분리함으로써 여러가지 이점을 얻음
+      - DataSource : REST API, DB, File 등..
+    - 구현방법
+      - 1. 모델 클래스 생성 ```class```
+      - 2. Repository 인터페이스 생성 ```abstract interface class Repository```
+      - 3. Repository 클래스 구현 ```class RepositoryImpl implements Repository```
+
 ---
