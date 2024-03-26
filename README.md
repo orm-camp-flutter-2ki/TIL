@@ -22,6 +22,7 @@
 - [24.03.22 - DataSource, Parsing 연습](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.22.md)
 ### 4주차
 - [24.03.25 - DataSource - API 호출, 데이터 파싱연습 ](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.25.md)
+- [24.03.26 - Model, Design Pattern(Factory,Singleton,Repository)](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.26.md)
 ### 5주차
 ### 6주차
 ### 7주차
