@@ -2,34 +2,6 @@
 
 ---
 
-### <Dart 테스트코드 작성>
-  1. 테스트하고자 하는 파일을 고른다 (lib/파일명.dart)
-  2. test 디렉토리 아래 동일 위치에 _test를 붙인 파일을 작성한다. (test/파일명_test.dart)
-     - 파일명_test.dart 파일에서 아래의 패키지를 import한다.
-     ```dart
-     import 'package:test/test.dart'; // equals(), expect(), test(), group() 함수 사용
-     ```
-  3. 여러가지 테스트 기법 중 given > when > then 기법을 사용한다.
-     ```dart
-     void main() {
-       test('테스트명', () {
-       // given(준비)
-       final wizard = Wizard(name: '마법사', hp : 100);
-       final hero = Hero(name: '히어로', hp: 10);
-       // when(실행)
-       wizard.heal(hero);
-       // then(검증)
-       expect(hero.hp, equals(20));
-     });
-     }
-     ```
-     - given : 테스트 대상 자료가 주어지고
-     - when : 테스트 대상 자료에 메소드가 실행되고
-     - then : 메소드가 실행된 이후, 테스트 대상 자료가 원하는 결과가 같은지 확인
-       - ```expect()``` 함수 사용, ```expect(a, equals(b))``` a 결과와 b를 비교 (같으면 테스트 통과, 아니면 실패)
-
----
-
 ### <인스턴스의 기본 조작>
 - Object Class
   - 모든 클래스는 Object 클래스의 메서드와 프로퍼티를 가지고 있다
@@ -835,5 +807,90 @@
       - 1. 모델 클래스 생성 ```class Todo```
       - 2. Repository 인터페이스 생성 ```abstract interface class TodoRepository```
       - 3. Repository 클래스 구현 ```class TodoRepositoryImpl implements TodoRepository```
+
+---
+
+### <단위 테스트>
+- 정의 : 특정 모듈이 의도한 대로 잘 작동하는가를 테스트하는 가장 작은 단위의 테스트 (*모듈 = 메서드, 기능)
+- 단위 테스트가 꼭 필요한 경우
+  - DB
+    - 스키마가 변경되는 경우
+    - 모델 클래스가 변경되는 경우
+  - Network
+    - 예측한 데이터가 제대로 들어오는지
+  - 데이터 검증
+    - 예측한 데이터를 제대로 처리하고 있는지
+
+- 테스트 방법 종류
+  - 수동 테스트 : 인간이 하는 테스트 (print)
+  - 단위 테스트 : 1개의 함수를 테스트 (test 코드)
+  - 통합 테스트 : 여러개 연관된 클래스나 함수를 함께 테스트 (UI test, Integration test)
+ 
+- 화이트 박스 테스트
+  - 내부 구조와 동작에 중점을 두고 테스트하는 방법
+  - 코드의 내부 로직, 제어 흐름, 데이터 흐름 등을 이해하고 검증하는 데에 사용
+  - 테스트 케이스를 설계할 때 코드의 특정 부분을 직접 확인
+  - 주요 기법으로는 구문 검사, 경로 검사, 조건/분기 검사 등이 있다
+
+- 블랙박스 테스트
+  - 소프트웨어의 내부 구조를 무시하고 기능을 테스트하는 방법
+  - 시스템이 어떻게 동작하는지에 대한 내부 정보를 알 필요 없이 사용자 관점에서 테스트
+  - 테스트 케이스는 입력 값과 예상 출력 값에 기반하여 설계
+  - 요구 사항을 충족하는지 확인하고, 시스템의 기능적 및 비기능적 요구 사항을 테스트
+  - 주요 기법으로는 등가 분할, 경계 값 분석, 상태 전이 테스트 등이 있다
+
+- 테스트의 장점
+  - 장애에 관한 신속한 피드백
+  - 개발 주기에서 조기 장애 감지
+  - 회귀에 신경 쓸 필요 없이 코드를 최적화할 수 있도록 하는 더 안전한 코드 리팩터링
+  - 기술적 문제를 최소화하는 안정적인 개발 속도
+
+- 테스트 케이스
+  - 가능한 모든 가능성의 범위를 테스트하는 것이 좋은 테스트 케이스이다
+  - 동등 분할, 경계값 분석... 등의 기법 등이 있음
+ 
+- 테스트 환경 및 실행
+  - 테스트 코드는 원래 파일에 _test 를 붙이고 동일 위치에 생성한다
+    ![image](https://github.com/algochemy/TIL/assets/152131529/9df28398-529b-4d29-9dde-7f01694e96f4)
+
+  1. 테스트하고자 하는 파일을 고른다 (lib/파일명.dart)
+  2. test 디렉토리 아래 동일 위치에 _test를 붙인 파일을 작성한다. (test/파일명_test.dart)
+     - 파일명_test.dart 파일에서 아래의 패키지를 import한다.
+     ```dart
+     import 'package:test/test.dart'; // equals(), expect(), test(), group() 함수 사용
+     ```
+  3. 여러가지 테스트 기법 중 given > when > then 기법을 사용한다.
+     ```dart
+     void main() {
+       test('테스트명', () {
+       // given(준비)
+       final wizard = Wizard(name: '마법사', hp : 100);
+       final hero = Hero(name: '히어로', hp: 10);
+       // when(실행)
+       wizard.heal(hero);
+       // then(검증)
+       expect(hero.hp, equals(20));
+     });
+     }
+     ```
+     - given : 테스트 대상 자료가 주어지고
+     - when : 테스트 대상 자료에 메소드가 실행되고
+     - then : 메소드가 실행된 이후, 테스트 대상 자료가 원하는 결과가 같은지 확인
+       - ```expect()``` 함수 사용, ```expect(a, equals(b))``` a 결과와 b를 비교 (같으면 테스트 통과, 아니면 실패)
+       - ```expect(a, throwException)``` 와 같이 예외 처리를 할 수도 있다. (반대는 returnNormally)
+     - test 함수가 여러개일 시, group() 으로 test('테스트', (){}); 을 묶어서 테스트 할 수 있다.
+    - 테스트 코드 실행은 Debug 모드로 실행한다.
+    - 테스트가 성공하도록 코드를 수정, 테스트 중심으로 개발하는 방법론을 TDD (Test Driven Development)라고 한다.
+
+- [Test Double](https://en.wikipedia.org/wiki/Test_double)
+  - 테스트를 진행하기 어려운 경우에 테스트가 가능하도록 만들어주는 객체 (어원 : 영화 촬영 시 위험한 역할을 대신하는 스턴트 더블에서 비롯)
+    - <img src="https://github.com/algochemy/TIL/assets/152131529/49cedd7d-0cb0-4d94-812d-d13de5d91ff6" height="400px" width="600px">  
+  - [Test Double의 경계](https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles)는 모호하므로, 엄밀하게 용어 구분하는 것은 불필요하다.
+    - <img src="https://github.com/algochemy/TIL/assets/152131529/43dfdada-2c49-45c1-ae13-dc0c6a676e8a" height="400px" width="600px">
+
+
+- 테스트 용이성
+  - 다형성을 활용하면 테스트할 때 원하는 객체를 활용 가능
+  - 테스트용 객체를 별도로 준비하여 테스트 가능
 
 ---
