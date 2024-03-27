@@ -33,4 +33,6 @@ Network<br>
 개발 주기에서 조기 장애 감지<br>
 회귀에 신경 쓸 필요 없이 코드를 최적화할 수 있도록 하는 더 안전한 코드 리팩터링<br>
 기술적 문제를 최소화하는 안정적인 개발 속도<br>
+> ⭐️ 한장정리! <br>
+![](https://velog.velcdn.com/images/hee462/post/166e7fd7-74f1-4b9d-a08a-1bdfed3fef9e/image.png)
 
