@@ -1,0 +1,44 @@
+크게 세가지 폴더
+data_source/model/repository 
+data 가져올 거면 무조건 data_source 가 있어야지 
+
+android studio - setting - dart data class 
+이걸로 data class 만들 수 있다. (노가다 놉) 
+
+필드만 만들고 generate - named argument constructor 
+toMap 을 toJson 으로 바꾸면 되지!
+
+test code 에 expect 무조건 쓰기 - 왜냐면 안쓰면 성공이거든 ..
+
+오늘 배운거
+
+dart - extension 
+원래는 상속해야 기능의 확장이 가능한데 
+extension으로 상속없이 확장할 수 있다. 
+
+string 은 final class
+final class 는 상속 금지다.
+이럴 때 extension 사용하면 된다! 
+
+앱은 작게 코드 ( 확장성)은 크게! 
+
+최종 구현체를 마지막에 만드는 게 속 편하다.
+repository 왜 씀? 
+캡슐화, 추상화 때문에 ! 
+
+clean sexy code : take(10)으로 앞에서 10개만 취할 수 있다. 
+
+return 은 마지막에~ 
+class 는 타입끼리 교체가 힘들다 
+인터페이스가 교체에 굿 ~ 
+http 때문에 인터넷 끊기면 끊긴다.
+
+장표에서 방법3만 쓰면된다.
+이게 제일 편다다.
+1,2도 알아는 둬라
+
+[] list
+{} map
+FromJson 이 제일 중요!!!
+서버에서 받아올 일이 많으니까 ...
+
