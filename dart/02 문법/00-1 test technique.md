@@ -66,7 +66,7 @@ void main() async {
 
 // group('bank ', () { // 정상 코드
   group('bank ', () async { 
-    test('jsonDecode test', () async {
+    test('jsonDecode test', () async {
       final List json = await jsonDecode(bankDataFile);
       json.map((e) => Bank.fromJson(e)).toList();
 
@@ -115,6 +115,8 @@ void main() {
   });
 }
 ```
+<br/>
+
 ### bool true/false 값으로 확인
 ```dart
 void main() {
@@ -122,6 +124,8 @@ void main() {
     expect(factorial(5) == 120, true); // T/F로 확인
   });
 ```
+<br/>
+
 ### 예외처리 유/무로 확인
 ```dart
   test('factorial 0 & 음의 수', () {
