@@ -892,10 +892,10 @@
 - 테스트 용이성
   - 다형성을 활용하면 테스트할 때 원하는 객체를 활용 가능
   - 테스트용 객체를 별도로 준비하여 테스트 가능
-
+    
 ---
 
-### <Dto>  
+### <DTO>
 
 - DTO(Data Transfer Object) 
   - Dto : 데이터 소스를 모델 클래스로 변환하는 과정에서 순수하게 클래스에 담기 위한 중간 전달 객체 (**JSON -> DTO -> Model Class**)
@@ -908,15 +908,17 @@
   - Json 값에 예외가 없다면 반드시 Dto를 도입할 필요는 없다
 
 - 구현 방법
-  - 모델 클래스
+  - **모델 클래스**
     - 모델 클래스는 불변 객체만을 담도록 한다. (모든 필드가 ```final```인 non-nullable 상수를 가지게 하고, ```const```인 생성자를 가지게 한다.) 그리고 옵션으로 ```toString, ==, hashCode, copyWith``` 4가지 메소드에 대해서만 재정의를 한다.( ```fromJson, toJson``` 은 Dto 클래스에서 작성한다.)
 
-  - Dto
+  - **Dto**
     - **Dto 클래스 작성을 위해서는 JsonToDart 플러그인을 설치해 사용**한다. ```fromJson(), toJson()```을 만을 담는다.
 
-  - Mapper
+  - **Mapper**
     - Dto를 Model 클래스로 변환하는 유틸 메소드이다. [확장함수 활용](https://dart.dev/language/extension-methods) ```extensiton TempDtoToTemp on TempDto```
     - Nullable을 non-Nullable로 변환하는것이 핵심
-    - Dto 전체를 변환하는 것이 아니라, 필요한 부분만 변환한다.
+    - Dto 전체를 변환하는 것이 아니라, 필요한 부분만 변환한다
    
+  - **Repository**
+    
 ---
