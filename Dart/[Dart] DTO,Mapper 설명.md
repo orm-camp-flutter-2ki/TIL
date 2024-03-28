@@ -1,5 +1,5 @@
 >🙋🏻DTO(Domain Transfer Object)?
-데이터를 전송하기 위한 객체
+ DTO는 계층 간 `데이터 교환`을 위해 사용되는 `객체`입니다.
 주로 네트워크 통신이나 데이터베이스 액세스와 같은 데이터 전송 작업
 - 필요한 이유?
   - Model Class 는 non-nullable 한 값만 가지고 있도록 한다
@@ -10,15 +10,49 @@ _(문서에 명시되어 있지 않더라도…)_
   ? Dto를 nullable 한 형태를 만들어 사용 ->
    필요한 데이터가 없는 경우 null로 처리하여 코드를 더욱 견고하고 유연하게 만들 수 있음
   - Json 값에 예외가 없다면 반드시 Dto를 도입할 필요는 없다
-
+```dart
+class UserDto {
+  num? id;
+  String? name;
+  String? username;
+  String? email;
+  AddressDto? address;
+  String? phone;
+  String? website;
+  CompanyDto? company;
+  UserDto({
+    this.id,
+    this.name,
+    this.username,
+    this.email,
+    this.address,
+    this.phone,
+    this.website,
+    this.company,
+  });
+--- tojson, fromjson 작성 생략 --
+```
+**모든 필드가 Nullable 변수
+직렬화(tojson), 역직렬화(fromjson) 제공**
 
 >🙋🏻Mapper ?
+다른 데이터 모델 간에 데이터를 `변환`
+데이터의 구조와 형식을 변경하여 원하는 형태로 `데이터를 변환하고 매핑`
+```dart
+extension UserDtoTOUserList on UserDto {
+  User toUser() {
+    return User(
+      name: name ?? '',
+      email: email ?? '',
+      // 현재 Dto는 모두 nullable 한 상태임으로
+      latitude: double.parse(address?.geo?.lat ?? '0.0'),
+      longitude: double.parse(address?.geo?.lng ?? '0.0'),
+    );
+  }
+}
 
-다른 데이터 모델 간에 데이터를 변환
-데이터의 구조와 형식을 변경하여 원하는 형태로 데이터를 변환하고 매핑
-
-<img src="https://velog.velcdn.com/images/hee462/post/c1b44458-e2fa-4980-ab94-a2f932d82fb3/image.png" width="500" height="300">
-
+```
+![](https://velog.velcdn.com/images/hee462/post/c1b44458-e2fa-4980-ab94-a2f932d82fb3/image.png)
 
 이전에 배운 [Repository](https://velog.io/@hee462/DartRepository) 와 mapper와 혼동
 
@@ -42,9 +76,7 @@ _(문서에 명시되어 있지 않더라도…)_
 메모 어플리케이션은 DTO와 데이터 클래스 간의 변환을 담당하는 매퍼를 사용합니다.
 사용자가 입력한 정보는 DTO로 변환되어 데이터 클래스에 저장됩니다. 그리고 이 데이터 클래스가 저장소에 저장됩니다.
 
-<img src="https://velog.velcdn.com/images/hee462/post/2d896e93-4fe7-4644-ace9-e020e2149ebd/image.png" width="500" height="300">
-
-
+![](https://velog.velcdn.com/images/hee462/post/2d896e93-4fe7-4644-ace9-e020e2149ebd/image.png)
 
 만드는 형식은 어플과 기능마다 차이가 있지만
 되도록이면 Model,Dto를 만들고 기능에 따라 맞춰서 코드를짜는것이 좋다
