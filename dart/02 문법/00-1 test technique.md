@@ -65,7 +65,7 @@ void main() async {
 // (...)
 
 // group('bank ', () { // 정상 코드
-  group('bank ', () async { 
+  group('bank ', () async { // 에러 코드
     test('jsonDecode test', () async {
       final List json = await jsonDecode(bankDataFile);
       json.map((e) => Bank.fromJson(e)).toList();
