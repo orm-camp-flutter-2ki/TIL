@@ -1,11 +1,15 @@
 # DTO, model class, mapper
+
 <div align="center">
-<img src="https://github.com/yujiyeong/TIL/assets/149862753/bcbc6fe8-8659-4add-bc49-102a69f80289" width="700">
+  
+![1](https://github.com/yujiyeong/TIL/assets/149862753/a352cbef-8398-4483-83a8-92e905dfc2fa)
+
+
 </div>
 
 # DTO (Data Transfer Object)
-> json -> Dto -> Model Class
 - 데이터 소스를 모델 클래스로 **변환**하는 과정에서 순수하게 클래스에 담기 위한 **중간 전달 객체**
+> json -> Dto -> Model Class
 
 ### 왜?
 - 잘못된 데이터 소스 (Json)를 받더라도 안 터지게 하려는 클라이언트 개발자의 방어 수단
@@ -20,6 +24,7 @@
 > `json to dart` plug-in 설치해서 dto 만들기
 
 <div align="center">
+  
 <img width="550" alt="image" src="https://github.com/yujiyeong/TIL/assets/149862753/2acd4b24-1ea4-495e-b345-8c87bd208aa5">
 
 <img width="550" alt="스크린샷 2024-03-28 오전 11 49 17" src="https://github.com/yujiyeong/TIL/assets/149862753/dfd6acd0-9526-4c2d-9c5b-0142d09b58f8">
