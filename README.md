@@ -25,6 +25,7 @@
 - [24.03.26 - Model, Design Pattern(Factory,Singleton,Repository)](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.26.md)
 - [24.03.27 - UnitTest, Extension, Mock](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.27.md)
 - [24.03.28 - DTO, Mapper](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.28.md)
+- [24.03.29 - 네트워크 통신, 이미지 다운로드](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.29.md)
 ### 5주차
 ### 6주차
 ### 7주차
