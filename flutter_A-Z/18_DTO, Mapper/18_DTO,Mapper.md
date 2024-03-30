@@ -38,6 +38,7 @@ final [one, ... last] = numbers.sotred();
 
 --- 
 ># Dto, Mapper
+![alt text](image.png)
 - 동적 Json
   - 서버에서 아예 잘못된 값을 보내는 경우
 - DTO
