@@ -4,10 +4,11 @@
 ```dart
 dart pub add json_annotation dev:build_runner dev:json_serializable
 ```
+- android Studio `terminal` 에 위 코드 라인을 실행
 - `pubspec.yaml` 파일 에서 확인 가능
 <br/>
 
-### 2. 
+### 2. Live Template 생성
 <div align="center">
 <img width="264" alt="image" src="https://github.com/yujiyeong/TIL/assets/149862753/10dcea63-aeaa-4581-b9e6-8fe886d3fadb">
 </div>
@@ -99,13 +100,4 @@ dart run build_runner build --delete-conflicting-outputs (충돌 해결)
 
 - `JsonKey` 를 사용해 모델의 필드로 맵핑 가능  
 - 생성된 `[파일명].g.dart`은 절대 건드리지 않는다!!!  
-
-
-
-
-
-
-
-
-
 
