@@ -78,5 +78,7 @@ extension UserDtoTOUserList on UserDto {
 
 ![](https://velog.velcdn.com/images/hee462/post/2d896e93-4fe7-4644-ace9-e020e2149ebd/image.png)
 
+데이터의 흐름 : api -> Dto -> mapper(nullable한 타입, 이름변경,type변경 ) -> model(불변객체) -> repository
+
 만드는 형식은 어플과 기능마다 차이가 있지만
 되도록이면 Model,Dto를 만들고 기능에 따라 맞춰서 코드를짜는것이 좋다
