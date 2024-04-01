@@ -1,5 +1,10 @@
 ### Pixabay Search Images API
 
+### 개요
+
+Pixabay 서비스의 Search Images API를 정리했습니다.
+분당 최대 100개의 요청이 가능합니다.
+
 **URL**
 ```
 https://pixabay.com/api/
