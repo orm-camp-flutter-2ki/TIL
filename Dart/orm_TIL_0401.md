@@ -133,14 +133,14 @@ Retrieving videos about "yellow flowers". The search term q needs to be URL en
 | id | A unique identifier for this video. | 이 동영상의 고유 식별자입니다. |
 | pageURL | Source page on Pixabay. | Pixabay의 소스 페이지. |
 | videos | A set of differently sizes video streams:
-• large usually has a dimension of 3840x2160. If a large video version is not available, an empty URL value and a size of zero is returned.
-• medium usually has a dimension of 1920x1080, older videos have a dimension of 1280x720. This size is available for all Pixabay videos.
-• small typically has a dimension of 1280x720, older videos have a dimension of 960x540. This size is available for all videos.
-• tiny typically has a dimension of 960x540, older videos have a dimension of 640x360. This size is available for all videos.Object keyDescriptionurlThe video URL. Append the GET parameter download=1 to the value to have the browser download it.widthThe width of the video and thumbnail.heightThe height of the video and thumbnail.sizeThe approximate size of the video in bytes.thumbnailThe URL of the poster image for this rendition. | 다양한 크기의 비디오 스트림 세트:
-• large일반적으로 크기는 3840x2160입니다. 큰 비디오 버전을 사용할 수 없는 경우 빈 URL 값과 0 크기가 반환됩니다.
-• medium일반적으로 크기는 1920x1080이고 이전 비디오의 크기는 1280x720입니다. 이 크기는 모든 Pixabay 비디오에 사용할 수 있습니다.
-• small일반적으로 크기는 1280x720이고 이전 비디오의 크기는 960x540입니다. 이 크기는 모든 비디오에 사용할 수 있습니다.
-• tiny일반적으로 크기는 960x540이고 이전 비디오의 크기는 640x360입니다. 이 크기는 모든 비디오에 사용할 수 있습니다.객체 키설명URL동영상 URL입니다. 브라우저가 해당 값을 다운로드하도록 하려면 GET 매개변수를 download=1값에 추가하세요.너비비디오 및 썸네일의 너비입니다.키동영상 및 미리보기 이미지의 높이입니다.크기비디오의 대략적인 크기(바이트)입니다.미리보기 이미지이 변환의 포스터 이미지 URL입니다. |
+• large usually has a dimension of 3840x2160. If a large video version is not available, an empty URL value and a size of zero is returned.|
+|• medium usually has a dimension of 1920x1080, older videos have a dimension of 1280x720. This size is available for all Pixabay videos.|
+|• small typically has a dimension of 1280x720, older videos have a dimension of 960x540. This size is available for all videos.|
+|• tiny typically has a dimension of 960x540, older videos have a dimension of 640x360. This size is available for all videos.Object keyDescriptionurlThe video URL. Append the GET parameter download=1 to the value to have the browser download it.widthThe width of the video and thumbnail.heightThe height of the video and thumbnail.sizeThe approximate size of the video in bytes.thumbnailThe URL of the poster image for this rendition. | 다양한 크기의 비디오 스트림 세트:
+• large일반적으로 크기는 3840x2160입니다. 큰 비디오 버전을 사용할 수 없는 경우 빈 URL 값과 0 크기가 반환됩니다.|
+|• medium일반적으로 크기는 1920x1080이고 이전 비디오의 크기는 1280x720입니다. 이 크기는 모든 Pixabay 비디오에 사용할 수 있습니다.
+|• small일반적으로 크기는 1280x720이고 이전 비디오의 크기는 960x540입니다. 이 크기는 모든 비디오에 사용할 수 있습니다.|
+|• tiny일반적으로 크기는 960x540이고 이전 비디오의 크기는 640x360입니다. 이 크기는 모든 비디오에 사용할 수 있습니다.객체 키설명URL동영상 URL입니다. 브라우저가 해당 값을 다운로드하도록 하려면 GET 매개변수를 download=1값에 추가하세요.너비비디오 및 썸네일의 너비입니다.키동영상 및 미리보기 이미지의 높이입니다.크기비디오의 대략적인 크기(바이트)입니다.미리보기 이미지이 변환의 포스터 이미지 URL입니다. |
 | views | Total number of views. | 총 조회수입니다. |
 | downloads | Total number of downloads. | 총 다운로드 수입니다. |
 | likes | Total number of likes. | 총 좋아요 수입니다. |
