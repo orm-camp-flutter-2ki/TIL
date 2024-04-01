@@ -10,12 +10,32 @@
 * sealed 클래스는 타입 봉인 효과를 가진다.(enum하고 비슷)
 
 ```dart
+sealed class Result<T> {
+  factory Result.success(T data) = Success;
+
+  factory Result.error(Exception e) = Error;
+}
+
+class Success<T> implements Result<T> {
+  final T data;
+
+  Success(this.data);
+}
+
+class Error<T> implements Result<T> {
+  final Exception e;
+
+  Error(this.e);
+}
 ```
+
 ### 사용 예시
 * 응답 객체를 Result 클래스로 랩핑하기
 <img width="683" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/1543806d-966d-44ed-9feb-0964e01a92a8">
 
 * 예외가 예상되는 지점에서 try - catch 사용하기
+* <img width="725" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/7f156bc6-6faf-4a5f-9db2-b73cdfe56769">
+
 
 ### Result 패턴 사용 시 효과
 * enum과 동일하게 switch 문과 조합하여 case를 강제할 수 있다.
@@ -27,10 +47,119 @@
 freezed = json_serializable + Equatable(==, hashCode, toString, copy) + immutable
 * 선언된 필드들의 getter를 만들어서 외부에서 값을 변경할 수 없도록 한다.
 * sealed class 작성을 편하게 해준다.
+
 ```dart
 dart pub add freezed
 ```
 
+* ver. 1
+```dart
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'result.freezed.dart';
+
+@freezed
+sealed class Result<T> with _$Result<T> {
+  const factory Result.success(T data) = Success;
+  const factory Result.error(Exception e) = Error;
+}
+```
+
+✅ @freezed 를 사용하자 코드가 대폭 줄었다.
+✅ 코드 생성 후 빌드 명령어를 입력 해준다.
+
+```dart
+dart run build_runner build
+```
+
+* ver. 2
+```dart
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'result_ver_2.freezed.dart';
+
+@freezed
+sealed class Result<D, E> with _$Result<D, E> {
+  const factory Result.success(D data) = Success;
+  const factory Result.error(E error) = Error;
+}
+```
+D: 데이터  
+E: 에러  
+기본 버전에는 Exception만 처리하는 반면,  
+신 버전에서는 원하는 에러 타입 정의 가능
+
+```dart
+enum NetworkError {
+  requestTimeout,
+  unknown,
+}
+
+// repository 에서 Result 타입을 반환하도록 수정
+abstract interface class PhotoRepository {
+  Future<Result<List<Photo>, NetworkError>> getPhotos();
+}
+
+class PhotoRepositoryImpl implements PhotoRepository {
+  final MockPhotoApi _api;
+
+  PhotoRepositoryImpl(this._api);
+
+  @override
+  Future<Result<List<Photo>, NetworkError>> getPhotos() async {
+    try {
+      final List<PhotoDto> photoDtoList =
+          await _api.getPhotos('').timeout(Duration(seconds: 10));
+
+      return Result.success(photoDtoList.map((e) => e.toPhoto)).toList();
+
+      // 두 가지 이상의 에러를 리턴할 수 있다.
+    } on TimeoutException {
+      return Result.error(NetworkError.requestTimeout);
+    } catch (e) {
+      return Result.error(NetworkError.unknown);
+    }
+  }
+}
+```
+
+* 실제 에러 처리 부분
+```dart
+void main() async {
+  final photoRepository = PhotoRepositoryImpl(MockPhotoApi());
+
+  final result = await photoRepository.getPhotos();
+
+  switch (result) {
+    case Success<List<Photo>, NetworkError>():
+      print(result.data);
+    case Error<List<Photo>, NetworkError>():
+      {
+        switch (result.error) {
+          case NetworkError.requestTimeout:
+            print('타임 아웃');
+          case NetworkError.unknown:
+            print('알 수 없는 에러');
+        }
+      }
+  }
+}
+
+```
+
+### freezed 를 활용한 Data Clase (모델) 작성
+<img width="553" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/c2398164-5a1d-460a-9fdc-15fab5a21111">
+
+
+### 정리
+* enum은 클래스만큼 자유롭지 않다.
+* equals, hashCode 재정의 불가능
+* sealed 클래스는 서브 타입을 봉인한다.
+* sealed class는 패터 매칭을 활용하여 모든 서브 타입에 대한 처리를 하기 용이하다.
+* Result 패턴은 여러 종류의 성공과 실패를 처리하기 용이한 패턴이다.
+* 앱의 규모에 맞는 Result 패턴을 사용하자
+* 소규모 ver 1로도 충분
+* 다국어 지원 : ver 2
 
 
 <br></br>
@@ -93,3 +222,20 @@ pretty : JSON 코드를 이쁘게 들여쓰기
 4. 그 중 첫 번째 이미지
 <img width="583" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/1cca39e3-6b24-4983-ae2f-f8f02ba9c292">
 
+
+## 기타
+```dart
+sealed class ResultVer2<D, E> with _$ResultVer2<D, E> {}
+
+return ResultVer2.error(NetworkError.unknown);
+E 타입이기 때문에 enum 값을 그대로 넣을 수 있었다.
+```
+```dart
+try {
+  throw Exception()
+} catch (e) {
+  return ResultVer2.error(NetworkError.unknown);
+}
+```
+
+try애 throw Exception() 을 넣으면 catch로 바로 가기 때문에 에러를 확인할 수 있다.
