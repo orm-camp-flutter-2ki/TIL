@@ -664,6 +664,69 @@ URL을 사용한 고수준 액세스
 5. 단순성
 6. 멀티캐스팅 및 브로트캐스팅
 
+## Result pattern
+
+1. 함수의 실행 결과를 표현하기 위해 사용되는 디자인패턴
+2. 성공적으로 실행될 경우 결과값을, 실패할경우 에러를 반환
+
+## 에러처리의 기본 try-catch
+
+- 기본적으로 예외처리는 try - catcy 활용
+
+- Result Pattern을 사용하여 다양한 상황에서 성공, 실패시 처리
+
+- Result 클래스는 성공시에는 데이터를, 실패시에는 Exception(또는 String)을 담는 객체를 정의
+
+## sealed 클래스
+
+- 타입 봉인 효과 
+
+- enum 과 비슷 + 다른 객체 참조
+
+
+## freezed
+
+- 불변성 지원, 복사기능, 유니온,sealed 클래스, JSON 직렬화, 커스텀 메소드와 게터 지원
+
+- 불변성(immutability) + json_serializable + Equatable
+
+- toJson / fromJson 함수를 제공해 json으로 쉽게 serialize / deserialize
+
+- equals (==)와 hashCode를 자동 생성
+
+- 선언된 필드들의 getter를 만들어서 외부에서 값을 변경할 수 없도록 한다
+
+- copy와 copyWith를 자동으로 구현해주고, 종속성을 가지는 하위 클래스들에 대해서도 쉽게 deepCopy할 수 있도록 해준다
+
+- sealed class 작성을 편하게 해준다
+
+
+## freezed를 활용한 Data Class (모델) 작성
+
+빌드 명령: dart run build_runner build --delete-conflicting-outputs
+
+
+## 정리
+1. enum 은 클래스만큼 자유롭지 않다
+2. equals, hashcode 재정의가 불가능하다
+3. sealed class 는 서브타입을 봉인한다.
+4. sealed class 는 패턴매칭을 활용하여 모든 서브타입에 대한 처리를 하기 용이하다.
+5. Result 패턴은 여러가지 종류의 성공과 실패를 처리하기 용이한 패턴이다.
+6. 앱의 규모에 맞는 Result패턴을 사용하자
+7. 소규모: ver1으로 충분
+8. 다국어 지원: ver2
+
+## API 이미지 검색
+
+1. https://pixabay.com/?page=2 에 회원가입을 하여 API key가 있는 링크를 얻는다.
+2. postman에 해당 링크를 붙여넣기 한다.
+3. q 파라미터에 값을 입력하여 API 사용 방법을 학습한다.
+
+<img src="./postman/1.png">
+<img src="./postman/2.png">
+<img src="./postman/3.png">
+
+
 -------------------
 알고리즘 학습 필요
 
