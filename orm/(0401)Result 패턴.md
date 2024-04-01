@@ -34,7 +34,8 @@ class Error<T> implements Result<T> {
 <img width="683" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/1543806d-966d-44ed-9feb-0964e01a92a8">
 
 * 예외가 예상되는 지점에서 try - catch 사용하기
-* <img width="725" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/7f156bc6-6faf-4a5f-9db2-b73cdfe56769">
+<img width="481" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/9b458b04-b0c0-4ce1-9451-2b1f78c5e9d0">
+
 
 
 ### Result 패턴 사용 시 효과
