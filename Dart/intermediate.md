@@ -795,7 +795,7 @@
      ```
     -> 싱글턴 패턴으로 인해 car1, car2 인스턴스는 2개의 인스턴스가 생성된게 아니라 동일한 1개의 인스턴스이다.
   
-  - Repository 패턴
+  - **Repository 패턴**
     - 정의 : SW 개발에서 **데이터 저장소에 접근하는 객체를 추상화**하고, 데이터소스(DB, File)와의 **통신을 담당하는 객체를 캡슐화**하는 디자인 패턴
     - 구성요소
       - Client : 데이터 요청을 시작하는 구성요소 (cf. 서비스, 컨트롤러)
@@ -895,7 +895,7 @@
     
 ---
 
-### <DTO>
+### <DTO, Data Transfer Object>
 
 - DTO(Data Transfer Object) 
   - Dto : 데이터 소스를 모델 클래스로 변환하는 과정에서 순수하게 클래스에 담기 위한 중간 전달 객체 (**JSON -> DTO -> Model Class**)
@@ -922,3 +922,79 @@
   - **Repository**
     
 ---
+
+### <네트워크 통신>
+- HTTP (HyperText Transfer Protocol)
+  
+  - 개념
+    - 상태 비저장용 프로토콜 (무상태성)
+    - HTTP는 요청 메시지를 보내기 직전까지 대상 컴퓨터가 응답 가능한지 알 방법이 없음
+    - Stateless 프로토콜, 즉 상태가 없는 프로토콜이라고 함
+    - Stateful 프로토콜로는 TCP (Transmission Control Protocol)가 있음
+      
+  - 용도
+    - 원래 문서 전송용으로 설계되어, 브라우저가 GET 요청으로 웹 서버의 문서를 읽어오는 용도였으나
+    - 지금은 서버와 클라이언트가 텍스트, 이미지, 동영상 등의 데이터를 주고 받을 때 사용하는 프로토콜로 확장
+    - 웹 상에서 보는 이미지, 영상, 파일과 같은 바이너리 데이터도 HTTP 멀티파트나 Base64 인코딩하여 사용
+   
+  - HTTP와 함께 사용하는 다른 기술
+    - JSON 등을 HTTP와 함께 사용하는 RESTful API
+    - HTTP에 전송 계층 보안(TLS:Transport Layer Security)을 더해 만든 HTTPS
+
+  - HTTP 요청과 응답
+    - 모든 HTTP 메시지는 요청과 응답이 일대일로 대응되어야 한다 
+      - Client는 Server에게 Request
+      - Server는 Client에게 Response
+        
+    - 클라이언트 측면의 장단점
+      - 장점 : 항상 자신이 보낸 요청에 대한 응답을 알 수 있어서 로직이 단순해짐
+      - 단점 : 서버로 HTTP 요청을 보내기 직전까지 실제로 서버가 동작하는지 알 방법이 없음
+        
+    - HTTP 응답 없음
+      - 일정 시간 응답이 없을 경우 요청 실패로 간주
+      - 실제로 서버가 제대로 처리를 했어도 응답이 늦게 와서 타임아웃 나는 경우도 있음
+      - Android의 경우 10초 이내에 응답이 없으면 타임아웃으로 간주, iOS의 경우 60초
+      - 예측이 어려운 경우 : 서버가 다른 국가에 있는 경우, 클라우드 기반의 서버
+     
+  - 서버 -> 클라이언트 http 통신을 통해 json 디코딩 하여 모델로 불러오는 과정
+    - 데이터 제공 서버(연습용) : [jsonplaceholder](https://jsonplaceholder.typicode.com/)
+    - Http 통신을 위한 다트 라이브러리 :  [```package:http```](https://pub.dev/packages/http/install) 패키지를 활용한 HTTP 요청을 수행
+    - ```dart:convert``` 사용하여 JSON 문자열을 Dart 객체로 디코딩 (jsonDecode)
+    - JSON 객체를 Dart 클래스로 변환 (fromJson)
+   
+  - HTTP 요청 메서드
+    - GET : 데이터 읽기 요청, 서버로부터 데이터를 받을 때 사용
+      - 특징
+        - body를 포함할 수 없음
+        - ?와 & 문자를 사용하는 쿼리 파라미터를 추가할 수 있다 (https://jsonplaceholder.typicode.com/comments?postId=1)
+    - POST : 데이터가 포함된 쓰기 요청, 서버에게 데이터를 보낼 때 사용 (예 : 로그인, 주문 요청 등)
+    - DELETE : 삭제
+    - PUT : 업데이트
+
+  - [HTTP 요청 헤더](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers)
+    - 요청 정보를 파악하는 데 도움이 되는 다른 여러 정보를 포함할 수 있음
+    - 주로 인증, 캐싱, 클라이언트 힌트, 조건, 연결 관리, 쿠키, CORS 등에 활용
+    - JSON 파일을 주고 받을 때 Content-Type 에 application/json 으로 명시
+
+  - 상태 코드
+    - 모든 HTTP 응답에는 상태 코드와 상태 메시지가 있음
+    - 200 OK
+      - 상태코드가 200인 경우에도, 실제 데이터는 올바르게 주어지지 않을 수 있기 때문에 통신이 성공하더라도 값이 유효한지 확인할 필요가 있다.
+    - 400 Bad Request
+    - 404 Not Found
+    - 500 Internal Server Error
+
+- 세션과 쿠키
+  - HTTP는 상태라는 개념이 존재하지 않기 때문에 세션과 쿠키를 사용해 구분
+  - 주로 웹에서 서버는 세션, 클라이언트는 쿠키를 통해 상태 저장
+
+- RESTful API
+  - REST (representational state transfer)는 분산 시스템을 위한 소프트웨어 아키텍처의 한 형태
+  - RESTful이란 REST 조건을 만족한다는 뜻
+  - 서버와 클라이언트가 메시지를 주고받을 때 가장 많이 사용하는 통신 규격 (암묵적인 룰)
+  - 요청 주소(URL)과 메서드(GET, POST 등), JSON 규격을 이용하여 API를 정의
+  - ![image](https://github.com/algochemy/TIL/assets/152131529/570d3077-d1d7-45cd-b359-20e439f87fe3)
+  - RESTfual API 테스트 도구 : [PostMan](https://www.postman.com)
+
+- JSON 직렬화 코드 제너레이션 기법
+  - [JsonSerializable 라이브러리](https://pub.dev/packages/json_serializable/install): ```fromJson(), toJson()``` 을 자동으로 생성해 주고, 필드명을 바꿀 수 있는 것 외에도 DTO, Model 을 하나로 합칠 수 있는 여러 기능을 제공
