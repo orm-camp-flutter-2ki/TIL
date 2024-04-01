@@ -27,6 +27,7 @@
 - [24.03.28 - DTO, Mapper](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.28.md)
 - [24.03.29 - 네트워크 통신, 이미지 다운로드](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.03.29.md)
 ### 5주차
+- [24.04.01 - Result, freezed](https://github.com/JEON-Sungsu/TIL/blob/main/SecondWeek/24.04.01.md)
 ### 6주차
 ### 7주차
 ### 8주차
