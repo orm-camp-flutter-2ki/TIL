@@ -998,3 +998,94 @@
 
 - JSON 직렬화 코드 제너레이션 기법
   - [JsonSerializable 라이브러리](https://pub.dev/packages/json_serializable/install): ```fromJson(), toJson()``` 을 자동으로 생성해 주고, 필드명을 바꿀 수 있는 것 외에도 DTO, Model 을 하나로 합칠 수 있는 여러 기능을 제공
+
+
+---
+
+### <Result 패턴>
+
+- 서버에 데이터 요청시 예상되는 상황
+  - 성공 (Success)
+  - 실패 (Error, Failure)
+    - 네트워크 연결이 아예 안 되어 있음
+    - 네트워크 불안정으로 타임아웃 발생
+
+- 예외 처리 
+  - 기본적으로 예외는 try - catch 를 활용하여 처리 한다.
+    - 런타임 에러 뿐만 아니라 논리적인 오류나 예외 상황에 대한 처리를 하기에는 부족하다
+  - **Result 패턴은 성공, 실패시 처리에 유용한 패턴이다** (Beyond try-catch)
+
+ - Result 클래스
+  - Result 클래스는 성공시에는 데이터를, 실패시에는 Exception(또는 String)을 담는 객체를 정의한다
+  - enum과 동일하게 switch 문과 조합하여 모든 처리를 강제할 수 있다
+    - 단, enum은 클래스만큼 자유롭지 않다(equal, hashcode 재정의가 불가능하다)
+  - 여러가지 3개 이상의 성공과 실패를 처리할 수 있다
+
+    - freeze 패키지를 이용한 성공, 에러를 처리하는 예 (2가지)
+      ```dart
+      import 'package:freezed_annotation/freezed_annotation.dart';
+      part 'result.freezed.dart';
+      
+      @freezed
+      sealed class Result<T> with _$Result<T> {
+        const factory Result.success(T data) = Success;
+        const factory Result.error(Exception e) = Error;
+      }
+      ```
+      
+  - freeze 패키지를 이용한 성공, 에러를 처리하는 예 (3가지 이상) **더 많은 반환 케이스가 필요하면 추가하면 된다.**
+    ```dart
+    import 'package:freezed_annotation/freezed_annotation.dart';
+    part 'result.freezed.dart';
+    
+    @freezed
+    sealed class Result<T> with _$Result<T> {
+      const factory Result.success(T data) = Success;
+      const factory Result.argumentError(Exception e) = ArgumentError;
+      const factory Result.networkError(Exception e) = NetworkError;
+    }
+    ```
+
+  - 위의 result.dart를 생성한 후 터미널에서 다음을 실행하여 빌드하면 result.freezed.dart가 생성된다.
+    ```cmd
+    dart run build_runner build --delete-conflicting-outputs
+    ```
+    
+  - [sealed 클래스](https://dart.dev/language/class-modifiers#sealed)
+    - 서브타입을 봉인하기 위해 사용
+    - 패턴 매칭을 활용하여 모든 서브타입에 대한 처리를 하기 용이하다
+    - enum 하고 비슷한 효과 + 다른 객체의 참조를 가질 수 있다
+
+  - **freeze 라이브러리**
+    - json_serializable + Equatable + Immutable 기능을 모두 지원
+    1. toJson / fromJson 함수를 제공해 json으로 쉽게 serialize / deserialize 할 수 있도록 돕는다.
+    2. equals (==)와 hashCode를 자동으로 작성해준다.
+    3. 선언된 필드들의 getter를 만들어서 외부에서 값을 변경할 수 없도록 한다.
+    4. copy와 copyWith을 자동으로 구현해주고, 종속성을 가지는 하위 클래스들에 대해서도 쉽게 deepCopy 할 수 있도록 도와준다.
+    5. sealed class 작성을 편하게 해 준다
+    - 설치
+      ```cmd
+      <설치>
+      dart pub add freezed_annotation
+      dart pub add dev:build_runner
+      dart pub add dev:freezed
+      dart pub add json_annotation
+      dart pub add dev:json_serializable
+      ```
+
+  - API 활용 예
+    - [픽사베이](https://pixabay.com/) 사이트 접근(https://pixabay.com/)
+    - [API DOCS](https://pixabay.com/api/docs/) API Docs 페이지 확인 (API 명세를 확인할 수 있다.)
+    ![image](https://github.com/algochemy/TIL/assets/152131529/00f27ecc-6792-4fd4-90b9-22b4626fc04a)
+      - api_key는 필수 쿼리 파라미터이다.
+      - 나머지 선택 파라미터를 URL에 조합하면 원하는 사진을 얻을 수 있다      
+
+    - PostMan을 통한 API 통신 확인
+      - [PostMan 다운로드](https://www.postman.com/downloads/)
+      - API Docs에 맞게 원하는 사진을 얻기 위해 쿼리 파라미터를 조합하여 알맞는 URL을 작성한다.
+        ![image](https://github.com/algochemy/TIL/assets/152131529/57fe3bf9-d60c-4181-95af-7414b80d57bb)
+      - GET 요청을 통해 Send하면 HTTP 통신을 통해 Body가 출력된다.
+        ![image](https://github.com/algochemy/TIL/assets/152131529/68a3e771-17f6-4842-8510-732d0c146966)
+      - Body의 previewURL, webformatURL, largeImageURL 등의 태그를 통해 입력한 쿼리에 알맞는 사진 URL이 제공된다.
+        ![image](https://github.com/algochemy/TIL/assets/152131529/ca527f1d-a826-4788-86e4-038d78cb2e2f)
+  
