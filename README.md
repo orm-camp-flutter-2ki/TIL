@@ -726,6 +726,42 @@ URL을 사용한 고수준 액세스
 <img src="./postman/2.png">
 <img src="./postman/3.png">
 
+## 좋은 설계 원칙
+
+1. 응집도와 결합도: 응집도는 모듈 내 요소들간의 연관성을, 결합도는 모듈 간 의존도를 나타냅니다.
+
+2. 코드 작성의 6가지 원칙:
+
+-DRY (Don't Repeat Yourself): 중복 코드 방지
+-PIE (Program Intently and Expressively): 명확하고 표현력 있는 코드 작성
+-SRP (Single Responsibility Principle): 한 클래스는 하나의 책임만 가짐
+-OCP (Open Closed Principle): 확장에는 열려 있고, 변경에는 닫혀 있어야 함
+-SDP (Stable Dependencies Principle): 안정적인 것에 의존
+-ADP (Acyclic Dependencies Principle): 의존성 사이클 방지
+
+## 디자인 패턴
+
+- 디자인 패턴의 정의: 특정 문맥에서 재사용 가능한 해결책을 제공하는 소프트웨어 디자인의 형식화된 관행입니다.
+
+- 디자인 패턴의 장점: 개발자 간 커뮤니케이션 개선, 객체지향 설계 원칙 이해도 향상
+
+- GoF의 23가지 디자인 패턴: 소프트웨어 공학에서 중요한 23가지 디자인 패턴
+
+- 초보자에게 권장되는 패턴: Factory 패턴, Singleton 패턴, Decorator 패턴
+
+- 다양한 디자인 패턴 예시:
+
+1. Iterator 패턴: 반복 구조의 추상화
+2. Facade 패턴: 복잡한 시스템을 단순한 인터페이스로 제공
+3. Strategy 패턴: 동일 계열의 알고리즘을 정의하고 상호 교체 가능하게 함
+4. Observer 패턴: 객체의 상태 변화를 관찰하고 변경 시 통지
+
+## 아키텍처 디자인 패턴
+
+- MVC, MVP, MVVM 등: 소프트웨어의 전체적인 구조에 대한 패턴
+
+- Repository 패턴: 데이터 소스에 접근하는 객체를 추상화하고 캡슐화
+
 
 -------------------
 알고리즘 학습 필요
