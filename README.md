@@ -762,7 +762,30 @@ URL을 사용한 고수준 액세스
 
 - Repository 패턴: 데이터 소스에 접근하는 객체를 추상화하고 캡슐화
 
+## Flutter의 기본 구성 요소인 Widget
 
+Flutter에서 화면을 그리는 데 사용되는 기본 단위.
+
+## 필수 위젯 목록:
+
+Scaffold, AppBar, Container, Text, Center, Column, Row, ElevatedButton, Navigator.push (화면 전환), Image.network, Image.asset, TextField, ListView, SizedBox, Stack, Form, Padding, SingleChildScrollView, FloatingActionButton
+
+## StatefulWidget
+
+상태를 가지고 있는 위젯으로, 화면에 변경사항이 있으면 다시 그려야 하는 경우 사용
+
+initState(), dispose() 등의 생명주기 함수를 포함
+
+## StatelessWidget
+
+상태가 없는 위젯으로, 정적인 화면을 나타낼 때 사용
+
+
+## MaterialApp
+
+Android 스타일의 앱 개발 시 사용되는 최상위 위젯
+
+iOS 스타일은 CupertinoApp을 사용
 -------------------
 알고리즘 학습 필요
 
