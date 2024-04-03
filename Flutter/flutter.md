@@ -1,4 +1,4 @@
-### <Layout>
+### Layout(레이아웃)
 
 - Widget : Flutter의 화면을 그리는 기본 구성요소
   - 필수 위젯
@@ -29,8 +29,3 @@
 
 - 플러터 공식문서 공부하기
   - [상호 작용](https://docs.flutter.dev/ui/interactive)
-
-
-  
-
-    
