@@ -355,7 +355,8 @@ void main(){
 
 void solution(x, n){
   List<num> result = [];
-  num sum = 0;
+  //num sum = 0;
+  int sum = 0;
   // for (int i = 0; i < n; i++ ){
   //   sum += x as int;
   //   //print('i: $i sum :$sum');
@@ -363,8 +364,9 @@ void solution(x, n){
   // }
   int i = 0;
   while(i < n){
-    //sum += x as int;
-    sum += x;
+    sum += x as int;
+    //sum += x.toInt(); // A value of type 'num' can't be assigned to a variable of type 'int'. (comile E)
+    //sum += int.parse(x); // int is not a subtype of type 'String' (runtime E)
     result.add(sum);
     i++;
   }
