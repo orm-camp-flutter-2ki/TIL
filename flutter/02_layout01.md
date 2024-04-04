@@ -28,3 +28,33 @@ flutter:
 //사진을 쓸 곳
 return const Image(image: AssetImage('assets/background.png'));
 ```
+
+Lottie 쓰는 법
+- Asset을 pubspec.yaml 에 선언하고 Json로드
+- <a href="https://lottiefiles.com/">Lottie 페이지 참조</a>
+```dart
+//pubspec.yaml
+flutter:
+  assets:
+    - assets/lottie
+
+//로띠를 쓸 곳
+class LottieTest extends StatefulWidget {
+  @override
+  _LottieTestState createState() => _LottieTestState();
+}
+
+class _LottieTestState extends State<LottieTest> {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Lottie.asset(
+        'assets/lottie/cake.json',
+        width: 400,
+        height: 400,
+      ),
+    );
+  }
+}
+
+```
