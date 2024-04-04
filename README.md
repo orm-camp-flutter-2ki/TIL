@@ -29,7 +29,6 @@
 ### 5주차
 - [24.04.01 - Result, freezed](https://github.com/JEON-Sungsu/TIL/blob/main/FifthWeek/24.04.01.md)
 - [24.04.03 - Flutter, Widget](https://github.com/JEON-Sungsu/TIL/blob/main/FifthWeek/24.04.03.md)
-- [24.04.04 - Flutter, SliverAppBar](https://github.com/JEON-Sungsu/TIL/blob/main/FifthWeek/24.04.04.md)
 ### 6주차
 ### 7주차
 ### 8주차
