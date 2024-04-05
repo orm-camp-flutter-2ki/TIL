@@ -44,3 +44,8 @@ State 객체들은, tree(위젯의 구성)에 추가하기 위해 StatefulWidget
 7. 만약 프레임워크가 현재 애니메이션 프레임이 끝나기 전까지 하위 트리를 다시 삽입하지 않는 다면, 프레임워크는 dispose메서드를 호출하고 해당 State 객체가 두번 다시 build되지 못하게 한다. State를 상속한 클래스는 dispose 메서드를 오버라이드하여, 해당 객체에서 유지하고 있던 자원들을 해제하도록 할 수 있다(예, 애니메이션 중지).
 
 8. 프레임워크가 dispose를 호출하고나면, State 객체는 mounted 속성이 false인 mount되지 않은 것으로 여겨진다. (이 때, setState를 호출하면 에러가 발생한다.) dispose 호출은 생명주기의 종료 단계로써 dispose가 호출된 State 객체를 다시 mount하는 것은 불가능하다.
+
+<br>
+
+### 생명주기 확인 예제 포스트
+https://medium.com/@hadiyaaamir222/lifecycle-of-a-stateful-widget-aece2d56c946
