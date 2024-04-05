@@ -39,3 +39,5 @@ Container(
 shape와 borderRadius는 꾸며지는 Container의 자식 위젯에게는 적용되지 않는다.  
 (ClipRect, ClipRRect, ClipPath와 같은 clip 위젯을 자식 위젯으로 사용할 것) 
 
+### Inheritance
+Object > Decoration > BoxDecoration
