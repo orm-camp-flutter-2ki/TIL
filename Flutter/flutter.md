@@ -29,3 +29,31 @@
 
 - 플러터 공식문서 공부하기
   - [상호 작용](https://docs.flutter.dev/ui/interactive)
+
+- 주요 위젯
+  - [BottomNavigationBar](https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html)
+    - 하단 탭 바를 의미. 하단 탭 바를 만드는데 사용.
+  - [Column](https://api.flutter.dev/flutter/widgets/Column-class.html)
+    - 아래로 정렬되는 레이아웃 위젯. 이미지나 텍스트를 정렬하거나 할 때 사용
+  - [Row](https://api.flutter.dev/flutter/widgets/Row-class.html)
+    - 수평으로 정렬하기 위한 레이아웃 위젯
+    - mainAxisxSize 속성에서는 화면에 꽉 채우는 max, 내부 아이템의 크기에 맞추는 min을 설정할 수 있다
+    - mainAxisAligment는 정렬 방법을 결정한다. spaceEvenly는 자식 위젯들 간에 적절한 여백을 두며 정렬되므로 유용하다
+  - [SizedBox](https://api.flutter.dev/flutter/widgets/SizedBox-class.html)
+    - 상하/좌우 여백을 표시하는데 사용될 수 있으며, width, height 속성에 값을 할당하여 크기를 결정하는 위젯이다.
+  - [Card](https://api.flutter.dev/flutter/material/Card-class.html)
+    - 카드 형태의 레이아웃 위젯
+  - [PageView](https://api.flutter.dev/flutter/widgets/PageView-class.html)
+    - 좌우로 슬라이드되는 화면을 만들 때 유용한 위젯이다. children 속성에 여러 화면을 배치하면 된다.
+  - [Image](https://api.flutter.dev/flutter/widgets/Image-class.html)
+    - 프로젝트 내부 이미지를 표시하려면 asset 메서드를, 네트워크 이미지를 표시하려면 network 메서드를 사용한다.
+  - [SingleChildScrollView](https://api.flutter.dev/flutter/widgets/SingleChildScrollView-class.html)
+    - 화면에 표현할 내용이 많다면 이 위젯으로 감싸서 스크롤을 생기게 할 수 있다. child 속성에 자식 위젯을 배치하기만 하면 된다.
+  - [Opacity](https://api.flutter.dev/flutter/widgets/Opacity-class.html)
+    - 위젯에 투명도를 부여한다. opacity 속성은 0.0~1.0 까지 설정할 수 있고 0에 가까울수록 투명, 1에 가까울수록 불투명하다.
+  - [Divider](https://api.flutter.dev/flutter/widgets/Divider-class.html)
+    - 수평 라인을 표시합니다.
+  - [Text](https://api.flutter.dev/flutter/widgets/Text-class.html)
+    - 글자를 표시합니다.
+  - [Expanded](https://api.flutter.dev/flutter/widgets/Expanded-class.html)
+    - child 위젯의 길이를 꽉 채우거나 Expanded끼리 비율을 정할 수 있다.
