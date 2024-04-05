@@ -13,6 +13,9 @@
 - [Operators](/Dart/Syntax%20basics/Operators.md)
 - [Comments](/Dart/Syntax%20basics/Comments.md)
 - [Libraries & imports](/Dart/Syntax%20basics/Libraries&imports.md)
+
+<br>
+
 ### Types
 - [Built-in-types](/Dart/Types/Built-in%20types.md)
 - [Records](/Dart/Types/Records.md)
@@ -20,7 +23,6 @@
 - [Generics](/Dart/Types/Generics.md)
 - [Typedefs](/Dart/Types/Typedefs.md)
 - [Type system](/Dart/Types/Type%20system.md)
-
 - [Error handling](/Dart/Error%20handling)
 
 <br>
