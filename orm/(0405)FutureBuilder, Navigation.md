@@ -40,9 +40,35 @@
   * 객체가 트리에서 완전히 삭제될 때 호출된다.
   * mounted is false
 
+<br></br>
+
 ## FutureBuilder
+#### future 를 사용한다면, 들어와야 하는 값이 최소 2개 이상(데이터가 없을 때, 있을 때, 로딩 중일때)이기 때문에 stateful 로 사용
 
+```dart
+FutureBuilder<String>(future: future 함수 작성, builder: (){
+ }
+)
 
+builder 패턴: 어떤 데이터를 내가 원하는 형태로 만드는 패턴
+```
+
+<br></br>
+
+## Navigation
+#### Named Route 안 씀
+#### 라우터 사용 (중규모 이상의 프로젝트에서 필수)
+<img width="241" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/271375e3-dff4-40bf-a967-8b3a4fbcbce8">
+
+* go_router에서 .go 는 웹에서 사용한다.(스택 교체=화면 완저 교체)
+* 앱에서는 push만 사용하면 됨(스택에 쌓임)
+
+<img width="519" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/aec4e94c-c153-4dde-9e98-f6433c8deafb">
+
+* extra에 객체를 두 개 이상 전달하고 싶으면, 리스트로 보낸다. 받을 때 타입을 캐스팅해서 받는다.(as List<Todo>)
+<img width="462" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/b4e440e4-7df8-4437-9265-5daec5299296">
+
+<br></br>
 
 ## 기타
 #### 피그마의 이미지를 그대로 복붙하여 사용할 수 있는지?
@@ -51,4 +77,12 @@
 
 #### 라이브 템플릿 작성 방법
 * 플러터 위젯용은 플러터에 적용한다.
-* 커서가 들어가고
+* 커서가 들어갈 부분에 앞 뒤로 `$`를 붙인다. 예시 => Text('$title$')
+* 커서를 이동하게 하고 싶으면 edit에서 설정 할 수 있다.
+* 같은 이름(변수)로 등록하면 동시에 작성 가능하다.
+* .jar 파일로 템플릿을 저장하면 다른 컴퓨터에서 해당 파일을 import에서 저장 및 사용 가능하다.
+
+#### stateless 생성자에서 const를 빼면 재사용하지 않는다.
+* final 필드가 있고 const를 사용하려면 외부에서 값을 받게 한다.
+* 빌드 메서드 내부의 위젯 중 const가 아닌 건 계속 생성된다.(예시 :futureBuilder는 stateful 위젯)
+
