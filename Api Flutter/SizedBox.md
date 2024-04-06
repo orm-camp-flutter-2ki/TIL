@@ -10,7 +10,7 @@ SizedBox는 자식 위젯이 있을 경우, 자식이 특정한 width/height를 
 
 만약 width/height가 null이라면, SizedBox는 자식의 해당 축의 크기에 맞춰진다. 만약 부모의 크기에 따라 크기가 결정되는 자식 위젯이라면, 반드시 SizedBox의 width와 height를 지정해주어야 한다.
 
-만약 자식이 없다면, SizedBox는 부모로 부터 주어진 constraint에 최대한 근접한 width와 height를 가지게 된다. 만약 height나 width가 null이거나 지정되지 않았다면, 0으로 취급된다.
+만약 자식이 없다면, SizedBox는 부모로 부터 주어진 constraint 범위 내에서 가능한 width와 height 값에 맞춰 크기가 결정된다. 만약 height나 width가 null이거나 지정되지 않았다면, 0으로 취급된다.
 
 SizedBox.expand 생성자는 부모의 크기와 동일한 SizedBox를 생성해준다. 이는 width와 height를 double.infity로 지정한 것과 동일하다.
 
