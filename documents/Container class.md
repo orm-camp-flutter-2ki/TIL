@@ -69,7 +69,14 @@ The decoration can implicitly increase the padding (e.g. borders in a BoxDecorat
 > decoration은 암묵적으로 패딩을 증가시킬 수 있다.(예: BoxDecoration의 테두리는 패딩에 기여한다.
 
 
+<img width="539" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/d0e2e557-ccfb-4360-ac3e-17d3e479e111">
 
+```dart
+class SizedBox extends SingleChildRenderObjectWidget {}
 
-
+class Container extends StatelessWidget {}
+```
+SingleChildRenderObjectWidget  
+렌더링 객체의 특징을 조정: SingleChildRenderObjectWidget를 사용하면 자식 위젯을 감싸는 렌더링 객체의 특성을 조정할 수 있습니다. 이는 위젯의 모양, 크기, 위치 등을 설정하는 데 사용됩니다.
+=> 화면에 그려지는 방식을 조정한다..?
 
