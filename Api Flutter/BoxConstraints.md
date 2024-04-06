@@ -1,4 +1,4 @@
-# BoxPainter (class)
+# BoxConstraints (class)
 [공식문서](https://api.flutter.dev/flutter/rendering/BoxConstraints-class.html) 
 
 RenderBox layout을 위한 불변 layout constratins(제약)
