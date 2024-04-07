@@ -57,3 +57,50 @@
     - 글자를 표시합니다.
   - [Expanded](https://api.flutter.dev/flutter/widgets/Expanded-class.html)
     - child 위젯의 길이를 꽉 채우거나 Expanded끼리 비율을 정할 수 있다.
+
+---
+
+### FutureBuilder
+
+- Future를 UI로 표현하는 방법
+  - 1. StatefulWidget + setState()
+  - 2. [FutureBuilder](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html)
+       - Future 함수의 결과를 Widget으로 변환하는 위젯
+       - snapshot 에 데이터와 에러 정보 등이 들어 있음  
+         <img src="https://github.com/algochemy/TIL/assets/152131529/ffa0ad7c-4b2f-46b0-a661-4e224a861c34" width="300" height="150">
+       
+       - snapshot 객체에서 연결 상태를 알 수 있음  
+         <img src="https://github.com/algochemy/TIL/assets/152131529/fae0fd72-57df-4dd3-a4b5-ba3cbbb0d288" width="350" height="200">
+         <img src="https://github.com/algochemy/TIL/assets/152131529/5763b72b-b8d5-4525-9b74-b2797260f92f" width="300" height="150">  
+         
+       - 에러 체크 가능  
+         <img src="https://github.com/algochemy/TIL/assets/152131529/1876061f-7470-4986-b3c7-cc007909adf4" width="300" height="150">
+
+- Stateful의 생명주기 조사
+  - 초기 실행 : **Widget Constructor -> createState -> initState -> didChangeDepedencies -> build**
+  - 종료 : **deactivate -> dispose**
+  - 핫 리로드(StatefulWidget의 파라미터 변경사항 적용) : **Widget Constructor -> didCUpdateWidget -> build**
+  - 종료(**deactivate -> dispose**) 상태가 되지 않은 이상, 상태는 유지된다.
+  
+---
+
+### Navigation  
+
+- Navigation
+  - 화면 전환을 말 함
+  - 화면 표시는 Stack 구조로 관리된다
+    - 다른 화면으로 전환 : push
+    - 다시 되돌아 오기 : pop
+
+- [Navigation 공식 문서](https://docs.flutter.dev/ui/navigation)
+  - 새로운 화면으로 이동 (navpush) : push() 함수는 Future를 리턴하는 타입
+    <img src="https://github.com/algochemy/TIL/assets/152131529/e60bb4a1-9d1b-4064-9d1b-4516f0245e14" width="500" height="150">
+  - 원래 화면으로 돌아가기 (navpop)  
+    <img src="https://github.com/algochemy/TIL/assets/152131529/ea8a4452-f6ec-44ce-a273-0dd67f438a59" width="500" height="150">
+
+
+
+
+
+     
+
