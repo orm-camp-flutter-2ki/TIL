@@ -55,15 +55,21 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 - 유튜브 클론 코딩 프로젝트 
   - [> 깃헙에 코드 보러가기](https://github.com/somarok/youtube_clone_coding)
   - 폴더 구조 :  데이터 소스 > 레포지토리 > 서비스 > 화면    
+
   <img src="image.png" width="40%"/>  
+
+
   - 구조를 짜는데 많은 고민을 했다. 데이터 폴더를 도메인 별로 나눠야 할지, 화면 별로 나눠야 할지..
     데이터를 기준으로 정리를 해야 할지 모호함의 연속이었다.   
-  - 유튜브 API를 활용하여 데이터를 호출하고 UI에 그려주었다.    
+  - 유튜브 API를 활용하여 데이터를 호출하고 UI에 그려주었다.  
+
   </br></br>
+
     <img src="image-1.png" width="30%"/>
+
   - https://console.cloud.google.com/projectselector2/apis/dashboard 에서 새 프로젝트를 추가하고
   - 검색 > YouTube Data API v3 클릭 > 사용 클릭 
   - 사용자 인증 정보 > 사용자 인증 정보 만들기 > API 키 > 키 별도 저장 후
   - API키를 수정하세요 클릭 > 키제한 > YouTube Data API v3 선택
-  API url
-  https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&regionCode=kr&key=API키
+  
+  [구글 API url](https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&regionCode=kr&key=API키)
