@@ -86,8 +86,11 @@ builder 패턴: 어떤 데이터를 내가 원하는 형태로 만드는 패턴
 * final 필드가 있고 const를 사용하려면 외부에서 값을 받게 한다.
 * 빌드 메서드 내부의 위젯 중 const가 아닌 건 계속 생성된다.(예시 :futureBuilder는 stateful 위젯)
 
+<img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/3e0520b7-8843-4fec-bb04-ac6e048e2257">
+<img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/c3347961-aef7-4e17-8bcf-fd41a0899ab0">
+
 <img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/6867ecff-40b8-4b37-89b0-8a55cf1dedfd">
 <img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/50dab125-db70-4ea1-9352-a50b96a94bc4">
 
-<img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/3e0520b7-8843-4fec-bb04-ac6e048e2257">
-<img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/c3347961-aef7-4e17-8bcf-fd41a0899ab0">
+<img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/967d8770-e512-4707-8b55-00aeb7539a42">
+<img width="200" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/ba024834-54db-42f4-81c8-4d5d2c63d837">
