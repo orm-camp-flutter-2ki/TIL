@@ -211,3 +211,6 @@ MVVM을 구성하는 3가지 요소의 역할과 책임을 이해하기 위해�
 
 [플러터 클린 아키텍쳐 참고 자료](https://medium.com/@yamen.abd98/clean-architecture-in-flutter-mvvm-bloc-dio-79b1615530e1)
 
+
+- MVC 와의 차이점? 컨트롤러가 뷰와 모델을 양방향으로 바라봄.
+- MVVM은 단방향으로 뷰, 뷰모델, 모델이 한쪽만을 바라보는 관계.
