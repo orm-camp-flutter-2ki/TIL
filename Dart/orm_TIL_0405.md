@@ -53,6 +53,10 @@ onPressed: () {
 	Navigator.pop(context);
 	}
 ```
+
+**go router 설치법**
+flutter pub add go_router
+
 # StatefulWidget class
 
 StatelessWidget class와 달리 변경 가능한 상태를 갖는 위젯이다.
