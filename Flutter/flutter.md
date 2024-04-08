@@ -107,7 +107,7 @@
 - 요구사항(수정사항)이 업데이트됐을 때 변경이 용이하다 !
 - Repository는 데이터 주고받는것에만 집중하게 한다.
 - MVMM 패턴은 모바일 앱에 가장 적합한 아키텍처 : 확장성과 유지보수의 편의성을 고려
-  ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6be06ad5-191c-4cca-8efa-4c4c060bc652/59a7d992-6aa3-4482-9e18-1722c0a456a6/Untitled.png)
 - ChangeNotifier로 View에 알림, 데이터바인딩 기능 구현 가능
-  ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6be06ad5-191c-4cca-8efa-4c4c060bc652/59a7d992-6aa3-4482-9e18-1722c0a456a6/Untitled.png)
-  - View Layer는 ViewModel Layer는 알 되 Data Layer를 알면 안됨 (계속 캡슐화.)
+- View Layer는 ViewModel Layer는 알 되 Data Layer를 알면 안됨 (계속 캡슐화.)
+
+- 추가할 내용 : goRouter, ChangeNotifier
