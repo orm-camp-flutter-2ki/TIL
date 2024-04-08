@@ -27,7 +27,8 @@ box layout model 이해의 시작으로 BoxConstraints를 먼저 볼 것.
 
 Container는 각각 고유한 layout 동작을 가진 여러 위젯을 결합하므로 Container의 layout 동작은 복잡하다.
 
-**요약**: Container는 다음을 순서대로 시도한다: 정렬을 준수하려 한다. 자식의 크기에 맞추려한다. width/height와 constraint를 준수하려 한다. 부모의 크기에 맞추려한다. 최소의 크기를 가지려한다.
+**요약**  
+Container는 다음을 순서대로 시도한다: 정렬을 준수하려 한다. 자식의 크기에 맞추려한다. width/height와 constraint를 준수하려 한다. 부모의 크기에 맞추려한다. 최소의 크기를 가지려한다.
 
 좀 더 구체적으로 알아보자
  

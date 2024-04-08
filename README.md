@@ -5,14 +5,15 @@
 <br>
 
 # Dart
-[Dart.dev](https://dart.dev/guides) 공식문서를 읽고 학습하며 번역한 결과를 정리하였습니다.
-기본적으로 공식문서 + α의 내용을 담고 있지만, 중요도가 너무 낮은 내용은 생략하였습니다
+[Dart.dev](https://dart.dev/guides) 공식문서를 읽고 학습하며 제 언어로 번역한 결과를 정리하였습니다.  
+기본적으로 공식문서 + α의 내용을 담고 있지만, 중요도가 너무 낮은 내용은 생략하였습니다.
 
 ### Syntax basics
 - [Variables](/Dart/Syntax%20basics/Variables.md)
 - [Operators](/Dart/Syntax%20basics/Operators.md)
 - [Comments](/Dart/Syntax%20basics/Comments.md)
 - [Libraries & imports](/Dart/Syntax%20basics/Libraries&imports.md)
+
 ### Types
 - [Built-in-types](/Dart/Types/Built-in%20types.md)
 - [Records](/Dart/Types/Records.md)
@@ -20,26 +21,31 @@
 - [Generics](/Dart/Types/Generics.md)
 - [Typedefs](/Dart/Types/Typedefs.md)
 - [Type system](/Dart/Types/Type%20system.md)
-
 - [Error handling](/Dart/Error%20handling)
 
 <br>
 
 # Flutter
-[api.flutter.dev](https://api.flutter.dev/), [docs.flutter.dev](https://docs.flutter.dev/) 공식문서를 읽고 학습하며 번역한 결과를 정리하였습니다.
+[api.flutter.dev](https://api.flutter.dev/), [docs.flutter.dev](https://docs.flutter.dev/) 공식문서를 읽고 학습하며 제 언어로 번역하였습니다.
 
 - [BoxConstraints](/Api%20Flutter/BoxConstraints.md)
 - [BoxDecoration](/Api%20Flutter/BoxDecoration.md)
 - [BoxPainter](/Api%20Flutter/BoxPainter.md)
+- [Builder](/Api%20Flutter/Builder.md)
 - [Center](/Api%20Flutter/Center.md)
+- [ChangeNotifier](/Api%20Flutter/ChangeNotifier.md)
 - [Container](/Api%20Flutter/Container.md)
 - [Decoration](/Api%20Flutter/Decoration.md)
+- [LayoutBuilder](/Api%20Flutter/LayoutBuilder.md)
+- [Listenable](/Api%20Flutter/Listenable.md)
+- [ListenableBuilder](/Api%20Flutter/ListenableBuilder)
 - [Offset](/Api%20Flutter/Offset.md)
 - [Placeholder](/Api%20Flutter/Placeholder.md)
 - [Rect](/Api%20Flutter/Rect.md)
 - [SizedBox](/Api%20Flutter/SizedBox.md)
 - [State](/Api%20Flutter/State.md)
-
+- [StatefulBuilder](/Api%20Flutter/StatefulBuilder.md)
+- [ValueNotifier](/Api%20Flutter/ValueNotifier.md)
 
 
 
@@ -49,6 +55,7 @@
 ### 편집 필요
 - Typedefs의 `inline function types` -> `Effective Dart`
 - Concurrency in Dart의 Futures, Streams, and async-await 파일로 연결
+- Understanding constraints Flex, Listview 연결
 
 ### 정리 필요
 - RenderBox
@@ -60,4 +67,4 @@
 - MediaQuery
 - MediaQueryData
 - LayoutBuilder
-- hit test: https://api.flutter.dev/flutter/rendering/RenderBox/hitTest.html
+- Flutter concept: https://docs.flutter.dev/resources/architectural-overview#hosting-flutter-content-in-a-parent-app

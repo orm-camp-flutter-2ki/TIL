@@ -12,7 +12,6 @@
 > fallbackWidth/fallbackHeight: width/height에 대한 제약이 없는 상황에서 placeholder의 width/height가 되는 값  
 [공식문서](https://api.flutter.dev/flutter/widgets/Placeholder/fallbackWidth.html)
 
-[영상](https://youtu.be/LPe56fezmoo)
 
 ### Inheritance
 
