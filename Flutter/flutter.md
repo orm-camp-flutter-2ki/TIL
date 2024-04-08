@@ -98,9 +98,16 @@
   - 원래 화면으로 돌아가기 (navpop)  
     <img src="https://github.com/algochemy/TIL/assets/152131529/ea8a4452-f6ec-44ce-a273-0dd67f438a59" width="500" height="150">
 
-
-
-
-
-     
-
+### MVMM 패턴 
+- Repository에 비즈니스 논리가 포함되지 않게 분리하자
+- 비지니스 로직을 담당하는 부분을 ViewModel 클래스로 따로 빼 둔다.
+- 화면 보여줘야하는 것은 getter로 제공
+- ViewModel 하나 더 들어온거밖에 없는데 기능 추가가 쉽다
+- 일반적으로 화면 하나 당 하나의 뷰모델을 유지하는 것이 좋다
+- 요구사항(수정사항)이 업데이트됐을 때 변경이 용이하다 !
+- Repository는 데이터 주고받는것에만 집중하게 한다.
+- MVMM 패턴은 모바일 앱에 가장 적합한 아키텍처 : 확장성과 유지보수의 편의성을 고려
+  ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6be06ad5-191c-4cca-8efa-4c4c060bc652/59a7d992-6aa3-4482-9e18-1722c0a456a6/Untitled.png)
+- ChangeNotifier로 View에 알림, 데이터바인딩 기능 구현 가능
+  ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6be06ad5-191c-4cca-8efa-4c4c060bc652/59a7d992-6aa3-4482-9e18-1722c0a456a6/Untitled.png)
+  - View Layer는 ViewModel Layer는 알 되 Data Layer를 알면 안됨 (계속 캡슐화.)
