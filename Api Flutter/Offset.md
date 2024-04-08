@@ -14,4 +14,4 @@
 
 ### Inheritance
 
-Object OffsetBase Offset
+Object > OffsetBase > Offset

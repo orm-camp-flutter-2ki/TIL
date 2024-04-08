@@ -49,3 +49,6 @@ Render 객체는 자식을 배치하는 것과 별개로 위치를 지정한다.
 
 ### Inheritance
 Object > Constraints > BoxConstraints
+
+### Understanding constraints
+constraint에 대한 이해를 도와주는 [문서](/Api%20Flutter/Understandingi%20constraints.md)
