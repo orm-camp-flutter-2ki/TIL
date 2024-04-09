@@ -112,7 +112,7 @@
   ![image](https://github.com/algochemy/TIL/assets/152131529/a8911936-0c9b-433b-a223-f531359afdeb)
 - ChangeNotifier/addListner로 **View에 알림, 데이터바인딩** (*setState()를 자동으로 처리) 기능 구현 가능
 - 아키텍처의 핵심은 단방향 의존성 그리고 Action과 DAta의 명확하고 일관된 흐름에 있음
-  <img src="https://github.com/algochemy/TIL/assets/152131529/4cc288b6-ed3b-4b17-83e8-d362176666cd" width="500" height="300">  
+  <img src="https://github.com/algochemy/TIL/assets/152131529/4cc288b6-ed3b-4b17-83e8-d362176666cd" width="400" height="300">  
   - View Layer는 ViewModel Layer는 알 되 Data Layer를 알면 안됨 (계속 캡슐화.)
 
 - 추가 할 내용 : goRouter, ChangeNotifier
