@@ -98,16 +98,21 @@
   - 원래 화면으로 돌아가기 (navpop)  
     <img src="https://github.com/algochemy/TIL/assets/152131529/ea8a4452-f6ec-44ce-a273-0dd67f438a59" width="500" height="150">
 
-### MVMM 패턴 
+---
+
+### [MVMM 패턴](https://learn.microsoft.com/ko-kr/dotnet/architecture/maui/mvvm)
 - Repository에 비즈니스 논리가 포함되지 않게 분리하자
 - 비지니스 로직을 담당하는 부분을 ViewModel 클래스로 따로 빼 둔다.
 - 화면 보여줘야하는 것은 getter로 제공
 - ViewModel 하나 더 들어온거밖에 없는데 기능 추가가 쉽다
-- 일반적으로 화면 하나 당 하나의 뷰모델을 유지하는 것이 좋다
+- 일반적으로 화면 하나 당 하나의 뷰모델을 유지하는 것이 좋다 (화면(View) 하나에 하나에 대한 로직(Model))
 - 요구사항(수정사항)이 업데이트됐을 때 변경이 용이하다 !
 - Repository는 데이터 주고받는것에만 집중하게 한다.
 - MVMM 패턴은 모바일 앱에 가장 적합한 아키텍처 : 확장성과 유지보수의 편의성을 고려
-- ChangeNotifier로 View에 알림, 데이터바인딩 기능 구현 가능
-- View Layer는 ViewModel Layer는 알 되 Data Layer를 알면 안됨 (계속 캡슐화.)
+  ![image](https://github.com/algochemy/TIL/assets/152131529/a8911936-0c9b-433b-a223-f531359afdeb)
+- ChangeNotifier/addListner로 **View에 알림, 데이터바인딩** (*setState()를 자동으로 처리) 기능 구현 가능
+- 아키텍처의 핵심은 단방향 의존성 그리고 Action과 DAta의 명확하고 일관된 흐름에 있음
+  <img src="https://github.com/algochemy/TIL/assets/152131529/4cc288b6-ed3b-4b17-83e8-d362176666cd" width="500" height="300">  
+  - View Layer는 ViewModel Layer는 알 되 Data Layer를 알면 안됨 (계속 캡슐화.)
 
-- 추가할 내용 : goRouter, ChangeNotifier
+- 추가 할 내용 : goRouter, ChangeNotifier
