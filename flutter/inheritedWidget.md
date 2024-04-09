@@ -39,9 +39,9 @@
 [[🔗 참고 블로그]](https://lucky516.tistory.com/122?category=1065021)
 ### buildContext
 
-> `context` 란?
-*A handle to the location of a widget in the widget tree.*
-현재 Widget의 Widget tree 상의 위치에 관한 정보를 담고있는 변수라는 뜻이다.
+> `context` 란?  
+*A handle to the location of a widget in the widget tree.*  
+현재 Widget의 Widget tree 상의 위치에 관한 정보를 담고있는 변수라는 뜻이다.  
 > 
 - Widget tree에 접근하려면 반드시 BuildContext의 `context` 가 필요
 </br>
