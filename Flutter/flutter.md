@@ -116,3 +116,197 @@
   - View Layer는 ViewModel Layer는 알 되 Data Layer를 알면 안됨 (계속 캡슐화.)
 
 - 추가 할 내용 : goRouter, ChangeNotifier
+
+---
+
+### InheritedWidget
+
+- InhertiedWidget : 원하는 위젯으로 원하는 객체를 의존성 주입(Dependency Injection)을 해 주는 위젯
+  - 의존성 주입이란?
+    - 어떤 객체가 다른 객체에서 사용되도록 하는 것
+    - 생성자를 통해 필요한 객체를 전달하는 것이 일반적
+    - 생성자를 통한 의존성 주입은 의존성 트리가 깊어질수록 단계를 많이 타야되는 단점이 있음
+    - 즉, 변화가 필요한 위젯에서 필요한 데이터를 받기 위해서는 트리의 Top 에서 Bottom 까지 생성자를 통한 데이터 전달이 필요하다
+    - InheritedWidget은 이런 단점을 해소  
+    <img src="https://github.com/algochemy/TIL/assets/152131529/15cbb063-1560-47a3-80a3-457077ac4ddc" width="300" height="400">  
+
+- 정리
+  - 위젯 트리에 접근하려면 반드시 context 가 필요하다
+  - InheritedWidget : 의존성 주입용 위젯
+  - BuildContext : 위젯 트리 정보를 알고 있는 객체 (신)
+    - BuildContext 없으면 화면 이동도 못 함
+    - BuildContext 없으면 다이얼로그도 실행 안 됨
+
+- 코드 샘플 분석
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider<MyViewModel>(
+      value: MyViewModel(),
+      child: const MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyViewModelTest(),
+    );
+  }
+}
+
+class ChangeNotifierProvider<T extends ChangeNotifier> extends InheritedWidget {
+  final T value;
+
+  const ChangeNotifierProvider({
+    super.key,
+    required super.child,
+    required this.value,
+  });
+
+  static ChangeNotifierProvider<T> of<T extends ChangeNotifier>(
+      BuildContext context) {
+    return context
+        .dependOnInheritedWidgetOfExactType<ChangeNotifierProvider<T>>()!;
+  }
+
+  @override
+  bool updateShouldNotify(ChangeNotifierProvider oldWidget) {
+    return value != oldWidget.value;
+  }
+}
+
+class MyViewModel with ChangeNotifier {
+  int _count = 0;
+
+  int get count => _count;
+
+  void increment() {
+    _count++;
+    notifyListeners();
+  }
+}
+
+class MyViewModelTest extends StatefulWidget {
+  const MyViewModelTest({super.key});
+
+  @override
+  State<MyViewModelTest> createState() => _MyViewModelTestState();
+}
+
+class _MyViewModelTestState extends State<MyViewModelTest> {
+  @override
+  Widget build(BuildContext context) {
+    final viewModel = ChangeNotifierProvider.of<MyViewModel>(context).value;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(viewModel.count.toString()),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  viewModel.increment();
+                });
+              },
+              child: const Text('+'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NextScreen()),
+                );
+              },
+              child: const Text('Next'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class NextScreen extends StatefulWidget {
+  const NextScreen({super.key});
+
+  @override
+  State<NextScreen> createState() => _NextScreenState();
+}
+
+class _NextScreenState extends State<NextScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final viewModel = ChangeNotifierProvider.of<MyViewModel>(context).value;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(viewModel.count.toString()),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  viewModel.increment();
+                });
+              },
+              child: const Text('+'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NextScreen()),
+                );
+              },
+              child: const Text('Next'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+  - main() 함수: Flutter 앱의 진입점
+    - 여기서는 ChangeNotifierProvider를 사용하여 MyViewModel을 앱의 루트에 제공하고 있습니다. 이렇게 함으로써 앱 전체에서 MyViewModel에 접근할 수 있게 됩니다.
+  
+  - MyApp 위젯: 앱의 루트 위젯
+    - MyApp은 StatelessWidget이며, build() 메서드를 통해 앱의 UI를 생성합니다.
+    - 여기서는 MaterialApp을 사용하여 앱의 기본적인 구성을 설정하고 있습니다. 또한 ChangeNotifierProvider를 통해 MyViewModel을 제공하고 있습니다. 이로써 앱 전체에서 MyViewModel에 접근할 수 있게 됩니다.
+  
+  - ChangeNotifierProvider 클래스: 상태를 제공하고 관리하는 데 사용
+    - ChangeNotifierProvider는 InheritedWidget을 확장한 클래스입니다. 따라서 상위 위젯에서 하위 위젯으로 데이터를 전달할 수 있습니다.
+    - ChangeNotifierProvider 클래스는 제네릭 타입 T를 받습니다. T는 ChangeNotifier 클래스를 상속받은 클래스여야 합니다.
+    - of 메서드를 통해 현재 위젯 트리에서 ChangeNotifierProvider의 인스턴스를 찾고, 해당 인스턴스의 value를 반환하여 상태에 접근할 수 있습니다. 이때, BuildContext를 매개변수로 받습니다.
+    - updateShouldNotify 메서드를 재정의하여 상태 변경을 감지하고 업데이트할지 여부를 결정합니다.
+  
+  - MyViewModel 클래스
+    - MyViewModel은 상태를 관리하는 데 사용됩니다.
+    - MyViewModel은 ChangeNotifier 클래스를 상속받아 상태를 관리하고 있습니다.
+    - MyViewModel 클래스에는 count 변수와 increment() 메서드가 있습니다.
+    - count 변수는 현재 상태를 나타내며, increment() 메서드를 호출할 때마다 1씩 증가하고 상태 변경을 알립니다.
+  
+  - MyViewModelTest와 NextScreen : 화면을 구성하는 위젯
+    - 각 위젯은 StatefulWidget이며, 상태를 가지고 있습니다. MyViewModelTest와 NextScreen 위젯에서는 ChangeNotifierProvider.of() 메서드를 사용하여 MyViewModel에 접근합니다. 이를 통해 상태를 표시하고 상태를 변경할 수 있습니다.
+    - 버튼을 누르면 viewModel.increment()가 호출되고, 해당 버튼을 포함하는 위젯 setState()를 통해 다시 빌드되어 UI가 업데이트됩니다.
+    - 또한 Navigator.push() 메서드를 사용하여 화면 전환을 수행합니다.
+---
