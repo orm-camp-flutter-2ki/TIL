@@ -310,3 +310,49 @@ class _NextScreenState extends State<NextScreen> {
     - 버튼을 누르면 viewModel.increment()가 호출되고, 해당 버튼을 포함하는 위젯 setState()를 통해 다시 빌드되어 UI가 업데이트됩니다.
     - 또한 Navigator.push() 메서드를 사용하여 화면 전환을 수행합니다.
 ---
+
+### 상태관리, 상태관리 라이브러리
+
+- 상태관리
+  - 상태 = 데이터 = 변수
+  - 변수를 수정하면 알아서 UI도 바뀌게 하자 = **InheritedWidget + (ValueNotifier 또는 ChangeNotifier)** 굉장히 복잡하지만 가능
+  - **더 나은 방법 = 상태관리 라이브러리**
+  - 상태관리 라이브러리 중 Provier는 InheritedWidget을 단순하게 사용하도록 한 것. (Provier는 구글에서 권장)
+  - 상태관리에 대한 Golden Rule은 없다. 대부분의 경우 setState()만으로 충분하다. 하지만 대규모 프로젝트에서는 관리가 어렵다
+
+- 상태관리 라이브러리 4대장
+  - Provider
+    - InheritedWidget과 가장 흡사함. (근본에 가까움)
+    - 제약이 많음 = 에러 내기가 어려움
+    - 구글에서 여전히 공식적으로 밀고 있음
+    - 다른 라이브러리는 제대로 알고 쓰지 않으면 코드가 messy해짐. (예 : GetX)
+    - freezed 개발자인 Remi가 개발함
+  - RiverPod
+    - Provider의 애너그램 (철자를 섞음)
+    - Provider의 단점을 보완하려고 만들다가 완전 다른 것이 됨
+    - 코드 제네레이션 기법을 이용하여 런타임 에러를 없앴음
+    - 근본과 멀어져서 RiverPod 자체를 공부해야 함
+    - 기능 위주로 Top Level에 모두 정의해놓고 어디서든 가져다 쓰는 개념
+    - MVMM, 클린 아키텍처와는 별개로 리버팟만의 아키텍쳐 공부가 필요
+  - Bloc
+    - 가장 처음 구글이 밀어줬던 상태관리 라이브러리
+    - 대형 프로젝트 위주로 사용
+  - GetX
+    - 상태관리에 대한 기본적인 이해 부족한 경우에도 개발 가능 
+    - 복잡한 상태를 관리해야하는 경우 좋지 않음
+    - 제약이 없다 = 버그 발생률 UP
+    - 테스트, 유지 보수가 어려움
+ 
+- Flutter에서 Provider 상태관리 구성
+  - ChangeNotifierProvider, ChangeNotifier 조합
+    - 위젯트리 최상단 위젯에 ChangeNotifierProvider을 둔다. (ChangeNotifier)을 감시
+    - 변경이 필요한 위젯만 자동 갱신
+      - Provider.of<ChangeNotifier>(context)
+      - context.read<ChangeNotifier>
+      - context.watch<ChangeNotifier>
+    - 변경을 통지
+      notifiyListener()
+      
+      
+
+---
