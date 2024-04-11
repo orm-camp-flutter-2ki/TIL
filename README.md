@@ -939,6 +939,43 @@ ViewModel은 특정 View에 대한 로직만을 담당
 
 4. 버전 관리
 - 앱의 버전을 올리는 것은 수동으로 진행해야 하는 경우도 있는데 보통 버전이 꼬여서 수동으로 수행
+
+
+## 상태관리 라이브러리
+
+1. 앱에서 화면에 필요한 변수를 관리
+2. UI와 상호작용하는 데이터를 효율적으로 관리하여 앱의 상태를 관리
+3. 화면이나 위젯의 상태 변화에 따라 UI를 업데이트하기 위해 상태를 관리
+4. 다양한 라이브러리와 패턴 사용
+
+## 상태 관리의 개념
+
+1. 상태는 데이터, 변수를 의미
+2. 효율적으로 관리하여 변수가 변경되면 UI도 자동으로 업데이트되도록 하는 것이 상태 관리의 목적
+
+## InheritedWidget + (ValueNotifier 또는 ChangeNotifier)
+
+1. InheritedWidget은 위젯 트리의 부모에서 자식 위젯으로 데이터를 전달하는 방식
+2. ValueNotifier 또는 ChangeNotifier와 결합하여 상태를 관리
+3. 복잡하지만 효과적인 상태 관리
+
+## Provider
+
+1. Provider는 InheritedWidget과 유사한 방식으로 상태를 관리하는 라이브러리
+2. 제약이 있을 수 있지만, 올바르게 사용하면 효율적인 상태 관리 가능
+
+
+## Riverpod
+
+1. 런타임 에러를 없애는 등 다양한 기능을 제공
+2. MVVM, 클린 아키텍처와는 별개의 리버팟만의 아키텍처 사용
+
+## ChangeNotifierProvider
+
+1. ChangeNotifierProvider는 Provider의 일종
+2. `watch`와 `read`를 사용하여 상태를 관찰하고 사용
+3. Consumer를 사용하여 모델을 제공하고 UI를 업데이트
+4. StreamBuilder, ListenableBuilder와 유사한 느낌으로 사용하여 UI 향상
 -------------------
 알고리즘 학습 필요
 
