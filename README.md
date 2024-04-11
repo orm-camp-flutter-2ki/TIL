@@ -32,7 +32,8 @@
 - [24.04.07 - FutureBuilder, Widget lifecycle](https://github.com/JEON-Sungsu/TIL/blob/main/FifthWeek/24.04.07.md)
 ### 6주차
 - [24.04.08 - MVVM, ChangeNotifier](https://github.com/JEON-Sungsu/TIL/blob/main/SixthWeek/24.04.08.md)
-- [24.04.08 - InheritedWidget, release](https://github.com/JEON-Sungsu/TIL/blob/main/SixthWeek/24.04.09.md)
+- [24.04.09 - InheritedWidget, release](https://github.com/JEON-Sungsu/TIL/blob/main/SixthWeek/24.04.09.md)
+- [24.04.11 - Provider Package](https://github.com/JEON-Sungsu/TIL/blob/main/SixthWeek/24.04.11.md)
 ### 7주차
 ### 8주차
 ### 9주차
