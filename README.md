@@ -1,60 +1,32 @@
-# Flutter TIL
+상태관리 라이브러리
 
-Today I Learned about Flutter
+임시상태
+- PageView의 index
+- BottomNavigationView의 index
+- 애니메이션 상태
 
-오늘 학습한 내용을 정리하는 것
+그 외, 어플리케이션 상태
+- Preference
+- 로그인 정보
+- 쇼핑몰의 카트
+- 메이랩의 읽은 메일/ 안 읽은 메일
+- 소셜앱의 알림
 
-훌륭한 개발자가 되자
+상태 관리
 
-## Github
+상태는 데이터 데이터는 변수
+변수를 수정하면 알아서 UI도 바뀌게 할 수 있다
 
-github와 IDE 연동
+Provider 라이브러리
+Provider는 InheritedWidget을 심플하게 사용하도록 한 것이다.
 
-IDE에서 github로 커밋하기
-
-## Dart
-
-dart.dev 공식 문서로 기본 문법 학습
-
-dart
--2011년 공개
--자바 대체어
--플러터 활용
--객체지향 + 함수형
-
-기본 자료형
-
-int(정수) - double(실수) - String(문자) - bool(논리)
-
-문자열 포멧 = '문자열'
-
-숫자
-정수(int)
-실수(double)
-숫자(num)
-
-형변환
-자료형(int형, double형, String형 등)간의 변환
-
-var 활용 타입 추론
-
-final name = '정지원';
-name <- 수정 불가
-
-증감 연산자
-뒤에++ -> num = 1
-++앞에 -> num = 2
-
-비교 연산자
+상태관리를 편하게 하기 위한 라이브러리 4가지
+- Provider
+- Bloc
+- Riverpod
+- GetX
 
 
-형변환 as 위험
-
-컴파일 = 사람 -> 기계어 번역
-
-알고리즘 학습 필요
-
-## 샘플
-- https://github.com/namjunemy/TIL
-- https://github.com/milooy/TIL
-- https://github.com/YutoMizutani/til
+Provider의 장점
+InheritedWidget과 가장 흡사하다
+제약이 많아서 에러 내기가 어렵다
