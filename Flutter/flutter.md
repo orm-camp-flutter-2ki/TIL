@@ -321,23 +321,23 @@ class _NextScreenState extends State<NextScreen> {
   - 상태관리에 대한 Golden Rule은 없다. 대부분의 경우 setState()만으로 충분하다. 하지만 대규모 프로젝트에서는 관리가 어렵다
 
 - 상태관리 라이브러리 4대장
-  - Provider
+  - **Provider**
     - InheritedWidget과 가장 흡사함. (근본에 가까움)
     - 제약이 많음 = 에러 내기가 어려움
     - 구글에서 여전히 공식적으로 밀고 있음
     - 다른 라이브러리는 제대로 알고 쓰지 않으면 코드가 messy해짐. (예 : GetX)
     - freezed 개발자인 Remi가 개발함
-  - RiverPod
+  - **RiverPod**
     - Provider의 애너그램 (철자를 섞음)
     - Provider의 단점을 보완하려고 만들다가 완전 다른 것이 됨
     - 코드 제네레이션 기법을 이용하여 런타임 에러를 없앴음
     - 근본과 멀어져서 RiverPod 자체를 공부해야 함
     - 기능 위주로 Top Level에 모두 정의해놓고 어디서든 가져다 쓰는 개념
     - MVMM, 클린 아키텍처와는 별개로 리버팟만의 아키텍쳐 공부가 필요
-  - Bloc
+  - **Bloc**
     - 가장 처음 구글이 밀어줬던 상태관리 라이브러리
     - 대형 프로젝트 위주로 사용
-  - GetX
+  - **GetX**
     - 상태관리에 대한 기본적인 이해 부족한 경우에도 개발 가능 
     - 복잡한 상태를 관리해야하는 경우 좋지 않음
     - 제약이 없다 = 버그 발생률 UP
