@@ -28,7 +28,7 @@ Center(
 child에 바로 자식 위젯을 할당하지 않고, Builder를 통해 할당하는 방식의 차이점은 새로운 BuildContext가 자식 위젯에게 부여된다는 것이다.  
 
 이는 위젯 tree가 inherited 위젯을 포함하고 있는 경우 특히 더 눈여겨 볼만하다.
-> ingerited 위젯은 Scaffold.of와 같이 자식 위젯의 BuildContext 조상을 따라가는 메서드에 의해 참조되기 때문
+> inherited 위젯은 Scaffold.of와 같이 자식 위젯의 BuildContext 조상을 따라가는 메서드에 의해 참조되기 때문
 
 아래의 예제에서, 버튼의 onPressed 콜백은 Scaffold.of로 포함중인 ScaffoldState를 찾을 수 없다.
 ```dart

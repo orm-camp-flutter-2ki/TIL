@@ -3,6 +3,8 @@
 
 [Listenable](/Api%20Flutter/Listenable.md)(값이) 변경될 때, 하위 위젯 tree를 생성하기 위해 사용되는 위젯
 
+=> addListener(), removeListener(), 변경에 대한 setState()를 대신 처리해주는 위젯
+
 ListenableBuilder은 거대한 build 함수 내부에서 다른 객체의 값에 대한 변화를 감지(listen)하기를 바라는 위젯을 위한 클래스이다.  
 => ListenableBuilder을 통해 위젯을 생성하고 해당 위젯을 builder 함수에 전달하면(넣으면)된다.
 
@@ -10,6 +12,7 @@ ListenableBuilder를 Listenable과 함께 사용하여, Listenable이 자신의 
 (Listenable을 상속하여 구현한 클래스는 다 가능 = [ChangeNotifier](/Api%20Flutter/ChangeNotifier.md), [ValueNotifier](/Api%20Flutter/ValueNotifier.md), Animation)  
 물론 Listenable을 상속한 구현 클래스들은 각각의 특징이 있으므로 적절한 Builder를 사용하는 것이 더 가독성이 좋다.  
 (예, Anibation의 경우 AnimatedBuilder)
+
 
 ### 예제
 

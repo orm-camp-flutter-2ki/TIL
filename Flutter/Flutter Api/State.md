@@ -32,11 +32,13 @@ State 객체들은, tree(위젯의 구성)에 추가하기 위해 StatefulWidget
 3. State의 dependency load가 끝나면 프레임워크가 didChangeDependencies를 호출한다.
     - State를 상속한 클래스는 didChangeDependencies를 오버라이드하여 inheritedWidget을 포함한 초기화 작업을 수행할 수 있다.   
     - 만약, BuildContext.dependOnInheritedWidgetOfExactType이 호출되고 상속한 위젯이 이 후에 변경되거나 트리 내부에서 이동하는 경우, 즉 dependency가 변경되는 경우, didChangeDependencies 메서드는 다시 호출된다.
+
 4. 이 후, State 객체는 초기화가 완료되고 프레임워크는 State의 build를 여러번 호출하여 하위 tree의 UI 정보르 얻는다. 
     - State 객체는 내부 상태가 변경되어 하위 tree의 UI에 영향이 가는 경우, setState 메서드를 호출하여 자발적으로 자신의 하위 tree를 다시 build하도록 할 수 있다.
     - 그렇게되면, 부모 위젯은 같은 rumtimeType과 Widget.key를 가진 새로운 위젯을 다시 build하고 tree의 같은 위치에서 표시되도록 업데이트한다. 
-5. 이때, 프레임워크는 새로운 위젯을 위해 위젯의 속성을 업데이트하고 didUpddateWidget(이전 위젯을 인자로 받는) 메서드를 호출한다. 
-    - State 객체는 didUpdateWidget을 오버라이드하여 자신과 연관된 widget의 변화에 대응할 수 있다(예, 명시된 애니메이션 시작하기). 프레임워크는 항상 didUpdateWidget을 호출한 이후에, build를 호출한다. 이는, didUpdateWidget에서 호출하는 setState는 의미없다는 뜻이다.
+
+5. 이때, 프레임워크는 새로운 위젯을 위해 위젯의 속성이 업데이트되면 didUpddateWidget(이전 위젯을 인자로 받는) 메서드를 호출한다. 
+    - State 객체는 didUpdateWidget을 오버라이드하여 자신과 연관된 widget의 변화에 대응할 수 있다(예, 명시된 애니메이션 시작하기). 프레임워크는 항상 didUpdateWidget을 호출한 이후에, build를 호출한다. 이는, didUpdateWidget에서 setState를 호출할 필요가 없다는 뜻이다.
 
 6. 개발 과정에서 핫 리로드가 발생한다면, reassemble 메서드가 호출된다.
     - reassemble 메서드는 initState 메서드에서 준비완료되는 어떠한 데이터든, 다시 초기화될 수 있도록 한다.
@@ -52,8 +54,7 @@ State 객체들은, tree(위젯의 구성)에 추가하기 위해 StatefulWidget
     - State를 상속한 클래스는 dispose 메서드를 오버라이드하여, 해당 객체에서 유지하고 있던 자원들을 해제하도록 할 수 있다(예, 애니메이션 중지).
 
 10. 프레임워크가 dispose를 호출하고나면, State 객체는 mounted 속성이 false인 mount되지 않은 것(context 및 state의 dependency가 없는 상태)으로 여겨진다. (이 때, setState를 호출하면 에러가 발생한다) 
-
-    dispose 호출은 생명주기의 종료 단계로써 dispose가 호출된 State 객체를 다시 mount하는 것은 불가능하다.
+    - dispose 호출은 생명주기의 종료 단계로써 dispose가 호출된 State 객체를 다시 mount하는 것은 불가능하다.
 
 <br>
 
