@@ -345,7 +345,7 @@ class _NextScreenState extends State<NextScreen> {
  
 - Flutter에서 Provider 상태관리 구성
   - ChangeNotifierProvider, ChangeNotifier 조합
-    - 위젯트리 최상단 위젯에 ChangeNotifierProvider을 둔다. (ChangeNotifier)을 감시
+    - 위젯트리 최상단 위젯에 ChangeNotifierProvider을 둔다. (ChangeNotifier을 감시)
     - 변경이 필요한 위젯만 자동 갱신
       - Provider.of<ChangeNotifier>(context)
       - context.read<ChangeNotifier>
