@@ -349,10 +349,22 @@ class _NextScreenState extends State<NextScreen> {
     - 변경이 필요한 위젯만 자동 갱신
       - Provider.of<ChangeNotifier>(context)
       - context.read<ChangeNotifier>
+        - read()는 지속적인 관찰이 아닌 단발성 접근에 사용 : initState() 또는 버튼 클릭
       - context.watch<ChangeNotifier>
+        - watch()는 지속적인 관찰을 하고 변경시 build()를 리빌드함. (build 메서드 내에서 사용)
     - 변경을 통지
       notifiyListener()
       
-      
+  - ChangeNotifier를 제공할 부분에 ChangeNotifierProvider 위젯 배치  
+    <img src="https://github.com/algochemy/TIL/assets/152131529/299e07eb-39ad-4edb-af3b-b52fd60b2f7d" width="300" height="150">
+
+  - UI 전체 코드  
+    <img src="https://github.com/algochemy/TIL/assets/152131529/825f2364-4a0a-4a05-acc6-213ec8acfa93" width="400" height="500">  
+    - 다음 룰을 따를 것
+      - build() 에서는 watch
+      - 단발성 실행은 read
+      - initState() 에서는 Future.microstask() 후에 read  
+        <img src="https://github.com/algochemy/TIL/assets/152131529/d0bbc75a-ba98-4061-aad4-1546e06c65a0" width="300" height="150">  
+      - 또는 didChangeDependencies() 에서 viewModel 접근가능 ( 단, 매번 실행하는 코드는 여기에 두면 안 됨 )
 
 ---
