@@ -381,8 +381,8 @@ class _NextScreenState extends State<NextScreen> {
     - 테스트 불가
     - 디버깅도 어렵다
  
-- 상태 홀더 클래스
-  - [상태 홀더 클래스의 책임](https://developer.android.com/topic/architecture/ui-layer/stateholders?hl=ko#state-holders)
+- [상태 홀더 클래스](https://developer.android.com/topic/architecture/ui-layer/stateholders?hl=ko#state-holders)
+  - **상태 홀더 클래스의 책임**
     - 상태 홀더의 책임은 앱이 읽을 수 있도록 상태를 저장하는 것입니다. 로직이 필요한 경우 상태 홀더는 중개자 역할을 하며 필요한 로직을 호스팅하는 데이터 소스에 대한 액세스 권한을 제공합니다. 이러한 방식으로 상태 홀더는 로직을 적절한 데이터 소스에 위임합니다.
   - 이점
     - 간단한 UI: UI가 상태를 바인딩합니다.
@@ -393,7 +393,7 @@ class _NextScreenState extends State<NextScreen> {
     - 상태 홀더가 반드시 필요한 것은 아닙니다. 간단한 UI는 표시 코드와 함께 로직을 인라인으로 호스팅할 수 있습니다.
 
   - [상태 홀더의 유형](https://developer.android.com/topic/architecture/ui-layer/stateholders?hl=ko#types-state)
-    - [비즈니스 로직 상태 홀더](https://developer.android.com/topic/architecture/ui-layer/stateholders?hl=ko#business-logic)
+    - **비즈니스 로직 상태 홀더**
       - 비즈니스 로직 상태 홀더는 사용자 이벤트를 처리하고 데이터 또는 도메인 레이어에서 화면 UI 상태로 데이터를 변환합니다.
       - 비즈니스 로직을 활용하는 상태 홀더에 다음 속성이 있어야 합니다.
         - UI 상태 생성
@@ -402,7 +402,7 @@ class _NextScreenState extends State<NextScreen> {
         - UI에 고유하며 재사용할 수 없음
       - 비즈니스 로직에 대한 액세스 권한을 제공하고 화면에 표시하기 위한 애플리케이션 데이터를 준비하는 데는 ViewModel이 적합합니다.
       
-    - UI 로직 상태 홀더
+    - **UI 로직 상태 홀더**
       - UI 로직은 UI 자체에서 제공하는 데이터에 작동하는 로직입니다. 이는 UI 요소의 상태 또는 UI 데이터 소스(예: 권한 API나 Resources)에 있을 수 있습니다.
       - UI 로직을 활용하는 상태 홀더에는 일반적으로 다음 속성이 있습니다.
         - UI 상태 생성 및 UI 요소 상태 관리
