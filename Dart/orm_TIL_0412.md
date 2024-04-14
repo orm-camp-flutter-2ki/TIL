@@ -16,6 +16,7 @@
     - Widget 들의 상태를 관리하는 요소들 (TextEditingController 등)
 
 ![image](https://github.com/BAUu/TIL/assets/44741680/0f69ae9f-d4a2-495f-b274-6dbffeffc61c)
+
 로직 UI는 정적인 속성이 아니다. (변수)
 시간이 흐름에 따라 사용자 액션에 따라 변경되며 그 로직은 ViewModel이 담당한다.
 
