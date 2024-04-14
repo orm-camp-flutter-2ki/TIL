@@ -5,7 +5,8 @@
 메모
 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/86296f50-858e-40b3-b09a-5faedc04c2f9/4234b170-be6d-47fe-b0d8-456254c55ab6/Untitled.png)
+![image](https://github.com/BAUu/TIL/assets/44741680/967c5a07-aac8-462b-90a5-7e86425b2f2d)
+
 뷰모델 로직 흐름
 
 - UI 를 설명하는 속성이다
