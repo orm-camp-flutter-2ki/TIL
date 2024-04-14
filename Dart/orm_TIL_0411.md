@@ -7,8 +7,8 @@
  + provider
  + http
  + greezed
- + json annotation
- + go router(선택)
+ + json_serialization
+ + go_router(선택)
 
 프로젝트 구분을 위한 폴더
 **data**
