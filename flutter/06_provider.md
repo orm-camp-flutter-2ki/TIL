@@ -54,7 +54,7 @@ class ImageCardWidget extends StatelessWidget {
   final Photo photo;
 
 const ImageCardWidget({
-  super.key,,
+  super.key,
   required this.photo,
 });
 
