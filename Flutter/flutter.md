@@ -417,4 +417,84 @@ class _NextScreenState extends State<NextScreen> {
     - 비즈니스 로직에 액세스해야 하며 화면이 이동될 수 있는 한 UI 상태를 유지해야 하는 경우 비즈니스 로직 상태 홀더 구현에 ViewModel을 사용하는 것이 좋습니다.
     - 단기 지속 UI 상태 및 UI 로직의 경우 수명 주기가 UI에만 종속되는 일반 클래스로 충분합니다.
 
+---
+
+### 클린 아키텍처
+- UseCase 도입
+  - viewModel에도 void 메소드가 엄청 길어지는 경우가 있다. 
+  - 로직이 변경될 때 ViewModel을 수정하지 않고 로직만을 수정하기 위해 사용 (*UseCase 클래스 작성)
+  - 하나의 클래스가 하나의 동작만 수행함 = 진정한 단일책임 원칙
+
+    
+  - 잘못된 예시 수정하는 과정 (유즈케이스 활용)
+    - Repository에는 비즈니스 로직이 없어야 함. 그래야 범용적으로 활용 가능
+    ![image](https://github.com/algochemy/TIL/assets/152131529/49f68775-5330-407e-8926-e0b4f7f83980)
+    - 비즈니스 로직은 View Model에 있도록 이동하자
+    ![image](https://github.com/algochemy/TIL/assets/152131529/b28e1378-2bc4-4f9d-b7bb-67654fde58c2)  
+    - ViewModel에서 로직을 작성하는데 코드가 너무 길어질 수 있다  
+    ![image](https://github.com/algochemy/TIL/assets/152131529/32314dea-1ec0-46a5-a937-30d00bc48d29)  
+
+    - 기능을 하나의 클래스로 캡슐화  
+    ![image](https://github.com/algochemy/TIL/assets/152131529/2ae0b689-94ac-4309-88a8-143574f6f6be)
+    - Repository가 아니라 UseCase을 주입, UseCase 실행
+    ![image](https://github.com/algochemy/TIL/assets/152131529/844eb39b-da61-4291-8bcd-501420f58c99)
+  
+- 클린 아키텍처
+  - [로버트 C. 마틴](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)이 고안한 개념
+    - 아키텍처 경계의 명확한 분리, 의존성 제어 역전 원칙(Dependency Inversion Principle), 단일 책임 원칙(Single Responsibility Principle) 등의 개념을 강조
+    - 장점
+      - 확장 가능한 앱
+      - 쉬운 테스트
+      - 다른 사람도 이해하기 쉬운 구조
+    - 어떻게 작업하는가 : data, domain, presentation 레이어로 코드를 나눈다.
+   
+     - Data Layer
+    - DB, API, Prefrence 등 구현
+    - DB Entity Mapper & DTO
+    - Repository 구현
+    - 데이터 형태에따라 local / remote로 구분할 수도 있다.
+   
+
+  - Presentation Layer
+    - 모든 화면, 컴포넌트를 포함한 위젯
+    - ViewModel을 포함
+  
+  - Domain Layer
+    - 아키텍처의 핵심이 되는 레이어
+    - 비즈니스 로직이 포함된 Use Case를 포함 (꼭 필요한 경우에만 DomainLayer, 즉 UseCase를 사용하는 것이 좋다.)
+    - 모델 클래스를 포함
+    - Repository 정의
+    - 이외에도 service, logic, exception, validation, event, command 등 도메인에 필요한 내용이 올 수 있음
+    - UI 쪽에서는 Data Layer를 몰라도 된다 (UI → Domain Layer을 통한 이행성)
+      
+  - 왜 Use Case를 사용하는가?
+    - ViewModel 이 어떤 기능을 하는지 직관적으로 파악 가능
+    - Repository 수정사항에 따른 ViewModel 에서의 의존성 제거
+    - 클린 아키텍처의 목적 중 하나인 변경의 최소화를 만족하기 위해
+    - 여러 ViewModel 에 동일한 기능이 있을 경우 기능의 재사용
+    - UseCase 이름 규칙
+      - 현재 시제의 동사 + 명사/대상(선택사항) + UseCase.
+      - 예를 들면 FormatDateUseCase, LogOutUserUseCase, GetLatestNewsWithAuthorsUseCase, MakeLoginRequestUseCase
+
+
+
+- [권장 앱 아키텍처](https://developer.android.com/topic/architecture?hl=ko#recommended-app-arch)
+  - UI Layer  
+    ![image](https://github.com/algochemy/TIL/assets/152131529/09708f4c-8a6c-4501-bea4-8eef8003b1e0)  
+  - Domain Layer  
+    ![image](https://github.com/algochemy/TIL/assets/152131529/aac1f88c-6831-4d19-aa6e-99cf76780d58)  
+  - Data Layer  
+    ![image](https://github.com/algochemy/TIL/assets/152131529/8794acd2-bd16-4088-915b-2148c843c558)  
+
+  - 권장 디렉토리 구조  
+    ![image](https://github.com/algochemy/TIL/assets/152131529/45b8bf0d-263d-4ad5-b77c-015459087f60)  
+  - Repository 파일 이름 규칙  
+    ![image](https://github.com/algochemy/TIL/assets/152131529/42311b38-0185-4ae5-96d0-311bd6ddc461)  
+
+      
+  - 더 나은 대안 : 도메인 별로 클린 아키텍처 구조를 가지도록 한다
+    - 예 : auth / user 별로 디렉토리를 아래에 가진다.
+    - 업무 분할시 좋음. (MVVM 패턴을 사용하든, 도메인레이어 도입해 UseCase도입하든, setState쓰든)
+
+  
   
