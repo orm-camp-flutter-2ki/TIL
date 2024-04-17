@@ -9,12 +9,12 @@
 |----------|------------|------------------|
 |Databse, Remote, Api, Prefernces 등 구현|아키텍처의 가장 핵심이 되는 레이어|모든 화면, 컴포넌트를 포함한 위젯들(UI)|
 |DB entity Mapper&DTO|비즈니스 로직이 포함된 Use Case를 포함|ViewModel 포함|
-|repository 구현(interface class)|repository 정의(repository impl class)||
+|repository 구현(impl class)|repository 정의(repository interface class)||
 |데이터 형태에 따라 local/remote로 구분할 수 있다.|모델 클래스||
 ||service, logic, exception, validation, event, command 등 도메인에 필요한 내용이 올 수 있음||
 
 #### Domatin Layer => 비즈니스 로직이 포함된 useCase를 포함하기 때문에 아키텍처의 핵심이다.
-#### repository 클래스도 이 곳에 있어서 어떤 데이터를 가져오는 지 확인할 수 있다. 
+#### repository 인터페이스 클래스도 이 곳에 있어서 어떤 데이터를 가져오는 지 확인할 수 있다. 
 
 <br></br>
 
