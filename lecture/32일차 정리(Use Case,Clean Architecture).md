@@ -27,11 +27,14 @@ Repository 에서는 비즈니스 로직이 없어야 함 (10만 가지고 오�
 
 새로운 형태의 UI나 기술을 추가해야 할 때 거의 처음부터 새로 만들어야 할 수도 있다
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b9daa94-c736-4734-b290-adac1d7c7c2d/c35c70e5-bdfe-4ca8-993d-62f8223ed127/Untitled.png)
+![Untitled](https://github.com/happysong3914/TIL/assets/130008915/a409b3f5-94c9-4e85-af88-77e0d6cb7c9a)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b9daa94-c736-4734-b290-adac1d7c7c2d/063e0c23-b510-41d9-a189-001c2acf3cbe/Untitled.png)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b9daa94-c736-4734-b290-adac1d7c7c2d/1809c5ca-280f-4fbf-b84c-8a90c4425086/Untitled.png)
+![Untitled 1](https://github.com/happysong3914/TIL/assets/130008915/157d9d3e-365e-4c5a-9097-ad6c2290f1d7)
+
+![Untitled 2](https://github.com/happysong3914/TIL/assets/130008915/34e8d1d2-ac4c-48a6-902f-9e5bcb261d8e)
+
+
 
 **클린 아키텍처 장점**
 
@@ -104,7 +107,8 @@ Use Case 의 이름 규칙
 - 앱이 성장하더라도 기존 기능에 영향을 덜 줌
 - 이 구조는 명확하고 일관성이 있어 새로운 개발자가 빠르게 이해할 수 있음
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b9daa94-c736-4734-b290-adac1d7c7c2d/7c8cf950-664f-4d4e-b2e7-4032fbcdd83a/Untitled.png)
+![Untitled 3](https://github.com/happysong3914/TIL/assets/130008915/2833642c-3f77-4af8-a639-67d436bb1da7)
+
 
 ### Good architecture != Clean Architecture
 
