@@ -1,4 +1,4 @@
-## 클릭 아키텍처
+## 클린 아키텍처
 * 앱이 커질수록 더 많은 모델, UI, ViewModel이 생성될 것이고 무언가를 찾을 때 고통을 받을 것이다.
 * 구조나 설계에 신경 쓰지 않고 오직 기능 구현에만 몰두한 소프트웨어의 유지보수는 매우 힘들다.
 * 새로운 형태의 UI나 기술을 추가해야 할 때 거의 처음부터 새로 만들어야 할 수도 있다.
@@ -7,13 +7,13 @@
 
 |Data Layer|Domain Layer|Presentation Layer|
 |----------|------------|------------------|
-|Databse, Remote, Api, Prefernces 등 구현|아키텍처의 가장 핵심이 되는 레이어|모든 화면, 컴포넌트를 포함한 위젯들(UI)|
+|Databse, Remote, Api, Preferences 등 구현|아키텍처의 가장 핵심이 되는 레이어|모든 화면, 컴포넌트를 포함한 위젯들(UI)|
 |DB entity Mapper&DTO|비즈니스 로직이 포함된 Use Case를 포함|ViewModel 포함|
 |repository 구현(impl class)|repository 정의(repository interface class)||
 |데이터 형태에 따라 local/remote로 구분할 수 있다.|모델 클래스||
 ||service, logic, exception, validation, event, command 등 도메인에 필요한 내용이 올 수 있음||
 
-#### Domatin Layer => 비즈니스 로직이 포함된 useCase를 포함하기 때문에 아키텍처의 핵심이다.
+#### Domain Layer => 비즈니스 로직이 포함된 useCase를 포함하기 때문에 아키텍처의 핵심이다.
 #### repository 인터페이스 클래스도 이 곳에 있어서 어떤 데이터를 가져오는 지 확인할 수 있다. 
 
 <br></br>
@@ -35,7 +35,7 @@
 > repository 인터페이스를 수정하면 viewModel이 영향을 받는다.  
 -> 레포는 수정이 빈번할 수밖에 없음  
 -> 뷰모델이 레포에 의존이 큼을 볼 수 있음. 따라서 의존성 분리  
--> 뷰모델이 인터페이스 역할이 된다.(단순히 전달자 역할이 된다.)
+-> 뷰모델이 인터페이스 같은 역할이 된다.(단순히 전달자 역할이 된다.)
 
 <img width="468" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/d7d98564-03a2-4dca-b5e1-63e418cc46da">
 
@@ -54,6 +54,7 @@ Repository에는 비즈니스 로직이 없어야 한다.(예시로 이름순 �
 #### -> 뷰모델에서 다른 기능이 있으면 또 다른 use case 만든다!
 * (뷰모델 state를 변경해야하면 usecase에 state를 전달해줘야 하나요?)  
 => state는 뷰모델에서 구현하고 useCase는 (리턴이 필요한 경우) 값을 리턴한다.
+=> state는 뷰에 나타낼 상태이기 때문에 viewModel에 둔다.  
 * 여러 repository와 다른 useCase를 활용할 수도 있다.
 * class 이름 형식 => 현재 시제 동사 + 명사/대상 + UseCase
 (FormatDateUseCase, LogOutUserUsecase, MakeLoginRequestUseCase)
@@ -115,3 +116,12 @@ Repository에는 비즈니스 로직이 없어야 한다.(예시로 이름순 �
 #### => 프레임워크가 핵심 코드 안으로 들어오지 못하게 한다.(순수한 코드들로 유지하자)
 
 #### 📝 [선생님의 클린 아키텍처 적용 코드 예시](https://github.com/junsuk5/flutter-clean-architecture-note-app-1/blob/master/lib/domain/use_case/note_use_cases.dart)
+
+
+### Facade Pattern
+* 어떠한 행위에 필요한 공통 기능들을 정의하기 위해 useCase 클래스들을 사용한다.  
+예시 두 가지 :  
+<img width="450" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/d6ee709f-7139-48eb-a945-aad542bebc14">
+
+<img width="377" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/fbcb48d0-6a76-489c-bc19-d70d7bb63232">
+
