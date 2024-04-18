@@ -26,3 +26,13 @@ winget install -e --id Git.Git
    - 본인 repository 내용을 상대 repository에 보내서 합치기 위해 사용함.
    - Pull Request시, 상대 repository의 알맞은 master(main)이 아닌 branch에 맞게 해당 branch에 pull할 수 있도록 할 것.
    - master 권한을 가진 상대가 PR을 승인하면 상대 repository에 merge됨.
+
+---
+
+- 협업 시 문제 해결
+  - 팀 Repository에 Colloborator 등록이 돼있는데도, Push시 403에러 권한이 없다고 뜰 때
+    - via Github Login을 통해서 아래와 같이 성공적으로 로그인해도 Push가 안 되는 경우가 발생  
+      ![image](https://github.com/algochemy/TIL/assets/152131529/c688f0d9-afd4-48de-9607-51187d3a4cad)  
+    - Github Token을 발급받아 인증하면 정상적으로 Push 되었다.
+      - [Settings] -> [Developer Settings] -> Personal access tokens (classic) 선택하여 발급  
+        ![image](https://github.com/algochemy/TIL/assets/152131529/fb0febda-77b9-43ef-ad2b-f64a4894208a)  
