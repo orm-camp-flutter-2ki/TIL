@@ -30,9 +30,9 @@ winget install -e --id Git.Git
 ---
 
 - 협업 시 문제 해결
-  - 팀 Repository에 Colloborator 등록이 돼있는데도, Push시 403에러 권한이 없다고 뜰 때
+  - 팀 Repository에 Colloborator 등록이 돼있는데도, Push시 403에러가 발생하면서 권한이 없다고 하며 Push가 안 되는 문제 발생
     - via Github Login을 통해서 아래와 같이 성공적으로 로그인해도 Push가 안 되는 경우가 발생  
       ![image](https://github.com/algochemy/TIL/assets/152131529/c688f0d9-afd4-48de-9607-51187d3a4cad)  
-    - Github Token을 발급받아 인증하면 정상적으로 Push 되었다.
+    - Github Token을 발급받은 후 Token으로 인증하여 Push한 경우, 정상적으로 Push 되었다.
       - [Settings] -> [Developer Settings] -> Personal access tokens (classic) 선택하여 발급  
         ![image](https://github.com/algochemy/TIL/assets/152131529/fb0febda-77b9-43ef-ad2b-f64a4894208a)  
