@@ -16,3 +16,5 @@
 
 #### 1.
 ![image](https://github.com/BAUu/TIL/assets/44741680/bf26d59a-ba50-4964-95a3-3b75c6f581ee)
+#### 2.
+![image](https://github.com/BAUu/TIL/assets/44741680/f4c34c30-a32e-4197-b698-3084298aed50)
