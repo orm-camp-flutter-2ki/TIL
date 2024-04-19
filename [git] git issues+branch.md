@@ -7,7 +7,7 @@
 ![](https://velog.velcdn.com/images/hee462/post/dbe4a3af-0dd6-4dc5-91ba-3970b9177904/image.png)
 그러면,
 ![](https://velog.velcdn.com/images/hee462/post/2d996242-e023-4e97-a257-52c633ae78c0/image.png)
-역기서 복사해서 터미널 넣고 , 내 기능 작업 하면 됨!
+여기서 복사해서 터미널 넣고 , 내 기능 작업 하면 됨!
 
 3) 이슈가 작성되면 TODO , 작성되면 In Progrese, 완성되면 Done
 ![](https://velog.velcdn.com/images/hee462/post/30880337-881b-4528-8368-39916aa323a2/image.png)
