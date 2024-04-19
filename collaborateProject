@@ -1,0 +1,20 @@
+GitHub를 활용한 협업 연습 프로세스
+- 커뮤니케이션 도구 선택(디스코드, 노션 피그마 등)
+- Organization 만들기 (옵션)
+- Github 위키 (옵션: 코드 컨벤션 가이드 작성)
+- Github 프로젝트 생성
+- Github 이슈 생성 (반복)
+
+작업 프로세스
+- 이슈 생성
+- 브랜치 생성
+- 작업 진행
+- PR 생성
+- Merge
+- 브랜치 삭제
+- 반복
+
+Git Repository 생성
+  소스 클론
+   - Repository에 팀원을 Collaborator로 추가
+   - 모든 인원은 Repository를 Clone
