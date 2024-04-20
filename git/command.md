@@ -31,8 +31,16 @@
 - remote의 최신 변경 사항을 local로 download할 때 사용
 
 #### git stash
-- 아직 commit하지 않은 변경 사항을 임시로 저장
-- 작업 중이던 변경 사항을 임시로 보관하고 다른 작업을 수행할 때 유용
+- 아직 commit하지 않은 변경 사항을 임시로 보관
+- 작업 중이던 변경 사항을 임시로 보관하고 다른 branch로 이동해서 작업을 수행하고자 할 때 유용
+```
+git stash
+git stash save
+git stash list
+git stash apply
+git stash pop
+git stash drop
+```
 
 #### git diff
 두 개의 commit, branch, 또는 file 사이 차이점을 표시하여 코드 변경 사항을 비교할 때 사용
