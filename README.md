@@ -1,13 +1,3 @@
-# TIL
+# orm-camp-flutter-note
 
-Today I Learned
-
-오늘 학습한 내용을 정리하는 것
-
-
-## 샘플
-- https://github.com/namjunemy/TIL
-- https://github.com/milooy/TIL
-- https://github.com/YutoMizutani/til
-
-## 테스트
+강의 중 언급된 일부 내용, 기억해두고 싶은 키워드, 간단한 정리를 위한 저장소입니다.
