@@ -8,6 +8,29 @@
 - 최근 한 개의 commit message만 변경하고 싶을 경우 사용
 - 변경된 commit을 remote에 강제로 push 가능
 
+#### git rebase
+- rebase를 사용하는 주된 이유는 git history를 선형으로 유지하기 위함
+- history를 어떻게 유지하고 싶은지에 따라 rebase와 merge 중 하나를 선택하여 사용
+1. 예를 들어, feature branch에서 작업을 진행하던 중 main branch에 최신 변경 사항 발생
+2. feature branch에 main branch의 최신 변경 사항이 필요할 때 rebase를 하면 최신 main branch에서부터 작업이 시작된 것처럼 보이게 하여 git history를 선형으로 깨끗하게 유지(rebase 대신 merge를 할 경우 merge에 대한 새로운 commit이 생김)
+```
+git checkout feature
+git rebase main
+```
+<img width="571" alt="스크린샷 2024-04-21 오후 1 48 49" src="https://github.com/leeseowoo/orm-camp-flutter-note/assets/76784643/613db6d8-f70a-49d3-a6bd-86f86386436e"></br>
+> https://www.atlassian.com/ko/git/tutorials/merging-vs-rebasing
+
+#### git merge
+- 두 개의 branch를 병합
+```
+git checkout feature
+git merge main
+```
+- 이렇게 하면 feature branch에 두 개의 branch에 대한 hitory를 연결하는 새로운 merge commit이 만들어져 다음과 같은 branch 구조를 얻게 됨
+<img width="499" alt="스크린샷 2024-04-21 오후 1 47 12" src="https://github.com/leeseowoo/orm-camp-flutter-note/assets/76784643/08e09c55-ccd1-441e-903c-fd813baaeeed"></br>
+> https://www.atlassian.com/ko/git/tutorials/merging-vs-rebasing
+
+
 #### git rebase -i HEAD~n
 - remote에 push된 commit message를 변경하고자 할 때, local에서 message를 수정하고, remote에 강제로 push하는 절차를 따르면 변경 가능
 
@@ -40,6 +63,12 @@ git stash list
 git stash apply
 git stash pop
 git stash drop
+```
+
+#### git log --graph
+- branch들의 commit history를 시각화
+```
+git log --graph --oneline --decorate --all
 ```
 
 #### git diff
