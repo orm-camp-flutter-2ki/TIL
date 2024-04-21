@@ -1,0 +1,14 @@
+git branch 생성후 해당 브랜치에서 다른 브랜치 업무까지 해버린경우
+다른 팀원분들이 헷갈리지 않게 
+branch들끼리 묶어주면 됩니다!
+묶어서 사용할 브랜치 탭
+![](https://velog.velcdn.com/images/hee462/post/29c23677-addf-4fea-92cb-80086ff51f30/image.png)
+ 내가 한다고 표시
+![](https://velog.velcdn.com/images/hee462/post/1fe68bf8-0e82-4af0-9467-923d4a1309ed/image.png)
+묶을 현재 작업중인 브랜치 검색 번호로 검색하시면 빠르니다
+![](https://velog.velcdn.com/images/hee462/post/4d309fb9-a345-4c60-8b3b-9429576f8070/image.png)
+해당 프로젝트 레포지토리 선택
+![](https://velog.velcdn.com/images/hee462/post/cffc922f-8669-4058-b03b-7b37b4d63864/image.png)
+현재 작업중인 이슈와 결합되있는거 확인!
+![](https://velog.velcdn.com/images/hee462/post/0afba3b6-7033-427f-81f1-d2213420dc79/image.png)
+
