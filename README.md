@@ -1121,6 +1121,34 @@ call 메서드는 암시적으로 생성자처럼 동작하므로, 이를 오버
 
 - 반복 프로세스: 위의 단계들은 프로젝트 진행 중 지속적으로 반복
 
+
+## Riverpod의 기본 개념
+
+Riverpod는 'Provider'라는 개념을 기반
+
+기존의 Provider 패키지와 비슷하게, Riverpod도 앱 전체에 걸쳐 데이터를 공유하고, UI가 데이터의 변화에 반응
+
+Riverpod는 컴파일 타임 안전성을 제공하며, Provider에 비해 더 유연
+
+## 주요 특징과 장점
+
+컴파일 타임 안전성: Riverpod는 컴파일 시점에 오류를 잡아내어 런타임 오류의 가능성 감소
+
+테스트 용이성: 상태 관리 코드를 단위 테스트 용이
+
+유연성과 확장성: 다양한 상태 관리 방법론을 지원하며, 사용자가 필요에 따라 쉽게 확장
+
+Context-free: Riverpod는 Flutter의 BuildContext에 의존하지 않으므로, 어떤 위치에서든 프로바이더에 접근 가능
+
+## 주요 구성 요소
+
+Provider: 가장 기본적인 상태 관리 단위로, 어떤 값이나 객체를 제공
+
+StateProvider: 상태를 가지는 Provider로, 상태 변경이 필요할 때 사용
+
+StreamProvider와 FutureProvider: 비동기 작업의 결과를 반영하기 위해 사용되며, Stream과 Future를 각각 사용
+
+ChangeNotifierProvider: 복잡한 상태 관리에 적합하며, ChangeNotifier를 사용하여 상태 변화 알림
 -------------------
 알고리즘 학습 필요
 
