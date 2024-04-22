@@ -36,7 +36,12 @@
 * 데이터 검증
   * 예측한 데이터를 제대로 처리하고 있는지
 
-### <Test Double>
+<br></br>
+
+## 경계값 테스트
+* 예시) 숫자1~100이 들어가는 경우: -1, 0, 1, 99, 100, 101
+
+## Test Double
 * 테스트를 진행하기 어려운 경우에 테스트가 가능하도록 만들어주는 객체
 * 모호한 경계를 가지므로 용어에 집착하지 말자
 
@@ -44,8 +49,8 @@
 <img width="163" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/405b4e58-5491-46af-94a3-9d8fbe51f7ff">
 
 ### 테스트 용이성
-다형성을 활용하면 원하는 객체로 쉽게 바꿔 테스트할 때 활용이 가능하다.
-=> interface 활용
+다형성을 활용하면 원하는 객체로 쉽게 바꿔 테스트할 때 활용이 가능하다.  
+#### => interface 활용
 
 <img width="428" alt="image" src="https://github.com/NalaJang/TIL/assets/73895803/b212551b-ae6d-48ed-8282-b08d63a09f1f">
 
