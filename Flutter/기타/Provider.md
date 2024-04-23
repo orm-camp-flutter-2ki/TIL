@@ -182,8 +182,14 @@ Object > DiagnosticableTree > Widget > StatelessWidget > SingleChildStatelessWid
 # Selector
 
 Consumer과 비슷하지만, value의 일부 변경에 대해서만 업데이트 되도록하여, 불필요한 rebuild를 방지할 수 있다.  
-`Selector<Foo, Bar>` => Foo객체의 Bar의 값의 변경에 대해서만 rebuild
-
+```dart
+Selector<Foo, Bar>(
+  selector: (_, foo) => foo.bar,  // will rebuild only when `bar` changes
+  builder: (_, data, __) {
+    return Text('${data.item}');
+  }
+)
+```
 Seletor는 Provider.of를 통해서 값을 얻은 후, selector에게 값을 전달한다.  
 selector는 builder에 필요한 정보만 포함한 객체를 반환하는 콜백이다.
 
