@@ -529,3 +529,52 @@ class _NextScreenState extends State<NextScreen> {
   - Get_It과 같은 의존성주입 라이브러리를 사용하면 **서비스 로케이터 패턴으로 의존성 주입**을 할 수 있음
   - 서비스 로케이터 패턴 구현 시 goRouter + get_it 라이브러리 함께 활용하여 사용
   - goRouter을 안 쓰고 get_it만 쓴다면, 서비스 로케이터 패턴이 아닌 안티패턴이 될 것임
+
+---
+### Stream
+- Stream
+  - 실시간으로 생성되고 전송되는 데이터의 흐름
+  - 리액티브 프로그래밍
+  - 데이터 수정 -> UI 변경이 자동으로
+  - 무한
+  - 예) 이벤트, 센서 데이터
+  - 용례) 실시간 분석, 예측, 알림, 감시, 로깅, 모니터링 등에 활용
+
+- Stream 활용 방법
+  - **StreamBuilder**
+    - Stream 데이터를 UI 로 변환해 주는 Widget
+    - FutureBuilder 와 Future 조합과 비슷
+    - Stream을 위젯으로 표현하는 위젯
+    - Future는 단발성이라면 Stream은 지속적은 변화에 따라 화면을 갱신함
+    - Stream은 센서 데이터 처럼 지속적인 값으로 제공되는 경우가 많음
+    - StreamBuilder를 사용하여 UI로 변환
+      - 데이터가 없는 경우의 처리도 한 군데서 다 처리함
+      - 원하는 부분만 UI 갱신이 가능함
+      - [수평계 샘플](https://github.com/junsuk5/flutter-first-guide/blob/master/tilt_sensor/lib/main.dart)
+    - **구독 / 해지**
+    - Stream 데이터를 UI 로 변환할 필요가 없는 경우에 활용
+    - listen() 메서드로 구독
+    - cancel() 메서드로 해지  
+    - 구독 / 해지 예  
+      <img src="https://github.com/algochemy/TIL/assets/152131529/b939b342-3d6a-4df4-96c7-81d318cd668f" width="400" height="100">  
+      <img src="https://github.com/algochemy/TIL/assets/152131529/677653a8-b3c5-4f4c-b628-6262f8eff669" width="400" height="200">  
+      listen()으로 시작한 구독을 해지하려면 StreamSubscription 객체의 인스턴스를 통해야 한다
+      <img src="https://github.com/algochemy/TIL/assets/152131529/3036566f-7f85-451a-93cb-a4a806b3904d" width="400" height="150">  
+
+- StreamController
+  - StreamController 작성
+    - 하나의 리스너를 허용하는 스트림 (Cold Stream)
+    ```dart
+    final _streamController = StreamController<int>();
+    ```
+    - 여러 리스너를 허용하는 브로드캐스트 스트림 (Hot Stream)
+    ```dart
+    final _streamController = StreamController<int>.broadcast();
+    ```
+  - StreamController의 값 변경
+    ```dart
+    _streamController.add(10);
+    ```
+    - add 메서드를 통해 값을 밀어넣는다
+    - StreamController 는 값 하나만 가진다.
+    - 값이 사용되면 StreamController 에서 제거된다
