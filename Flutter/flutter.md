@@ -496,5 +496,36 @@ class _NextScreenState extends State<NextScreen> {
     - 예 : auth / user 별로 디렉토리를 아래에 가진다.
     - 업무 분할시 좋음. (MVVM 패턴을 사용하든, 도메인레이어 도입해 UseCase도입하든, setState쓰든)
 
+---
+
+### <의존성 주입>
+
+- 의존성 주입
+  - InhertiedWidget : 근본
+  - Provider : 근본을 편하게 사용
+  - Get_it : 서비스 로케이터 패턴을 제공
+  - GetX : 서비스 로케이터 패턴 등을 제공하지만 권장하지 않음(대부분의 기능을 GetX 라이브러리 자체에 의존)
+    
+- 서비스 로케이터 패턴이란?  
+  ![image](https://github.com/algochemy/TIL/assets/152131529/edb7fdab-300f-421d-9261-0d021bfeb383)
+  - 강력한 추상화 계층을 사용하여 서비스를 얻는 데 관련된 프로세스를 캡슐화하기 위해 소프트웨어 개발 에 사용되는 디자인 패턴
+  - 요청 시 특정 작업을 수행하는 데 필요한 정보를 반환하는 "서비스 로케이터"로 알려진 중앙 레지스트리를 사용합니다.
+  - 찬성 :  전체 애플리케이션 설계의 시작 부분에 모든 종속성이 명확하게 나열되는 구성 요소 기반 애플리케이션을 단순화하므로 결과적으로 기존 종속성 주입이 개체를 연결하는 더 복잡한 방법이 된다고 주장. (즉, 서비스 로케이터 패턴을 사용하면 복잡한 것을 단순하게 나열하므로 좋음)
+  - 반대 : 이 패턴을 비판하는 사람들은 이것이 종속성을 모호하게 하고 소프트웨어를 테스트하기 어렵게 만드는 안티패턴 이라고 주장 (**주의해서 써야함.**)
+
+- getIt
+  - 싱글턴 : 하나 만들어 놓고 계속 쓰는 패턴
+    - getIt.registerSingleton<ImageRepository>(PixabayImageItemRepositry());
+    - 제네릭에 인터페이스 타입을 지정하고 구현하는 코드 넣어주면 된다
+    - Impl을 받아서 사용하는데 제네릭 생략가능 getIt.registerSingleton(PixabayImageItemRepositry())
+  - 팩토리 : 계속 만들어 쓰는 패턴
+    - getIt.registerFactory<MainViewModel> ()⇒ MainViewModel(repository: getIt<ImageItemRepository>()),
+    - **팩토리에 지정해야하는 것은 viewModel 밖에 없다**
+    - **viewModel 이외는 다 싱글턴으로 처리**
+  - getIt으로 객체를 얻을 경우, getIt<얻을타입> 예) ```getIt<MainViewModel>()``` 하면 어디서든 객체 주입 받을 수 있음. (입력 파라미터 타입을 따라가기 때문에 제네릭은 생략 가능)
   
-  
+- 의존성 주입 정리
+  - Provider와 같은 상태관리 라이브러리를 사용하면서 이미 의존성 주입을 하고 있음
+  - Get_It과 같은 의존성주입 라이브러리를 사용하면 **서비스 로케이터 패턴으로 의존성 주입**을 할 수 있음
+  - 서비스 로케이터 패턴 구현 시 goRouter + get_it 라이브러리 함께 활용하여 사용
+  - goRouter을 안 쓰고 get_it만 쓴다면, 서비스 로케이터 패턴이 아닌 안티패턴이 될 것임
