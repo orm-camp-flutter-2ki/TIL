@@ -73,6 +73,8 @@ void main() async {
   * `streamController.sink.add()`로 넣고
   * `streamController.stream.listen()`로 꺼낸다.
 
+<br></br>
+
 ### Stream을 활용한 일회성 UI 이벤트 처리 방법 예시
 * Stream이 노출하는 값은 일회성이기 때문에 단발성 UI 처리에 활용할 수 있다.
   * SnackBar, 다이얼로그 표시 등
