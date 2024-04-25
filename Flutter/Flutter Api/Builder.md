@@ -4,7 +4,7 @@
 자신의 builder 콜백을 사용하는 build 메서드를 통해 새로운 자식 위젯을 생성하는 stateless 유틸 위젯
 
 이 위젯은 StatelessWidget 구현체 정의에 대한 inline한 대안이다.  
-예를 들어, 아래와 같은 정의되고
+예를 들어, 아래와 같이 정의되고
 ```dart
 class Foo extends StatelessWidget {
   const Foo({super.key});
